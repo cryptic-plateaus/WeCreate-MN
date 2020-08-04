@@ -8,7 +8,7 @@ const Nav = (props) => (
   <div className="nav">
     
     <Link to="/home">
-      <img width="100" alt="WeCreate MN Logo, small version" src="images/example_logo.png" />
+      <img className="nav-logo" width="70" alt="WeCreate MN Logo, small version" src="images/example_logo.png" />
       <h2 className="nav-title">WeCreate MN</h2>
     </Link>
     <div className="nav-right">
@@ -27,10 +27,10 @@ const Nav = (props) => (
           <LogOutButton className="nav-link"/>
         </>
       )}
-      {/* Always show this link since the about page is not protected */}
+      {/* Always show this link since the about page is not protected
       <Link className="nav-link" to="/about">
         About
-      </Link>
+      </Link> */}
     </div>
   </div>
 );
