@@ -1,15 +1,21 @@
 import React from 'react';
-import './Footer.css'
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import './Footer.css';
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
-
-const Footer = () => (
-  <footer>
-    &copy; Prime Digital Academy
-  </footer>
+const Footer = (props) => (
+  <div className="footer">
+    <Link to="/home">
+      <img className="footer-logo" width="40" alt="WeCreate MN Logo, smallest version" src="images/example_logo.png" />
+    </Link>
+    <p className="footer-message">WeCreate MN is based in the Twin Cities, MN</p>
+    <p className="footer-copyright">&copy; WeCreate MN</p>
+  </div>
 );
 
-export default Footer;
+const mapStateToProps = state => ({
+  user: state.user,
+});
+
+export default connect(mapStateToProps)(Footer);
+
