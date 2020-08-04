@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 class RegisterPage extends Component {
   state = {
     username: '',
     password: '',
+    orgName: '',
+    orgWebsite: '',
+    nameOfContact: '',
+    emailOfContact: '',
+    industry: '',
+    orgSize: ''
   };
 
   registerUser = (event) => {
@@ -12,14 +18,15 @@ class RegisterPage extends Component {
 
     if (this.state.username && this.state.password) {
       this.props.dispatch({
-        type: 'REGISTER',
+        type: 'REGISTER_EMPLOYER', //WAS 'REGISTER'
         payload: {
           username: this.state.username,
           password: this.state.password,
+
         },
       });
     } else {
-      this.props.dispatch({type: 'REGISTRATION_INPUT_ERROR'});
+      this.props.dispatch({ type: 'REGISTRATION_INPUT_ERROR' });
     }
   } // end registerUser
 
@@ -32,6 +39,7 @@ class RegisterPage extends Component {
   render() {
     return (
       <div>
+        {/* {JSON.stringify(this.state)} testing on-change */}
         {this.props.errors.registrationMessage && (
           <h2
             className="alert"
@@ -41,7 +49,7 @@ class RegisterPage extends Component {
           </h2>
         )}
         <form onSubmit={this.registerUser}>
-          <h1>Register User</h1>
+          <h1>Register As An Employer</h1>
           <div>
             <label htmlFor="username">
               Username:
@@ -65,6 +73,75 @@ class RegisterPage extends Component {
             </label>
           </div>
           <div>
+            <label htmlFor="organization-name">
+              Organization Name:
+              <input
+                type="text"
+                name="organization-name"
+                value={this.state.orgName}
+                onChange={this.handleInputChangeFor('orgName')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="organization-website">
+              Organization Website:
+              <input
+                type="text"
+                name="organization-website"
+                value={this.state.orgWebsite}
+                onChange={this.handleInputChangeFor('orgWebsite')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="organization-contact-name">
+              Name of Organization Contact:
+              <input
+                type="text"
+                name="organization-contact-name"
+                value={this.state.nameOfContact}
+                onChange={this.handleInputChangeFor('nameOfContact')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="organization-contact-email">
+              Email of Organization Contact:
+              <input
+                type="text"
+                name="organization-contact-email"
+                value={this.state.emailOfContact}
+                onChange={this.handleInputChangeFor('emailOfContact')}
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="organization-industry">
+              Organization Industry:
+              <input
+                type="text"
+                name="organization-industry"
+                value={this.state.industry}
+                onChange={this.handleInputChangeFor('industry')}
+              />
+            </label>
+          </div>
+          {/* 
+
+      companySize: '' */}
+          <div>
+            <label htmlFor="organization-size">
+              Company Size:
+                <input
+                type="number"
+                name="organization-size"
+                value={this.state.orgSize}
+                onChange={this.handleInputChangeFor('orgSize')}
+              />
+            </label>
+          </div>
+          <div>
             <input
               className="register"
               type="submit"
@@ -73,7 +150,7 @@ class RegisterPage extends Component {
             />
           </div>
         </form>
-        <center>
+        {/* <center>
           <button
             type="button"
             className="link-button"
@@ -81,7 +158,7 @@ class RegisterPage extends Component {
           >
             Login
           </button>
-        </center>
+        </center> */}
       </div>
     );
   }
