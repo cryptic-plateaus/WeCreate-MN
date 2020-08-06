@@ -52,8 +52,9 @@ input {
 }
 
 
+
 .welcome .image{
-  width: 110%;
+  width: 100%;
   z-index: 0;
 }
 
@@ -65,16 +66,16 @@ input {
         right: 0;        
         text-align: center;
         top: 40%; /* Adjust this value to move the positioned div up and down */
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.2);
         font-family: Arial,sans-serif;
         color: #fff;
         width: 60%; /* Set the width of the positioned div */
     }
 
-.welcome .message .title{
+.title{
     font-size: 100px;
 }
 
-.welcome .message .subtitle{
+.subtitle{
 font-size: 30px;
 }
