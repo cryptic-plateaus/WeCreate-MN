@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import SubmitOppButton from "../../components/SubmitOppButton/SubmitOppButton";
+import SubmitOppButton from "../../components/SubmitNewOppButton/SubmitNewOppButton";
 import UpdateProfileButton from "../../components/UpdateProfileButton/UpdateProfileButton";
 import Header from "../../components/DecoHeaderOne/DecoHeaderOne";
 import RecentUserOpps from "../../components/RecentUserOpps/RecentUserOpps";
