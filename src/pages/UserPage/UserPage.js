@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from "../../components/LogOutButton/LogOutButton";
+import SubmitOppButton from "../../components/SubmitOppButton/SubmitOppButton";
+import UpdateProfileButton from "../../components/UpdateProfileButton/UpdateProfileButton";
+import Header from "../../components/DecoHeaderOne/DecoHeaderOne";
+import RecentUserOpps from "../../components/RecentUserOpps/RecentUserOpps";
 
 class UserPage extends Component {
 
@@ -8,10 +11,16 @@ class UserPage extends Component {
   render() {
     return (
       <div>
-        
-        <h1 id="welcome">Welcome, {this.props.user.username}!</h1>
-        <p>Your ID is: {this.props.user.id}</p>
-        <LogOutButton className="log-in" />
+        <Header />
+        <div className="dashboard-content">
+          <h2 id="welcome">Welcome, {this.props.user.username}!</h2>
+          <h3>
+            <i>Your current opportunities:</i>
+          </h3>
+          <RecentUserOpps />
+          <SubmitOppButton />
+          <UpdateProfileButton />
+        </div>
       </div>
     );
   }
