@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import SubmitOppButton from "../../components/SubmitNewOppButton/SubmitNewOppButton";
-import UpdateProfileButton from "../../components/UpdateProfileButton/UpdateProfileButton";
+import GoToSubmitOppButton from "../../components/buttons/GoToSubmitOppButton/GoToSubmitOppButton";
+import UpdateProfileButton from "../../components/buttons/UpdateProfileButton/UpdateProfileButton";
 import Header from "../../components/DecoHeaderOne/DecoHeaderOne";
 import RecentUserOpps from "../../components/RecentUserOpps/RecentUserOpps";
 
@@ -18,7 +18,7 @@ class UserPage extends Component {
             <i>Your current opportunities:</i>
           </h3>
           <RecentUserOpps />
-          <SubmitOppButton />
+          <GoToSubmitOppButton />
           <UpdateProfileButton />
         </div>
       </div>

@@ -55,10 +55,14 @@ class App extends Component {
             <ProtectedRoute exact path="/info" component={InfoPage} />
             {/* If none of the other routes matched, we will show a 404. */}
             {/* <Route render={() => <h1>404</h1>} /> */}
+            {/* This works the same as the other protected route, except that if the user is logged in,
+            they will see the info page instead. */}
+            <ProtectedRoute exact path="/submit" component={SubmitNewOppPage} />
+            {/* If none of the other routes matched, we will show a 404. */}
+            {/* <Route render={() => <h1>404</h1>} /> */}
           </Switch>
           <Route path="/register" component={EmployerRegisterPage} />
           <Route path="/login" component={LoginPage} />
-          <Route path="/submit" component={SubmitNewOppPage} />
           <Footer />
         </div>
       </Router>

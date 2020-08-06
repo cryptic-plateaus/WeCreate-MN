@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Header from "../../components/DecoHeaderOne/DecoHeaderOne";
+import SubmitOppButton from "../../components/buttons/SubmitOppButton/SubmitOppButton";
 
 class SubmitNewOppPage extends Component {
   state = {
@@ -50,9 +51,9 @@ class SubmitNewOppPage extends Component {
     });
   };
 
-//   handleClick = (event) => {
-//     this.props.history.push("/login");
-//   };
+  handleClick = (event) => {
+    this.props.history.push("/");
+  };
 
   render() {
     return (
@@ -132,6 +133,7 @@ class SubmitNewOppPage extends Component {
                   onChange={this.handleInputChangeFor("expLevel")}
                 />
               </label>
+              <br />
               <label htmlFor="compensation">
                 Compensation:
                 <input
@@ -141,6 +143,7 @@ class SubmitNewOppPage extends Component {
                   onChange={this.handleInputChangeFor("compensation")}
                 />
               </label>
+              <br />
               <label htmlFor="per">
                 Per:
                 <input
@@ -150,6 +153,7 @@ class SubmitNewOppPage extends Component {
                   onChange={this.handleInputChangeFor("per")}
                 />
               </label>
+              <br />
               <label htmlFor="opportunity-details">
                 Opportunity Details:
                 <textarea
@@ -159,14 +163,7 @@ class SubmitNewOppPage extends Component {
                 ></textarea>
               </label>
             </div>
-            <div>
-              <input
-                className="register"
-                type="submit"
-                name="submit"
-                value="Create a Profile"
-              />
-            </div>
+            <SubmitOppButton />
           </form>
           <center>
             <button
@@ -174,7 +171,7 @@ class SubmitNewOppPage extends Component {
               onClick={this.handleClick}
               className="link-button"
             >
-              Login
+              Go Back
             </button>
           </center>
         </div>
