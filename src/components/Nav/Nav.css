@@ -7,11 +7,11 @@
 }
 
 .nav-logo{
-  padding: 40px;
+  padding: 10px;
 }
 
 .nav {
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #e7e7e7;
 }
 
@@ -20,10 +20,9 @@
   color: #000000;
   background-color: transparent;
   text-align: center;
-  padding: 24px 10px;
+  padding: 30px;
   text-decoration: none;
   font-size: 15px;
-  padding: 50px;
 
   /* these last two make the logout button in
   the nav bar look like another link */
