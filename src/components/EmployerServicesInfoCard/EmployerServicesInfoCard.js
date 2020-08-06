@@ -46,8 +46,15 @@ function MediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button className="for-employer-button" size="small" color="primary">
-          Register
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          className="for-employer-button"
+          size="small"
+          href="#register"
+        >
+          Create an Employer Account
         </Button>
       </CardActions>
     </Card>

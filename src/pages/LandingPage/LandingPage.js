@@ -29,15 +29,17 @@ function ContainedButtons(props) {
           </h3>
           <Button
             variant="contained"
-            // href="#register"
+            color="primary"
             className={classes.button}
+            // href="#register"
           >
             Learn More
           </Button>
           <Button
             variant="contained"
-            href="#register"
+            color="primary"
             className={classes.button}
+            href="#register"
           >
             Sign Up
           </Button>

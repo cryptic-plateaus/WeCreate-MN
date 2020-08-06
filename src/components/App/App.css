@@ -18,6 +18,11 @@ form {
     text-align: left;
 }
 
+.form{
+padding-top: 30px;
+padding-bottom: 30px;
+}
+
 input {
     margin: 5px;
     margin-bottom: 10px;
@@ -66,7 +71,7 @@ input {
         left: 50px;
         right: 0;        
         text-align: center;
-        top: 40%; /* Adjust this value to move the positioned div up and down */
+        top: 25%; /* Adjust this value to move the positioned div up and down */
         background: rgba(0, 0, 0, 0.2);
         border-radius: 20px;
         font-family: Arial,sans-serif;

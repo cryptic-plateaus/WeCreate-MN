@@ -24,11 +24,12 @@ router.post('/register', (req, res, next) => {
   const industry = req.body.industry;
   const orgSize = req.body.orgSize;
 
-  const queryText = `INSERT INTO "user" (username, password) VALUES ($1, $2) RETURNING id;
-  INSERT INTO "organization_profile"("user_id", "org_name", "org_website", "org_contact_name", 
-  "org_contact_email", "org_industry", "org_size") VALUES (id, $3, $4, $5, $6, $7, $8, $9);`;
-  pool.query(queryText, [username, password, username, orgWebsite, nameOfContact,emailOfContact,
-  industry, orgSize])
+  const queryText = `INSERT INTO "user" (username, password) VALUES ($1, $2) RETURNING id;`;
+  // `INSERT INTO "organization_profile"("user_id", "org_name", "org_website", "org_contact_name", 
+  // "org_contact_email", "org_industry", "org_size") VALUES (id, $3, $4, $5, $6, $7, $8, $9);`;
+  pool.query(queryText, [username, password]) 
+  //   username, orgWebsite, nameOfContact,emailOfContact,
+  // industry, orgSize])
     .then(() => res.sendStatus(201))
     .catch(() => res.sendStatus(500));
 });

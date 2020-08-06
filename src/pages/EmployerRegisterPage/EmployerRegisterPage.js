@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Header from "../../components/DecoHeaderOne/DecoHeaderOne";
 
 class RegisterPage extends Component {
   state = {
-    username: '',
-    password: '',
-    orgWebsite: '',
-    nameOfContact: '',
-    emailOfContact: '',
-    industry: '',
-    orgSize: ''
+    username: "",
+    password: "",
+    orgWebsite: "",
+    nameOfContact: "",
+    emailOfContact: "",
+    industry: "",
+    orgSize: "",
   };
 
   registerUser = (event) => {
     event.preventDefault();
 
-    if (this.state.username 
-      && this.state.password
-      && this.state.orgWebsite
-      && this.state.nameOfContact
-      && this.state.emailOfContact
-      && this.state.industry
-      && this.state.orgSize) { 
+    if (
+      this.state.username &&
+      this.state.password 
+      // &&
+      // this.state.orgWebsite &&
+      // this.state.nameOfContact &&
+      // this.state.emailOfContact &&
+      // this.state.industry &&
+      // this.state.orgSize
+    ) {
       this.props.dispatch({
-        type: 'REGISTER_EMPLOYER', //WAS 'REGISTER'
+        type: "REGISTER_EMPLOYER", //WAS 'REGISTER'
         payload: {
           username: this.state.username,
           password: this.state.password,
@@ -31,132 +35,136 @@ class RegisterPage extends Component {
           nameOfContact: this.state.nameOfContact,
           emailOfContact: this.state.emailOfContact,
           industry: this.state.industry,
-          orgSize: this.state.orgSize
+          orgSize: this.state.orgSize,
         },
       });
     } else {
-      this.props.dispatch({ type: 'REGISTRATION_INPUT_ERROR' });
+      this.props.dispatch({ type: "REGISTRATION_INPUT_ERROR" });
     }
-  } // end registerUser
+  }; // end registerUser
 
-  handleInputChangeFor = propertyName => (event) => {
+  handleInputChangeFor = (propertyName) => (event) => {
     this.setState({
       [propertyName]: event.target.value,
     });
-  }
+  };
+
+  handleClick = (event) => {
+    this.props.history.push("/login");
+  };
 
   render() {
     return (
       <div>
+        <Header />
         {/* {JSON.stringify(this.state)} testing on-change */}
         {this.props.errors.registrationMessage && (
-          <h2
-            className="alert"
-            role="alert"
-          >
+          <h2 className="alert" role="alert">
             {this.props.errors.registrationMessage}
           </h2>
         )}
-        <form onSubmit={this.registerUser}>
-          <h1>Register As An Employer</h1>
-          <div>
-            <label htmlFor="organization-username">
-              Organization Name:
-              <input
-                type="text"
-                name="organization-username"
-                value={this.state.username}
-                onChange={this.handleInputChangeFor('username')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="password">
-              Password:
-              <input
-                type="password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleInputChangeFor('password')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="organization-website">
-              Organization Website:
-              <input
-                type="text"
-                name="organization-website"
-                value={this.state.orgWebsite}
-                onChange={this.handleInputChangeFor('orgWebsite')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="organization-contact-name">
-              Name of Organization Contact:
-              <input
-                type="text"
-                name="organization-contact-name"
-                value={this.state.nameOfContact}
-                onChange={this.handleInputChangeFor('nameOfContact')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="organization-contact-email">
-              Email of Organization Contact:
-              <input
-                type="text"
-                name="organization-contact-email"
-                value={this.state.emailOfContact}
-                onChange={this.handleInputChangeFor('emailOfContact')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="organization-industry">
-              Organization Industry:
-              <input
-                type="text"
-                name="organization-industry"
-                value={this.state.industry}
-                onChange={this.handleInputChangeFor('industry')}
-              />
-            </label>
-          </div>
-          {/* 
+        <div className="form">
+          <form onSubmit={this.registerUser}>
+            <h1>Register As An Employer</h1>
+            <div>
+              <label htmlFor="organization-username">
+                Organization Name:
+                <input
+                  type="text"
+                  name="organization-username"
+                  value={this.state.username}
+                  onChange={this.handleInputChangeFor("username")}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="password">
+                Password:
+                <input
+                  type="password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleInputChangeFor("password")}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="organization-website">
+                Organization Website:
+                <input
+                  type="text"
+                  name="organization-website"
+                  value={this.state.orgWebsite}
+                  onChange={this.handleInputChangeFor("orgWebsite")}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="organization-contact-name">
+                Name of Organization Contact:
+                <input
+                  type="text"
+                  name="organization-contact-name"
+                  value={this.state.nameOfContact}
+                  onChange={this.handleInputChangeFor("nameOfContact")}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="organization-contact-email">
+                Email of Organization Contact:
+                <input
+                  type="text"
+                  name="organization-contact-email"
+                  value={this.state.emailOfContact}
+                  onChange={this.handleInputChangeFor("emailOfContact")}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="organization-industry">
+                Organization Industry:
+                <input
+                  type="text"
+                  name="organization-industry"
+                  value={this.state.industry}
+                  onChange={this.handleInputChangeFor("industry")}
+                />
+              </label>
+            </div>
+            {/* 
 
       companySize: '' */}
-          <div>
-            <label htmlFor="organization-size">
-              Company Size:
+            <div>
+              <label htmlFor="organization-size">
+                Company Size:
                 <input
-                type="number"
-                name="organization-size"
-                value={this.state.orgSize}
-                onChange={this.handleInputChangeFor('orgSize')}
+                  type="number"
+                  name="organization-size"
+                  value={this.state.orgSize}
+                  onChange={this.handleInputChangeFor("orgSize")}
+                />
+              </label>
+            </div>
+            <div>
+              <input
+                className="register"
+                type="submit"
+                name="submit"
+                value="Create a Profile"
               />
-            </label>
-          </div>
-          <div>
-            <input
-              className="register"
-              type="submit"
-              name="submit"
-              value="Create a Profile"
-            />
-          </div>
-        </form>
-        {/* <center>
-          <button
-            type="button"
-            className="link-button"
-            onClick={() => {this.props.dispatch({type: 'SET_TO_LOGIN_MODE'})}}
-          >
-            Login
-          </button>
-        </center> */}
+            </div>
+          </form>
+          <center>
+            <button
+              type="button"
+              onClick={this.handleClick}
+              className="link-button"
+            >
+              Login
+            </button>
+          </center>
+        </div>
       </div>
     );
   }
