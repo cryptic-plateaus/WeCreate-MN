@@ -7,16 +7,16 @@ import './Nav.css';
 const Nav = (props) => (
   <div className="nav">
     
-    <Link to="/home">
+    <Link to="/">
       <img className="nav-logo" width="70" alt="WeCreate MN Logo, small version" src="images/example_logo.png" />
       <h2 className="nav-title">WeCreate MN</h2>
     </Link>
     <div className="nav-right">
-      <Link className="nav-link" to="/">
+      <Link className="nav-link" to="/login">
         {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
         and call this link 'Login / Register' if they are not */}
-        {props.user.id ? 'Home' : 'WeCreate MN'}
+        {props.user.id ? 'Home' : 'Login'}
       </Link>
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {props.user.id && (

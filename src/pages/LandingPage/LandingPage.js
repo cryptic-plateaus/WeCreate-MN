@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 import InfoCard from "../../components/EmployerServicesInfoCard/EmployerServicesInfoCard";
 import { withStyles } from '@material-ui/core/styles';

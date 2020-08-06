@@ -21,7 +21,7 @@ import InfoPage from '../../pages/InfoPage/InfoPage';
 
 import './App.css';
 import EmployerRegisterPage from "../../pages/EmployerRegisterPage/EmployerRegisterPage";
-
+import LoginPage from "../../pages/LoginPage/LoginPage";
 class App extends Component {
   componentDidMount () {
     this.props.dispatch({type: 'FETCH_USER'})
@@ -32,7 +32,6 @@ class App extends Component {
       <Router>
         <div>
           <Nav />
-          <Route path="#register" component={EmployerRegisterPage} />
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             {/* <Redirect exact from="/" to="/home" /> */}
@@ -52,8 +51,10 @@ class App extends Component {
             they will see the info page instead. */}
             <ProtectedRoute exact path="/info" component={InfoPage} />
             {/* If none of the other routes matched, we will show a 404. */}
-            <Route render={() => <h1>404</h1>} />
+            {/* <Route render={() => <h1>404</h1>} /> */}
           </Switch>
+          <Route path="/register" component={EmployerRegisterPage} />
+          <Route path="/login" component={LoginPage} />
           <Footer />
         </div>
       </Router>
