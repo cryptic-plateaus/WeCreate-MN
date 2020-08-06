@@ -22,7 +22,9 @@ class LandingPage extends Component {
               </div>
             </div>
             <div className="services">
-              <h3 className="subtitle">Services</h3>
+              <h3 className="subtitle" id="services-title">
+                Services
+              </h3>
               <InfoCard />
             </div>
           </>

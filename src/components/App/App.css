@@ -1,6 +1,7 @@
 body {
     font-family: 'Arial', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
+    
 }
 
 .alert {
@@ -78,4 +79,26 @@ input {
 
 .subtitle{
 font-size: 30px;
+}
+
+.for-employer-title{
+    text-align: center;
+}
+
+.for-employer-button{
+    text-align: center;
+}
+
+#services-title{
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+#employer-info-card{
+padding-bottom: 20px;
+}
+
+.services{
+
 }
