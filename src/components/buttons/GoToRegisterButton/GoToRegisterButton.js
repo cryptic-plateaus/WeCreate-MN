@@ -12,24 +12,23 @@ const styles = (theme) => ({
   },
 });
 
-function Register(props) {
+function GoToRegister(props) {
   const { classes } = props;
   return (
     <div>
-      <Button
-        variant="contained"
-        color="primary"
-        href="#login"
-        className={classes.button}
-      >
-        Register
+      <Button 
+      variant="contained" 
+      color="primary" 
+      href="#register"
+      className={classes.button}>
+        Sign Up
       </Button>
     </div>
   );
 }
 
-Register.propTypes = {
+GoToRegister.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Register);
+export default withStyles(styles)(GoToRegister);

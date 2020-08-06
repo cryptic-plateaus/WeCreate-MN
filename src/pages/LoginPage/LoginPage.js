@@ -77,16 +77,16 @@ class LoginPage extends Component {
               />
             </div>
           </form>
-          <center>
-            <button
-              type="button"
-              onClick={this.handleClick}
-              className="link-button"
-            >
-              Register
-            </button>
-          </center>
         </div>
+        <center>
+          <button
+            type="button"
+            onClick={this.handleClick}
+            className="link-button"
+          >
+            Register
+          </button>
+        </center>
       </div>
     );
   }

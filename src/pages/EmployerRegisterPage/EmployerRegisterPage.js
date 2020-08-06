@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from "../../components/DecoHeaderOne/DecoHeaderOne";
+import RegisterButton from "../../components/buttons/RegisterButton/RegisterButton"
 
 class RegisterPage extends Component {
   state = {
@@ -146,14 +147,7 @@ class RegisterPage extends Component {
                 />
               </label>
             </div>
-            <div>
-              <input
-                className="register"
-                type="submit"
-                name="submit"
-                value="Create a Profile"
-              />
-            </div>
+          <RegisterButton/>
           </form>
           <center>
             <button
