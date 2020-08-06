@@ -14,10 +14,12 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 // import AboutPage from '../AboutPage/AboutPage';
+
 import UserPage from '../../pages/UserPage/UserPage';
 import InfoPage from '../../pages/InfoPage/InfoPage';
 
 import './App.css';
+import LandingPage from '../../pages/LandingPage/LandingPage';
 
 class App extends Component {
   componentDidMount () {
