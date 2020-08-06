@@ -19,6 +19,8 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import UserPage from '../../pages/UserPage/UserPage';
 import InfoPage from '../../pages/InfoPage/InfoPage';
 
+import SubmitNewOppPage from "../../pages/SubmitNewOppPage/SubmitNewOppPage";
+
 import './App.css';
 import EmployerRegisterPage from "../../pages/EmployerRegisterPage/EmployerRegisterPage";
 import LoginPage from "../../pages/LoginPage/LoginPage";
@@ -47,6 +49,7 @@ class App extends Component {
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
             <ProtectedRoute exact path="/" component={UserPage} />
+
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
             <ProtectedRoute exact path="/info" component={InfoPage} />
@@ -55,6 +58,7 @@ class App extends Component {
           </Switch>
           <Route path="/register" component={EmployerRegisterPage} />
           <Route path="/login" component={LoginPage} />
+          <Route path="/submit" component={SubmitNewOppPage} />
           <Footer />
         </div>
       </Router>

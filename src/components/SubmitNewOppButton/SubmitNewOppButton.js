@@ -12,7 +12,7 @@ const styles = (theme) => ({
   },
 });
 
-function SubmitOppButton(props) {
+function SubmitNewOppButton(props) {
   const { classes } = props;
   return (
     <div>
@@ -21,14 +21,14 @@ function SubmitOppButton(props) {
       color="primary" 
       href=""
       className={classes.button}>
-        Post A New Opportunity
+        Submit A New Opportunity
       </Button>
     </div>
   );
 }
 
-SubmitOppButton.propTypes = {
+SubmitNewOppButton.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SubmitOppButton);
+export default withStyles(styles)(SubmitNewOppButton);
