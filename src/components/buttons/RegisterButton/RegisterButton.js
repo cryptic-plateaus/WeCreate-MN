@@ -12,23 +12,24 @@ const styles = (theme) => ({
   },
 });
 
-function SubmitOppButton(props) {
+function Register(props) {
   const { classes } = props;
   return (
     <div>
-      <Button 
-      variant="contained" 
-      color="primary" 
-      href=""
-      className={classes.button}>
-        Post A New Opportunity
+      <Button
+        variant="contained"
+        color="primary"
+        href="#login"
+        className={classes.button}
+      >
+        Register
       </Button>
     </div>
   );
 }
 
-SubmitOppButton.propTypes = {
+Register.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SubmitOppButton);
+export default withStyles(styles)(Register);
