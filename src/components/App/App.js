@@ -17,7 +17,7 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import UserPage from '../../pages/UserPage/UserPage';
 import InfoPage from '../../pages/InfoPage/InfoPage';
 
-import SubmitNewPostPage from "../../pages/SubmitNewPostPage/SubmitNewPostPage";
+import SubmitNewOppPage from "../../pages/SubmitNewOppPage/SubmitNewOppPage";
 
 import './App.css';
 

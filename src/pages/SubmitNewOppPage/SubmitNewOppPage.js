@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Header from "../../components/DecoHeaderOne/DecoHeaderOne";
 
-class SubmitNewPostPage extends Component {
+class SubmitNewOppPage extends Component {
   state = {
     oppTitle: "",
     closingDate: "",
@@ -190,4 +190,4 @@ const mapStateToProps = (state) => ({
   errors: state.errors,
 });
 
-export default connect(mapStateToProps)(SubmitNewPostPage);
+export default connect(mapStateToProps)(SubmitNewOppPage);
