@@ -90,8 +90,6 @@ class SubmitNewPostPage extends Component {
               </label>
             </div>
             <div>
-              oppType: "", industry: "", expLevel: "", compensation: "", per:
-              "", oppDetails: ""
               <label htmlFor="organization-website">
                 Organization Website:
                 <input
@@ -103,50 +101,62 @@ class SubmitNewPostPage extends Component {
               </label>
             </div>
             <div>
-              <label htmlFor="organization-contact-name">
-                Name of Organization Contact:
+              <label htmlFor="opportunity-type">
+                Opportunity Type:
                 <input
                   type="text"
-                  name="organization-contact-name"
-                  value={this.state.nameOfContact}
-                  onChange={this.handleInputChangeFor("nameOfContact")}
+                  name="opportunity-type"
+                  value={this.state.oppType}
+                  onChange={this.handleInputChangeFor("oppType")}
                 />
               </label>
             </div>
             <div>
-              <label htmlFor="organization-contact-email">
-                Email of Organization Contact:
+              <label htmlFor="opportunity-industry">
+                Industry:
                 <input
                   type="text"
-                  name="organization-contact-email"
-                  value={this.state.emailOfContact}
-                  onChange={this.handleInputChangeFor("emailOfContact")}
-                />
-              </label>
-            </div>
-            <div>
-              <label htmlFor="organization-industry">
-                Organization Industry:
-                <input
-                  type="text"
-                  name="organization-industry"
+                  name="opportunity-industry"
                   value={this.state.industry}
                   onChange={this.handleInputChangeFor("industry")}
                 />
               </label>
             </div>
-            {/* 
-
-      companySize: '' */}
             <div>
-              <label htmlFor="organization-size">
-                Company Size:
+              <label htmlFor="experience-level">
+                Experience Level:
+                <input
+                  type="text"
+                  name="experience-level"
+                  value={this.state.expLevel}
+                  onChange={this.handleInputChangeFor("expLevel")}
+                />
+              </label>
+              <label htmlFor="compensation">
+                Compensation:
                 <input
                   type="number"
-                  name="organization-size"
-                  value={this.state.orgSize}
-                  onChange={this.handleInputChangeFor("orgSize")}
+                  name="compensation"
+                  value={this.state.compensation}
+                  onChange={this.handleInputChangeFor("compensation")}
                 />
+              </label>
+              <label htmlFor="per">
+                Per:
+                <input
+                  type="number"
+                  name="per"
+                  value={this.state.per}
+                  onChange={this.handleInputChangeFor("per")}
+                />
+              </label>
+              <label htmlFor="opportunity-details">
+                Opportunity Details:
+                <textarea
+                  name="opportunity-details"
+                  value={this.state.oppDetails}
+                  onChange={this.handleInputChangeFor("oppDetails")}
+                ></textarea>
               </label>
             </div>
             <div>

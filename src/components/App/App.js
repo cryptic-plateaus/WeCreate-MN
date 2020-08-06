@@ -17,6 +17,8 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import UserPage from '../../pages/UserPage/UserPage';
 import InfoPage from '../../pages/InfoPage/InfoPage';
 
+import SubmitNewPostPage from "../../pages/SubmitNewPostPage/SubmitNewPostPage";
+
 import './App.css';
 
 class App extends Component {
@@ -57,6 +59,7 @@ class App extends Component {
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
+            
           </Switch>
           <Footer />
         </div>
