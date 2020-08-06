@@ -10,11 +10,11 @@ body {
 
 form {
     background-color: #d6d6d6;
-    width: 30%;
-    height: 250px;
+    width: 35%;
     margin: 20px auto;
     padding: 25px;
     border-radius: 10px;
+    text-align: left;
 }
 
 input {

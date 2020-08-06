@@ -16,7 +16,7 @@ class RegisterPage extends Component {
   registerUser = (event) => {
     event.preventDefault();
 
-    if (this.state.username && this.state.password) {
+    if (this.state.username && this.state.password) { //need to add other input items
       this.props.dispatch({
         type: 'REGISTER_EMPLOYER', //WAS 'REGISTER'
         payload: {
@@ -146,7 +146,7 @@ class RegisterPage extends Component {
               className="register"
               type="submit"
               name="submit"
-              value="Register"
+              value="Create a Profile"
             />
           </div>
         </form>
