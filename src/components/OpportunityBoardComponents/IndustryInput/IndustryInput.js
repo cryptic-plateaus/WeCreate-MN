@@ -14,12 +14,12 @@ const styles = (theme) => ({
   //   flexWrap: 'wrap',
   // },
   formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120,
+    // margin: theme.spacing.unit,
+    minWidth: 100,
   },
-  // selectEmpty: {
-  //   marginTop: theme.spacing.unit * 2,
-  // },
+  selectEmpty: {
+    // margin: 10,
+  },
 });
 
 class IndustryInput extends React.Component {
@@ -35,7 +35,11 @@ class IndustryInput extends React.Component {
     const { classes } = this.props;
 
     return (
-      <form className={classes.root} autoComplete="off">
+      <form
+        className={classes.root}
+        autoComplete="off"
+        className="input-select"
+      >
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="age-simple">Industry</InputLabel>
           <Select

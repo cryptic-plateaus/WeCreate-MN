@@ -23,11 +23,14 @@ const styles = {
 function SearchBar(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
+    <div className={classes.root} className="search-bar">
+      <AppBar position="static" color="default" >
         <Toolbar>
-            <IndustryInput/>
-            <Button color="inherit">Search</Button>
+          <IndustryInput />
+          <IndustryInput />
+          <IndustryInput />
+          <IndustryInput />
+          <Button color="inherit">Search</Button>
         </Toolbar>
       </AppBar>
     </div>
