@@ -27,7 +27,7 @@ function OpportunityPost(props) {
   const { classes, theme } = props;
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} className="opportunity-post">
       <CardMedia
         className={classes.cover}
         image="/static/images/cards/live-from-space.jpg" //need to be retreived from database

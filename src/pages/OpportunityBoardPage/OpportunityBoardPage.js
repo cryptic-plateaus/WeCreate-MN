@@ -11,9 +11,13 @@ class OpportunityBoardPage extends Component {
     return (
       <div>
         <div className="dashboard-content">
-          <h2 className="subtitle">Find Your Next Job</h2>
-          <SearchBar/>
-          <OpportunityPost/>
+          <center>
+            <h2 className="subtitle">Find Your Next Job</h2>
+          </center>
+          <SearchBar />
+          <OpportunityPost />
+          <OpportunityPost />
+          <OpportunityPost />
         </div>
       </div>
     );

@@ -68,7 +68,7 @@ class App extends Component {
           </Switch>
           <Route path="/register" component={EmployerRegisterPage} />
           <Route path="/login" component={LoginPage} />
-          <Route path="/opportunity" component={OpportunityBoardPage} />
+          <Route path="/opportunities" component={OpportunityBoardPage} />
           <Footer />
         </div>
       </Router>

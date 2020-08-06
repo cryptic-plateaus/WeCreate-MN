@@ -108,13 +108,19 @@ font-size: 30px;
 padding-bottom: 20px;
 }
 
-.services{
-
+.search-bar{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    align-content: center;
 }
-
 
 .dashboard-content{
 padding-top: 30px;
 padding-bottom: 30px;
 }
 
+
+.opportunity-post{
+  margin-top: 30px;
+  margin-bottom: 30px;  
+}

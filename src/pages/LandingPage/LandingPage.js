@@ -5,6 +5,9 @@ import InfoCard from "../../components/EmployerServicesInfoCard/EmployerServices
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
+import SeeOpportunitiesButton from "../../components/buttons/SeeOpportunitiesButton/SeeOpportunitiesButton";
+import SignUpButton from "../../components/buttons/RegisterButton/RegisterButton";
+
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
@@ -27,22 +30,8 @@ function ContainedButtons(props) {
             <br />
             color to find local, paid opportunities
           </h3>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-            // href="#register"
-          >
-            Learn More
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-            href="#register"
-          >
-            Sign Up
-          </Button>
+          <SeeOpportunitiesButton/>
+          <SignUpButton/>
         </div>
       </div>
       <div className="services">
