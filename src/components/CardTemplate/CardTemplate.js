@@ -18,7 +18,7 @@ const styles = {
   },
 };
 
-function EmployerServicesInfoCard(props) {
+function CardTemplate(props) {
   const { classes } = props;
   return (
     <Card className={classes.card} id="employer-info-card">
@@ -61,8 +61,8 @@ function EmployerServicesInfoCard(props) {
   );
 }
 
-EmployerServicesInfoCard.propTypes = {
+CardTemplate.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(EmployerServicesInfoCard);
+export default withStyles(styles)(CardTemplate);

@@ -32,21 +32,6 @@ input {
     border-width: 0px;
 }
 
-.log-in, .log-out, .register {
-  background-color: #5271ff;
-  border-radius: 20px;
-  color: #f8f8f8;
-  font-size: medium;
-  min-height: 50px;
-  min-width: 100px;
-  outline:0;
-  cursor: pointer;
-}
-
-.log-in:hover, .log-out:hover, .register:hover {
-  background-color: #dddddd;
-}
-
 /* This line makes the "Register" and "Login" buttons look like links */
 .link-button {
     background:none;

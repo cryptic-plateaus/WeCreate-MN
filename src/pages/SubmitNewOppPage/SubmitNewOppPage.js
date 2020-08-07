@@ -12,7 +12,8 @@ class SubmitNewOppPage extends Component {
     expLevel: "",
     compensation: "",
     per: "",
-    oppDetails: ""
+    oppDetails: "",
+    link: "",
   };
 
   registerUser = (event) => {
@@ -124,13 +125,13 @@ class SubmitNewOppPage extends Component {
               </label>
             </div>
             <div>
-              <label htmlFor="experience-level">
-                Experience Level:
+              <label htmlFor="apply-link">
+                Application Link:
                 <input
                   type="text"
-                  name="experience-level"
-                  value={this.state.expLevel}
-                  onChange={this.handleInputChangeFor("expLevel")}
+                  name="apply-link"
+                  value={this.state.link}
+                  onChange={this.handleInputChangeFor("link")}
                 />
               </label>
               <br />
@@ -161,6 +162,15 @@ class SubmitNewOppPage extends Component {
                   value={this.state.oppDetails}
                   onChange={this.handleInputChangeFor("oppDetails")}
                 ></textarea>
+              </label>
+              <label htmlFor="experience-level">
+                Experience Level:
+                <input
+                  type="text"
+                  name="experience-level"
+                  value={this.state.expLevel}
+                  onChange={this.handleInputChangeFor("expLevel")}
+                />
               </label>
             </div>
             <SubmitOppButton />

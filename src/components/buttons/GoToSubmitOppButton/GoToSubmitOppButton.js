@@ -19,7 +19,7 @@ function GoToSubmitOppButton(props) {
       <Button 
       variant="contained" 
       color="primary" 
-      href=""
+      href="#submit"
       className={classes.button}>
         Submit A New Opportunity
       </Button>
