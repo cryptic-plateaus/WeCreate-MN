@@ -21,21 +21,16 @@ const styles = {
 function CardTemplate(props) {
   const { classes } = props;
   return (
-    <Card className={classes.card} id="employer-info-card">
+    <Card className={classes.card} id="info-card">
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/images/5.jpg"
-          title="Two Employers"
-        />
         <CardContent>
           <Typography
-            className="for-employer-title"
+            className="card-title"
             gutterBottom
             variant="h5"
             component="h2"
           >
-            For Employers
+            Job Post
           </Typography>
           <Typography component="p">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -45,18 +40,6 @@ function CardTemplate(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          className="for-employer-button"
-          size="small"
-          href="#register"
-        >
-          Create an Employer Account
-        </Button>
-      </CardActions>
     </Card>
   );
 }

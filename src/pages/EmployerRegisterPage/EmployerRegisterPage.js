@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Header from "../../components/DecoHeaderOne/DecoHeaderOne";
+import Header from "../../components/DecorativeHeaders/HeaderThree/HeaderThree";
 import RegisterButton from "../../components/buttons/RegisterButton/RegisterButton"
 
 class RegisterPage extends Component {

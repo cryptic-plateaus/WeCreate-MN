@@ -21,7 +21,7 @@ const styles = {
 function EmployerServicesInfoCard(props) {
   const { classes } = props;
   return (
-    <Card className={classes.card} id="employer-info-card">
+    <Card className={classes.card} id="info-card">
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -30,7 +30,7 @@ function EmployerServicesInfoCard(props) {
         />
         <CardContent>
           <Typography
-            className="for-employer-title"
+            className="card-title"
             gutterBottom
             variant="h5"
             component="h2"

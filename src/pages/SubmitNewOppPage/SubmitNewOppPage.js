@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Header from "../../components/DecoHeaderOne/DecoHeaderOne";
+import Header from "../../components/DecorativeHeaders/HeaderOne/HeaderOne";
 import SubmitOppButton from "../../components/buttons/SubmitOppButton/SubmitOppButton";
 
 class SubmitNewOppPage extends Component {
@@ -163,8 +163,9 @@ class SubmitNewOppPage extends Component {
                   onChange={this.handleInputChangeFor("oppDetails")}
                 ></textarea>
               </label>
+              <br />
               <label htmlFor="experience-level">
-                Experience Level:
+                Application Link:
                 <input
                   type="text"
                   name="experience-level"

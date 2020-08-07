@@ -18,28 +18,31 @@ const styles = theme => ({
 });
 
 function ContainedButtons(props) {
-  const { classes } = props;
+  // const { classes } = props;
   return (
     <>
-      <div className="welcome">
-        <img className="image" src="images/6.png" />
-        <div className="message">
-          <h1 className="title">WeCreate MN</h1>
-          <h3 className="subtitle">
-            A place for Minnesota-based creatives of
-            <br />
-            color to find local, paid opportunities
-          </h3>
-          <SeeOpportunitiesButton/>
-          <SignUpButton/>
+      <center>
+
+        <div className="welcome">
+          <img className="image" src="images/6.png" />
+          <div className="message">
+            <h1 className="title">WeCreate MN</h1>
+            <h3 className="subtitle">
+              A place for Minnesota-based creatives of
+              <br />
+              color to find local, paid opportunities
+            </h3>
+            <SeeOpportunitiesButton />
+            <SignUpButton />
+          </div>
         </div>
-      </div>
-      <div className="services">
-        <h3 className="subtitle" id="services-title">
-          Services
-        </h3>
-        <InfoCard />
-      </div>
+        <div className="services">
+          <h3 className="subtitle" id="services-title">
+            Services
+          </h3>
+          <InfoCard />
+        </div>
+      </center>
     </>
   );
     }
