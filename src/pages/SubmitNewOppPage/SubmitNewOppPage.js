@@ -4,7 +4,6 @@ import Header from "../../components/DecorativeHeaders/HeaderOne/HeaderOne";
 import SubmitOppButton from "../../components/buttons/SubmitOppButton/SubmitOppButton";
 
 class SubmitNewOppPage extends Component {
-  
   state = {
     oppTitle: "",
     closingDate: "",
@@ -17,37 +16,55 @@ class SubmitNewOppPage extends Component {
     link: "",
   };
 
+  // submitOpportunity = (event) => {
+  //   event.preventDefault();
+
+  //   if (
+  //     this.state.oppTitle &&
+  //     this.state.closingDate &&
+  //     this.state.oppType &&
+  //     this.state.industry &&
+  //     this.state.expLevel &&
+  //     this.state.compensation &&
+  //     this.state.per &&
+  //     this.state.oppDetails &&
+  //     this.state.link
+  //   ) {
+  //     this.props.dispatch({
+  //       type: "SUBMIT_OPPORTUNITY", //WAS 'REGISTER'
+  //       payload: {
+  //         oppTitle: this.state.oppTitle,
+  //         closingDate: this.state.closingDate,
+  //         oppType: this.state.oppType,
+  //         industry: this.state.industry,
+  //         expLevel: this.state.expLevel,
+  //         compensation: this.state.compensation,
+  //         per: this.state.per,
+  //         oppDetails: this.state.oppDetails,
+  //         link: this.state.link,
+  //       },
+  //     });
+  //   } else {
+  //     this.props.dispatch({ type: "OPPORTUNITY_INPUT_ERROR" });
+  //   }
+  // }; // end submitOpportunity
+
   submitOpportunity = (event) => {
     event.preventDefault();
-
-    if (
-      this.state.oppTitle &&
-      this.state.closingDate &&
-      this.state.oppType &&
-      this.state.industry &&
-      this.state.expLevel &&
-      this.state.compensation &&
-      this.state.per &&
-      this.state.oppDetails &&
-      this.state.link
-    ) {
-      this.props.dispatch({
-        type: "SUBMIT_OPPORTUNITY", //WAS 'REGISTER'
-        payload: {
-          oppTitle: this.state.oppTitle,
-          closingDate: this.state.closingDate,
-          oppType: this.state.oppType,
-          industry: this.state.industry,
-          expLevel: this.state.expLevel,
-          compensation: this.state.compensation,
-          per: this.state.per,
-          oppDetails: this.state.oppDetails,
-          link: this.state.link
-        },
-      });
-    } else {
-      this.props.dispatch({ type: "OPPORTUNITY_INPUT_ERROR" });
-    }
+    this.props.dispatch({
+          type: "SUBMIT_OPPORTUNITY", //WAS 'REGISTER'
+          payload: {
+            oppTitle: this.state.oppTitle,
+            closingDate: this.state.closingDate,
+            oppType: this.state.oppType,
+            industry: this.state.industry,
+            expLevel: this.state.expLevel,
+            compensation: this.state.compensation,
+            per: this.state.per,
+            oppDetails: this.state.oppDetails,
+            link: this.state.link,
+          },
+        });
   }; // end submitOpportunity
 
   handleInputChangeFor = (propertyName) => (event) => {
