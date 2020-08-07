@@ -81,7 +81,7 @@ class SubmitNewOppPage extends Component {
     return (
       <div>
         <Header />
-        {JSON.stringify(this.state)} testing on-change
+        {/* {JSON.stringify(this.state)} testing on-change */}
         {/* {this.props.errors.registrationMessage && (
           <h2 className="alert" role="alert">
             {this.props.errors.registrationMessage}
