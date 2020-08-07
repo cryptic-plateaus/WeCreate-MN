@@ -17,4 +17,37 @@ router.get("/", (req, res) => {
     });
 });
 
+router.post('/', (req, res, next) => {  
+  const orgID = 1; //NEEDS TO BE CHANGED
+  const title =  req.body.oppTitle;
+  const date =  req.body.closingDate;
+  const type =  req.body.oppType;
+  const industry =  req.body.industry;
+  const level =  req.body.expLevel
+  const compensation =  req.body.compensation;
+  const per =  req.body.per;
+  const details =  req.body.oppDetails;
+  const link =  req.body.link;
+
+  const queryText = `INSERT INTO "opportunity_post" 
+      ("org_id",
+      "opp_title",
+      "closing_date",
+      "opp_type",
+      "industry",
+      "experience_level",
+      "compensation",
+      "compensation_per",
+      "opp_details",
+      "apply-link")
+      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10);`;
+  pool.query(queryText, [orgID,title,date,type,industry,
+    level,compensation,per,details,link])
+    .then(() => res.sendStatus(201))
+    .catch((error) => {
+      console.log("Error POST /api/opportunities", error);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
