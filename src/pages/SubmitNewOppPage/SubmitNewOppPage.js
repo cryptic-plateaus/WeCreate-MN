@@ -16,35 +16,56 @@ class SubmitNewOppPage extends Component {
     link: "",
   };
 
-  registerUser = (event) => {
-    event.preventDefault();
+  // submitOpportunity = (event) => {
+  //   event.preventDefault();
 
-    if (
-      this.state.username &&
-      this.state.password
-      // &&
-      // this.state.orgWebsite &&
-      // this.state.nameOfContact &&
-      // this.state.emailOfContact &&
-      // this.state.industry &&
-      // this.state.orgSize
-    ) {
-      this.props.dispatch({
-        type: "SUBMIT_OPP", //WAS 'REGISTER'
-        payload: {
-          username: this.state.username,
-          password: this.state.password,
-          orgWebsite: this.state.orgWebsite,
-          nameOfContact: this.state.nameOfContact,
-          emailOfContact: this.state.emailOfContact,
-          industry: this.state.industry,
-          orgSize: this.state.orgSize,
-        },
-      });
-    } else {
-      this.props.dispatch({ type: "OPPORTUNITY_INPUT_ERROR" });
-    }
-  }; // end registerUser
+  //   if (
+  //     this.state.oppTitle &&
+  //     this.state.closingDate &&
+  //     this.state.oppType &&
+  //     this.state.industry &&
+  //     this.state.expLevel &&
+  //     this.state.compensation &&
+  //     this.state.per &&
+  //     this.state.oppDetails &&
+  //     this.state.link
+  //   ) {
+  //     this.props.dispatch({
+  //       type: "SUBMIT_OPPORTUNITY", //WAS 'REGISTER'
+  //       payload: {
+  //         oppTitle: this.state.oppTitle,
+  //         closingDate: this.state.closingDate,
+  //         oppType: this.state.oppType,
+  //         industry: this.state.industry,
+  //         expLevel: this.state.expLevel,
+  //         compensation: this.state.compensation,
+  //         per: this.state.per,
+  //         oppDetails: this.state.oppDetails,
+  //         link: this.state.link,
+  //       },
+  //     });
+  //   } else {
+  //     this.props.dispatch({ type: "OPPORTUNITY_INPUT_ERROR" });
+  //   }
+  // }; // end submitOpportunity
+
+  submitOpportunity = (event) => {
+    event.preventDefault();
+    this.props.dispatch({
+          type: "SUBMIT_OPPORTUNITY", //WAS 'REGISTER'
+          payload: {
+            oppTitle: this.state.oppTitle,
+            closingDate: this.state.closingDate,
+            oppType: this.state.oppType,
+            industry: this.state.industry,
+            expLevel: this.state.expLevel,
+            compensation: this.state.compensation,
+            per: this.state.per,
+            oppDetails: this.state.oppDetails,
+            link: this.state.link,
+          },
+        });
+  }; // end submitOpportunity
 
   handleInputChangeFor = (propertyName) => (event) => {
     this.setState({
@@ -61,13 +82,13 @@ class SubmitNewOppPage extends Component {
       <div>
         <Header />
         {/* {JSON.stringify(this.state)} testing on-change */}
-        {this.props.errors.registrationMessage && (
+        {/* {this.props.errors.registrationMessage && (
           <h2 className="alert" role="alert">
             {this.props.errors.registrationMessage}
           </h2>
-        )}
+        )} */}
         <div className="form">
-          <form onSubmit={this.registerUser}>
+          <form>
             <h2>Submit An Opportunity</h2>
             <div>
               <label htmlFor="opportunity-title">
@@ -125,15 +146,6 @@ class SubmitNewOppPage extends Component {
               </label>
             </div>
             <div>
-              <label htmlFor="apply-link">
-                Application Link:
-                <input
-                  type="text"
-                  name="apply-link"
-                  value={this.state.link}
-                  onChange={this.handleInputChangeFor("link")}
-                />
-              </label>
               <br />
               <label htmlFor="compensation">
                 Compensation:
@@ -148,7 +160,7 @@ class SubmitNewOppPage extends Component {
               <label htmlFor="per">
                 Per:
                 <input
-                  type="number"
+                  type="text"
                   name="per"
                   value={this.state.per}
                   onChange={this.handleInputChangeFor("per")}
@@ -174,7 +186,8 @@ class SubmitNewOppPage extends Component {
                 />
               </label>
             </div>
-            <SubmitOppButton />
+            {/* <SubmitOppButton  /> */}
+            <button onClick={this.submitOpportunity}>Submit!</button>
           </form>
           <center>
             <button
@@ -191,11 +204,9 @@ class SubmitNewOppPage extends Component {
   }
 }
 
-// Instead of taking everything from state, we just want the error messages.
-// if you wanted you could write this code like this:
-// const mapStateToProps = ({errors}) => ({ errors });
-const mapStateToProps = (state) => ({
-  errors: state.errors,
+
+const mapReduxStateToProps = (reduxState) => ({
+  reduxState,
 });
 
-export default connect(mapStateToProps)(SubmitNewOppPage);
+export default connect(mapReduxStateToProps)(SubmitNewOppPage);
