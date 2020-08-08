@@ -13,7 +13,7 @@ class OpportunityList extends Component {
 
   render() {
     return (
-      <div className="opportunity-list" >
+      <div>
         {/* {JSON.stringify(this.props.allOpportunities)} */}
         {/* {this.props.allOpportunities.map((opportunity, index) => (
           <p key={index}>{opportunity.opp_title}</p>
