@@ -23,7 +23,9 @@ class OpportunityList extends Component {
             <div>
               <OpportunityPost
                 title={item.opp_title}
-                date={item.opp_type}
+                type={item.opp_type}
+                experience={item.experience_level}
+                date={item.closing_date}
                 key={item.id}
               />
             </div>
