@@ -39,8 +39,8 @@ class OpportunityPost extends Component {
                   <Typography component="h5" variant="h5">
                     {this.state.title}
                   </Typography>
-               <Typography variant="subtitle1" color="textSecondary">
-                    Experience: {this.state.experience}, {this.state.type}
+                  <Typography variant="subtitle1">
+                    {this.state.type}, {this.state.experience} Level
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
                 Closing Date: {this.state.date.split('T')[0]}

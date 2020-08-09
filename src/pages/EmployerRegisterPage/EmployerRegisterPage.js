@@ -173,3 +173,7 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps)(RegisterPage);
 
+
+
+
+

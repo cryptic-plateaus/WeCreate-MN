@@ -1,47 +1,63 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import LogOutButton from '../PostOppButton/PostOppButton';
-import './Nav.css';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
-const Nav = (props) => (
-  <div className="nav">
-    
-    <Link to="/">
-      <img className="nav-logo" width="70" alt="WeCreate MN Logo, small version" src="images/example_logo.png" />
-      <h2 className="nav-title">WeCreate MN</h2>
-    </Link>
-    <div className="nav-right">
-      <Link className="nav-link" to="/login">
-        {/* Show this link if they are logged in or not,
-        but call this link 'Home' if they are logged in,
-        and call this link 'Login / Register' if they are not */}
-        {props.user.id ? 'Home' : 'Login'}
-      </Link>
-      {/* Show the link to the info page and the logout button if the user is logged in */}
-      {props.user.id && (
-        <>
-          <Link className="nav-link" to="/info">
-            Info Page
-          </Link>
-          {/* <LogOutButton className="nav-link"/> */}
-        </>
-      )}
-      {/* Always show this link since the about page is not protected
-      <Link className="nav-link" to="/about">
-        About
-      </Link> */}
+const styles = {
+
+};
+
+function Nav (props) {
+  const { classes } = props;
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography className={classes.title} variant="h5" color="inherit" noWrap>
+              WeCreate MN
+          </Typography>        
+          <div>
+            {props.user.id && (
+              <>
+                <Button
+                  size="large" 
+                  href="#"
+                  className={classes.button}>
+                  Dashboard
+                </Button>
+              </>
+            )}
+          </div>
+          {props.user.id ?
+            <Button
+              size="large"
+              href="#"
+              className={classes.button}>
+              Log Out
+                </Button> :
+            <Button
+              size="large"
+              href="#login"
+              className={classes.button}>
+              Login
+                </Button>}
+        </Toolbar>
+      </AppBar>
     </div>
-  </div>
-);
+  );
+}
 
-// Instead of taking everything from state, we just want the user
-// object to determine if they are logged in
-// if they are logged in, we show them a few more links 
-// if you wanted you could write this code like this:
-// const mapStateToProps = ({ user }) => ({ user });
+Nav .propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
 const mapStateToProps = state => ({
   user: state.user,
 });
 
-export default connect(mapStateToProps)(Nav);
+export default withStyles(styles)(connect(mapStateToProps)(Nav));
