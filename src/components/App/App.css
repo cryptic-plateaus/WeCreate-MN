@@ -116,3 +116,10 @@ padding-bottom: 30px;
 .opportunity-post{
   margin-top: 40px;  
 }
+
+/* DASHBOARD STYLING */
+.carousel{
+    margin-left: 33%;
+    margin-right:33%;
+    margin-bottom: 30px;
+}
