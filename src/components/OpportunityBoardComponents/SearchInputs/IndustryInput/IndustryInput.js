@@ -9,16 +9,16 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
 const styles = (theme) => ({
-  // root: {
-  //   display: 'flex',
-  //   flexWrap: 'wrap',
-  // },
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
   formControl: {
-    // margin: theme.spacing.unit,
+    margin: theme.spacing.unit,
     minWidth: 100,
   },
   selectEmpty: {
-    // margin: 10,
+    margin: 10,
   },
 });
 

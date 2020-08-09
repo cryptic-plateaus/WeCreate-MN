@@ -1,44 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
-import IndustryInput from "../IndustryInput/IndustryInput";
+import { withStyles } from "@material-ui/core/styles";
+import IndustryInput from "../SearchInputs/IndustryInput/IndustryInput";
 
-
-const styles = {
+const styles = (theme) => ({
   root: {
-    flexGrow: 1,
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-};
+    width: "100%",
+  }
+});
 
-function SearchBar(props) {
+function SearchAppBar(props) {
   const { classes } = props;
   return (
-    <div className={classes.root} className="search-bar">
-      <AppBar position="static" color="default">
-            <Toolbar>
-              <IndustryInput />
-              <IndustryInput />
-              <IndustryInput />
-              <IndustryInput />
-              <Button color="inherit">Search</Button>
-            </Toolbar>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <IndustryInput />
+          <IndustryInput />
+          <IndustryInput />
+          <IndustryInput />
+        </Toolbar>
       </AppBar>
     </div>
   );
 }
 
-SearchBar.propTypes = {
+SearchAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SearchBar);
+export default withStyles(styles)(SearchAppBar);

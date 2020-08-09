@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 
-import InfoCard from "../../components/EmployerServicesInfoCard/EmployerServicesInfoCard";
+import InfoCardOne from "../../components/LandingPageComponents/EmployerServicesInfoCard/EmployerServicesInfoCard";
+import InfoCardTwo from "../../components/LandingPageComponents/JobSeekerServicesInfoCard/JobSeekerServicesInfoCard";
+
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
@@ -22,7 +24,6 @@ function ContainedButtons(props) {
   return (
     <>
       <center>
-
         <div className="welcome">
           <img className="image" src="images/6.png" />
           <div className="message">
@@ -40,7 +41,7 @@ function ContainedButtons(props) {
           <h3 className="subtitle" id="services-title">
             Services
           </h3>
-          <InfoCard />
+          <InfoCardOne />
         </div>
       </center>
     </>
