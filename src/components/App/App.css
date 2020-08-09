@@ -44,29 +44,6 @@ input {
     cursor: pointer;
 }
 
-
-
-.welcome .image{
-  width: 100%;
-  z-index: 0;
-}
-
-.welcome .message{
-        position: absolute;
-        z-index: 999;
-        margin: 0;
-        left: 50px;
-        right: 0;        
-        text-align: center;
-        top: 25%; /* Adjust this value to move the positioned div up and down */
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 20px;
-        font-family: Arial,sans-serif;
-        color: #fff;
-        width: 60%; /* Set the width of the positioned div */
-        padding-bottom: 50px;
-    }
-
 .title{
     font-size: 100px;
 }
@@ -100,10 +77,7 @@ padding-bottom: 20px;
 
 
 
-.dashboard-content{
-padding-top: 30px;
-padding-bottom: 30px;
-}
+
 
 /* JOB BOARD STYLING */
 
@@ -115,4 +89,16 @@ padding-bottom: 30px;
 
 .opportunity-post{
   margin-top: 40px;  
+}
+
+/* DASHBOARD STYLING */
+.carousel{
+    margin-left: 33%;
+    margin-right:33%;
+    margin-bottom: 30px;
+}
+
+.dashboard-content{
+padding-top: 30px;
+padding-bottom: 30px;
 }

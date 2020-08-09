@@ -13,22 +13,23 @@ import Button from "@material-ui/core/Button";
 
 const cardStyle = {
   main: {
-    display: 'block',
-    width: '70%',
-    color: 'black',
-    background: '#f9f9f9',
-    textAlign: 'left',
-    
-  }
-}
+    display: "block",
+    width: "250px",
+    height: "200px",
+    color: "black",
+    background: "#f9f9f9",
+    justify: "center",
+    paddingTop: "5%"
+  },
+};
 
-class OpportunityPost extends Component {
-  state = {
-    title: this.props.title,
-    type: this.props.type,
-    experience: this.props.experience,
-    date: this.props.date
-  };
+class RecentUserOppPost extends Component {
+  // state = {
+  //   title: this.props.title,
+  //   type: this.props.type,
+  //   experience: this.props.experience,
+  //   date: this.props.date
+  // };
   render() {
     const classes = this.props;
     return (
@@ -37,16 +38,20 @@ class OpportunityPost extends Component {
           <div className={classes.details}>
               <CardContent className={classes.content}>
                   <Typography component="h5" variant="h5">
-                    {this.state.title}
+                    {/* {this.state.title} */}
+                    Title
                   </Typography>
-               <Typography variant="subtitle1" color="textSecondary">
-                    Experience: {this.state.experience}, {this.state.type}
+                 <Typography variant="subtitle1" color="textSecondary">
+                    {/* Experience: {this.state.experience}, {this.state.type} */}
+                    Experience and Type
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                Closing Date: {this.state.date.split('T')[0]}
+                    Closing Date: 
+                {/* {this.state.date.split('T')[0]} */}
                   </Typography>
+                  <br/>
                   <Button size="small" variant="contained" color="primary">
-                    Learn More
+                    See Post
                   </Button>
               </CardContent>
           </div>
@@ -56,12 +61,13 @@ class OpportunityPost extends Component {
   }
 }
 
-OpportunityPost.propTypes = {
+RecentUserOppPost.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-const mapReduxStateToProps = (reduxState) => ({
-  reduxState,
-});
+// const mapReduxStateToProps = (reduxState) => ({
+//   reduxState,
+// });
 
-export default withRouter(connect(mapReduxStateToProps)(OpportunityPost));
+// export default withRouter(connect(mapReduxStateToProps)(RecentUserOppPost));
+export default withRouter(RecentUserOppPost);

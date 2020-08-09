@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import GoToSubmitOppButton from "../../components/buttons/GoToSubmitOppButton/GoToSubmitOppButton";
 import UpdateProfileButton from "../../components/buttons/UpdateProfileButton/UpdateProfileButton";
 import Header from "../../components/DecorativeHeaders/HeaderTwo/HeaderTwo";
-// import RecentUserOpps from "../../components/RecentUserOpps/RecentUserOpps";
-import CardTemplate from "../../components/CardTemplate/CardTemplate";
+import RecentUserOpps from "../../components/EmployerUserDashboardComponents/RecentUserOppCarousel/RecentUserOppCarousel";
+// import CardTemplate from "../../components/CardTemplate/CardTemplate";
 
 class UserPage extends Component {
 
@@ -15,12 +15,9 @@ class UserPage extends Component {
         <Header />
         <center>
           <div className="dashboard-content">
-            <h2 id="welcome">Welcome, {this.props.user.username}!</h2>
-            <h3>
-              <i>Your current opportunities:</i>
-            </h3>
-            {/* <RecentUserOpps /> */}
-            <CardTemplate />
+            <h2 className="subtitle">Welcome, {this.props.user.username}!</h2>
+            <RecentUserOpps />
+            {/* <CardTemplate /> */}
             <GoToSubmitOppButton />
             <UpdateProfileButton />
           </div>
