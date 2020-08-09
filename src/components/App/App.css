@@ -77,6 +77,28 @@ padding-bottom: 20px;
 
 
 
+/* LANDING PAGE STYLING */
+
+.welcome .image{
+  width: 100%;
+  z-index: 0;
+}
+
+.welcome .message{
+        position: absolute;
+        z-index: 999;
+        margin: 0;
+        left: 50px;
+        right: 0;        
+        text-align: center;
+        top: 25%; /* Adjust this value to move the positioned div up and down */
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        font-family: Arial,sans-serif;
+        color: #fff;
+        width: 60%; /* Set the width of the positioned div */
+        padding-bottom: 50px;
+    }
 
 
 /* JOB BOARD STYLING */
