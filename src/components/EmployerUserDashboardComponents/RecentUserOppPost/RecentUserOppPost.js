@@ -19,7 +19,7 @@ const cardStyle = {
     color: "black",
     background: "#f9f9f9",
     justify: "center",
-    paddingTop: "10%"
+    paddingTop: "5%"
   },
 };
 

@@ -15,10 +15,7 @@ class UserPage extends Component {
         <Header />
         <center>
           <div className="dashboard-content">
-            <h2 id="welcome">Welcome, {this.props.user.username}!</h2>
-            <h3>
-              <i>Your current opportunities:</i>
-            </h3>
+            <h2 className="subtitle">Welcome, {this.props.user.username}!</h2>
             <RecentUserOpps />
             {/* <CardTemplate /> */}
             <GoToSubmitOppButton />

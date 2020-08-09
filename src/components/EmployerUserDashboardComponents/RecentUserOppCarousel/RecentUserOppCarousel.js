@@ -90,6 +90,10 @@ class RecentUserOppCarousel extends React.Component {
 
   render() {
     return (
+      <>
+      <h3>
+              <i>Your current opportunities:</i>
+      </h3>
       <Carousel
         className="carousel"
         navButtonsAlwaysVisible={true}
@@ -117,6 +121,7 @@ class RecentUserOppCarousel extends React.Component {
         <RecentUserOppPost />
         <RecentUserOppPost />
       </Carousel>
+      </>
     );
   }
 }
