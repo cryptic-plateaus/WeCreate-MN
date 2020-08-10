@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 
 import ServicesInfoCarousel from "../../components/LandingPageComponents/ServicesInfoCarousel/ServicesInfoCarousel";
 import SeeOpportunitiesButton from "../../components/AllButtons/SeeOpportunitiesButton/SeeOpportunitiesButton";
-import SignUpButton from "../../components/AllButtons/RegisterButton/RegisterButton";
+import SignUpButton from "../../components/AllButtons/GoToRegisterButton/GoToRegisterButton";
 
 const styles = theme => ({
   button: {
