@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import GoToSubmitOppButton from "../../components/buttons/GoToSubmitOppButton/GoToSubmitOppButton";
-import UpdateProfileButton from "../../components/buttons/UpdateProfileButton/UpdateProfileButton";
+import GoToSubmitOppButton from "../../components/AllButtons/GoToSubmitOppButton/GoToSubmitOppButton";
+import UpdateProfileButton from "../../components/AllButtons/UpdateProfileButton/UpdateProfileButton";
 import Header from "../../components/DecorativeHeaders/HeaderTwo/HeaderTwo";
 import RecentUserOpps from "../../components/EmployerUserDashboardComponents/RecentUserOppCarousel/RecentUserOppCarousel";
 // import CardTemplate from "../../components/CardTemplate/CardTemplate";

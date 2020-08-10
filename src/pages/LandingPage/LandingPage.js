@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
-
-import InfoCardOne from "../../components/LandingPageComponents/EmployerServicesInfoCard/EmployerServicesInfoCard";
-import InfoCardTwo from "../../components/LandingPageComponents/JobSeekerServicesInfoCard/JobSeekerServicesInfoCard";
-
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-import SeeOpportunitiesButton from "../../components/buttons/SeeOpportunitiesButton/SeeOpportunitiesButton";
-import SignUpButton from "../../components/buttons/RegisterButton/RegisterButton";
+import ServicesInfoCarousel from "../../components/LandingPageComponents/ServicesInfoCarousel/ServicesInfoCarousel";
+import SeeOpportunitiesButton from "../../components/AllButtons/SeeOpportunitiesButton/SeeOpportunitiesButton";
+import SignUpButton from "../../components/AllButtons/RegisterButton/RegisterButton";
 
 const styles = theme => ({
   button: {
@@ -41,7 +38,7 @@ function ContainedButtons(props) {
           <h3 className="subtitle" id="services-title">
             Services
           </h3>
-          <InfoCardOne />
+          <ServicesInfoCarousel/>
         </div>
       </center>
     </>

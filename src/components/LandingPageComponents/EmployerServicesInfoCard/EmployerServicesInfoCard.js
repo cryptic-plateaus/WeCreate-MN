@@ -11,11 +11,15 @@ import Typography from "@material-ui/core/Typography";
 
 const styles = {
   card: {
-    maxWidth: 345,
+    display: "block",
+    width: "80%",
+    color: "black",
+    background: "#f9f9f9",
+    textAlign: "left",
   },
   media: {
-    height: 140,
-  },
+    height: 340,
+  }
 };
 
 function EmployerServicesInfoCard(props) {
@@ -45,17 +49,17 @@ function EmployerServicesInfoCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          className="for-employer-button"
-          size="small"
-          href="#register"
-        >
-          Create an Employer Account
-        </Button>
+      <CardActions>       
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            className="for-employer-button"
+            size="small"
+            href="#register"
+          >
+            Create an Employer Account
+          </Button>      
       </CardActions>
     </Card>
   );
@@ -66,3 +70,5 @@ EmployerServicesInfoCard.propTypes = {
 };
 
 export default withStyles(styles)(EmployerServicesInfoCard);
+
+

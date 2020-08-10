@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Header from "../../components/DecorativeHeaders/HeaderOne/HeaderOne";
-import SubmitOppButton from "../../components/buttons/SubmitOppButton/SubmitOppButton";
+import SubmitOppButton from "../../components/AllButtons/SubmitOppButton/SubmitOppButton";
 
 class SubmitNewOppPage extends Component {
   state = {

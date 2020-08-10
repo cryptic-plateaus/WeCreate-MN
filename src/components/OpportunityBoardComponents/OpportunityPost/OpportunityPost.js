@@ -18,7 +18,6 @@ const cardStyle = {
     color: 'black',
     background: '#f9f9f9',
     textAlign: 'left',
-    
   }
 }
 
