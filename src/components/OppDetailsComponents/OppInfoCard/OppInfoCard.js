@@ -35,15 +35,17 @@ class OppInfoCard extends Component {
         <Card style={cardStyle.main} className={classes.card} className="opportunity-post">
           <div className={classes.details}>
               <CardContent className={classes.content}>
-                  <Typography component="h5" variant="h5">
-                    {this.state.title}
-                  </Typography>
-                  <Typography variant="subtitle1">
-                    {this.state.type}, {this.state.experience} Level
-                  </Typography>
-                  <Button size="small" variant="contained" color="primary">
-                    Learn More
-                  </Button>
+                  <center>
+                    <Typography className="opp-text-details-1" component="h5" variant="h5">
+                      Experience Level
+                    </Typography>
+                    <Typography className="opp-text-details-1" component="h5" variant="h5">
+                      Opp Type
+                    </Typography>
+                    <Typography className="opp-text-details-1" component="h5" variant="h5">
+                      Compensation
+                    </Typography>
+                  </center>
               </CardContent>
           </div>
         </Card>

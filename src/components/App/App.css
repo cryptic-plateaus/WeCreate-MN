@@ -123,11 +123,18 @@ padding-bottom: 20px;
     color: grey;
 }
 
-.opp-details{
+.opp-details-paragraph{
     margin-top: 40px;
     width: 70%;
     text-align: left;
     margin-bottom: 40px;
+}
+
+.opp-text-details-1{
+    display:inline;
+    padding-left: 20px;
+    padding-right: 20px;
+
 }
 
 
