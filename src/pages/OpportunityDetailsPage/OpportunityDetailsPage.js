@@ -4,7 +4,7 @@ import SeeOpportunitiesButton from '../../components/AllButtons/SeeOpportunities
 import OppInfoCard from '../../components/OppDetailsComponents/OppInfoCard/OppInfoCard';
 import EmployerInfoCard from '../../components/OppDetailsComponents/EmployerInfoCard/EmployerInfoCard';
 import ApplyToOppButton from '../../components/AllButtons/ApplyToOppButton/ApplyToOppButton';
-
+import HeaderThree from "../../components/DecorativeHeaders/HeaderThree/HeaderThree";
 
 class OpportunityDetailsPage extends Component {
 
@@ -13,6 +13,7 @@ class OpportunityDetailsPage extends Component {
             <div>
                 <div className="dashboard-content">
                     <center>
+                        <HeaderThree/>
                         <h1>Opportunity Name</h1>
                         <h3 className="opp-close"><i>Closes On [DATE HERE]</i></h3>
                         <OppInfoCard/>

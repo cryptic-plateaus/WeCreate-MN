@@ -36,13 +36,13 @@ class OppInfoCard extends Component {
           <div className={classes.details}>
               <CardContent className={classes.content}>
                   <center>
-                    <Typography className="opp-text-details-1" component="h5" variant="h5">
+                    <Typography className="opp-text-details-1" component="h6" variant="h6">
                       Experience Level
                     </Typography>
-                    <Typography className="opp-text-details-1" component="h5" variant="h5">
+                    <Typography className="opp-text-details-1" component="h6" variant="h6">
                       Opp Type
                     </Typography>
-                    <Typography className="opp-text-details-1" component="h5" variant="h5">
+                    <Typography className="opp-text-details-1" component="h6" variant="h6">
                       Compensation
                     </Typography>
                   </center>
