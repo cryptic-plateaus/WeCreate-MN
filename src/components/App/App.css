@@ -118,6 +118,19 @@ padding-bottom: 20px;
   margin-top: 40px;  
 }
 
+/* JOB DETAILS STYLING */
+.opp-close{
+    color: grey;
+}
+
+.opp-details{
+    margin-top: 40px;
+    width: 70%;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+
 /* DASHBOARD STYLING */
 .carousel{
     margin-left: 33%;

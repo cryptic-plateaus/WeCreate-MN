@@ -27,7 +27,7 @@ import './App.css';
 import EmployerRegisterPage from "../../pages/EmployerRegisterPage/EmployerRegisterPage";
 import LoginPage from "../../pages/LoginPage/LoginPage";
 import OpportunityBoardPage from "../../pages/OpportunityBoardPage/OpportunityBoardPage"
-
+import OpportunityDetailsPage from "../../pages/OpportunityDetailsPage/OpportunityDetailsPage";
 
 class App extends Component {
   componentDidMount () {
@@ -69,6 +69,7 @@ class App extends Component {
           <Route path="/register" component={EmployerRegisterPage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/opportunities" component={OpportunityBoardPage} />
+          <Route path="/details" component={OpportunityDetailsPage} />
           <Footer />
         </div>
       </Router>

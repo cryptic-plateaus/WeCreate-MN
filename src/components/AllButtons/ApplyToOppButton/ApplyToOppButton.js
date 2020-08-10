@@ -12,7 +12,7 @@ const styles = (theme) => ({
   },
 });
 
-function SeeOpportunitiesButton(props) {
+function ApplyToOppButton(props) {
   const { classes } = props;
   return (
     <div>
@@ -21,14 +21,14 @@ function SeeOpportunitiesButton(props) {
       color="primary" 
       href="#opportunities"
       className={classes.button}>
-        See All Opportunities
+        Apply (Add Link!)
       </Button>
     </div>
   );
 }
 
-SeeOpportunitiesButton.propTypes = {
+ApplyToOppButton.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SeeOpportunitiesButton);
+export default withStyles(styles)(ApplyToOppButton);

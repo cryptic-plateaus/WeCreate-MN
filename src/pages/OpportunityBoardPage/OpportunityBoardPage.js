@@ -10,9 +10,9 @@ class OpportunityBoardPage extends Component {
   render() {
     return (
       <div>
-        <div className="dashboard-content">
+        <div >
           <center>
-            <h2 className="subtitle">Find Your Next Job</h2>
+            <h1>Find Your Next Job</h1>
           </center>
           <SearchBar />
           <OpportunityList/>
