@@ -7,6 +7,7 @@ class RegisterPage extends Component {
   state = {
     username: "",
     password: "",
+    orgName: "",
     orgWebsite: "",
     nameOfContact: "",
     emailOfContact: "",
@@ -19,8 +20,8 @@ class RegisterPage extends Component {
 
     if (
       this.state.username &&
-      this.state.password 
-      &&
+      this.state.password &&
+      this.state.orgName &&
       this.state.orgWebsite &&
       this.state.nameOfContact &&
       this.state.emailOfContact &&
@@ -32,6 +33,7 @@ class RegisterPage extends Component {
         payload: {
           username: this.state.username,
           password: this.state.password,
+          orgName: this.state.orgName,
           orgWebsite: this.state.orgWebsite,
           nameOfContact: this.state.nameOfContact,
           emailOfContact: this.state.emailOfContact,
@@ -69,7 +71,7 @@ class RegisterPage extends Component {
             <h1>Register As An Employer</h1>
             <div>
               <label htmlFor="organization-username">
-                Organization Name:
+                Userame:
                 <input
                   type="text"
                   name="organization-username"
@@ -86,6 +88,17 @@ class RegisterPage extends Component {
                   name="password"
                   value={this.state.password}
                   onChange={this.handleInputChangeFor("password")}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="organization-name">
+                Organization Name:
+                <input
+                  type="text"
+                  name="organization-name"
+                  value={this.state.orgName}
+                  onChange={this.handleInputChangeFor("orgName")}
                 />
               </label>
             </div>
