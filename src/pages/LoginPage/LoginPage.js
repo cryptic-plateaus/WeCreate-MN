@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Header from "../../components/DecoHeaderOne/DecoHeaderOne";
+import Header from "../../components/DecorativeHeaders/HeaderOne/HeaderOne";
+import LoginButton from "../../components/AllButtons/LoginButton/LoginButton";
 
 class LoginPage extends Component {
   state = {
@@ -33,6 +34,7 @@ class LoginPage extends Component {
   handleClick = (event) => {
     this.props.history.push("/register");
   };
+
 
   render() {
     return (
@@ -76,17 +78,18 @@ class LoginPage extends Component {
                 value="Log In"
               />
             </div>
+            {/* <LoginButton/> */}
           </form>
-          <center>
-            <button
-              type="button"
-              onClick={this.handleClick}
-              className="link-button"
-            >
-              Register
-            </button>
-          </center>
         </div>
+        <center>
+          <button
+            type="button"
+            onClick={this.handleClick}
+            className="link-button"
+          >
+            Register
+          </button>
+        </center>
       </div>
     );
   }

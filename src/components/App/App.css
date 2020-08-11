@@ -9,7 +9,14 @@ body {
     margin: 50px;
 }
 
-form {
+.input-select {
+margin: 20px;
+}
+
+
+.form{
+padding-top: 30px;
+padding-bottom: 30px;
     background-color: #d6d6d6;
     width: 35%;
     margin: 20px auto;
@@ -18,31 +25,11 @@ form {
     text-align: left;
 }
 
-.form{
-padding-top: 30px;
-padding-bottom: 30px;
-}
-
 input {
     margin: 5px;
     margin-bottom: 10px;
     border-radius: 5px;
     border-width: 0px;
-}
-
-.log-in, .log-out, .register {
-  background-color: #5271ff;
-  border-radius: 20px;
-  color: #f8f8f8;
-  font-size: medium;
-  min-height: 50px;
-  min-width: 100px;
-  outline:0;
-  cursor: pointer;
-}
-
-.log-in:hover, .log-out:hover, .register:hover {
-  background-color: #dddddd;
 }
 
 /* This line makes the "Register" and "Login" buttons look like links */
@@ -57,7 +44,40 @@ input {
     cursor: pointer;
 }
 
+.title{
+    font-size: 100px;
+}
 
+.subtitle{
+font-size: 30px;
+}
+
+.card-title{
+    text-align: center;
+}
+
+/* .info-card{
+    margin-top: 20px;
+    margin-bottom: 20px;
+} */
+
+.for-employer-button{
+    text-align: center;
+}
+
+#services-title{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+#employer-info-card{
+padding-bottom: 20px;
+}
+
+
+
+/* LANDING PAGE STYLING */
 
 .welcome .image{
   width: 100%;
@@ -80,39 +100,51 @@ input {
         padding-bottom: 50px;
     }
 
-.title{
-    font-size: 100px;
+.landing-carousel{
+    margin-left: 20%;
+    margin-right:20%;
+    margin-bottom: 30px;
 }
 
-.subtitle{
-font-size: 30px;
+/* JOB BOARD STYLING */
+
+.search-bar{
+    margin-top: 30px;
+    margin-bottom: 60px;
+    align-content: center;
 }
 
-.for-employer-title{
-    text-align: center;
+.opportunity-post{
+  margin-top: 40px;  
 }
 
-.for-employer-button{
-    text-align: center;
+/* JOB DETAILS STYLING */
+.opp-close{
+    color: grey;
 }
 
-#services-title{
-    text-align: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
+.opp-details-paragraph{
+    margin-top: 40px;
+    width: 70%;
+    text-align: left;
+    margin-bottom: 40px;
 }
 
-#employer-info-card{
-padding-bottom: 20px;
+.opp-text-details-1{
+    display:inline;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
-.services{
 
+/* DASHBOARD STYLING */
+.carousel{
+    margin-left: 33%;
+    margin-right:33%;
+    margin-bottom: 30px;
 }
-
 
 .dashboard-content{
 padding-top: 30px;
 padding-bottom: 30px;
 }
-

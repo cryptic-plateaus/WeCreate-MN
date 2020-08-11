@@ -22,8 +22,13 @@ import InfoPage from '../../pages/InfoPage/InfoPage';
 import SubmitNewOppPage from "../../pages/SubmitNewOppPage/SubmitNewOppPage";
 
 import './App.css';
+
+//Public pages
 import EmployerRegisterPage from "../../pages/EmployerRegisterPage/EmployerRegisterPage";
 import LoginPage from "../../pages/LoginPage/LoginPage";
+import OpportunityBoardPage from "../../pages/OpportunityBoardPage/OpportunityBoardPage"
+import OpportunityDetailsPage from "../../pages/OpportunityDetailsPage/OpportunityDetailsPage";
+
 class App extends Component {
   componentDidMount () {
     this.props.dispatch({type: 'FETCH_USER'})
@@ -63,6 +68,8 @@ class App extends Component {
           </Switch>
           <Route path="/register" component={EmployerRegisterPage} />
           <Route path="/login" component={LoginPage} />
+          <Route path="/opportunities" component={OpportunityBoardPage} />
+          <Route path="/details" component={OpportunityDetailsPage} />
           <Footer />
         </div>
       </Router>

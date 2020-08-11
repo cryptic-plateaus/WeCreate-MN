@@ -18,11 +18,11 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 router.post('/register', (req, res, next) => {  
   const username = req.body.username;
   const password = encryptLib.encryptPassword(req.body.password);
-  const orgWebsite = req.body.orgWebsite;
-  const nameOfContact = req.body.nameOfContact;
-  const emailOfContact = req.body.emailOfContact;
-  const industry = req.body.industry;
-  const orgSize = req.body.orgSize;
+  // const orgWebsite = req.body.orgWebsite;
+  // const nameOfContact = req.body.nameOfContact;
+  // const emailOfContact = req.body.emailOfContact;
+  // const industry = req.body.industry;
+  // const orgSize = req.body.orgSize;
 
   const queryText = `INSERT INTO "user" (username, password) VALUES ($1, $2) RETURNING id;`;
   // `INSERT INTO "organization_profile"("user_id", "org_name", "org_website", "org_contact_name", 
