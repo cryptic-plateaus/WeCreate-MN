@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 
 const styles = (theme) => ({
   button: {
-    margin: theme.spacing.unit,
+    // margin: theme.spacing.unit,
   },
   input: {
     display: "none",
@@ -19,7 +19,7 @@ function Register(props) {
       <Button
         variant="contained"
         color="primary"
-        href="#login"
+        // href="#login"
         className={classes.button}
       >
         Register

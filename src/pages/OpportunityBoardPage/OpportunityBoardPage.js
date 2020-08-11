@@ -14,7 +14,7 @@ class OpportunityBoardPage extends Component {
           <center>
             <h1>Find Your Next Job</h1>
           </center>
-          <SearchBar />
+          {/* <SearchBar /> */}
           <OpportunityList/>
         </div>
       </div>

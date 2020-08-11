@@ -20,12 +20,12 @@ class RegisterPage extends Component {
     if (
       this.state.username &&
       this.state.password 
-      // &&
-      // this.state.orgWebsite &&
-      // this.state.nameOfContact &&
-      // this.state.emailOfContact &&
-      // this.state.industry &&
-      // this.state.orgSize
+      &&
+      this.state.orgWebsite &&
+      this.state.nameOfContact &&
+      this.state.emailOfContact &&
+      this.state.industry &&
+      this.state.orgSize
     ) {
       this.props.dispatch({
         type: "REGISTER_EMPLOYER", //WAS 'REGISTER'
@@ -133,9 +133,6 @@ class RegisterPage extends Component {
                 />
               </label>
             </div>
-            {/* 
-
-      companySize: '' */}
             <div>
               <label htmlFor="organization-size">
                 Company Size:
@@ -147,9 +144,17 @@ class RegisterPage extends Component {
                 />
               </label>
             </div>
-          <RegisterButton/>
+            {/* <RegisterButton/> */}
+            <div>
+              <input
+                className="register"
+                type="submit"
+                name="submit"
+                value="Register"
+              />
+            </div>
           </form>
-          <center>
+          {/* <center>
             <button
               type="button"
               onClick={this.handleClick}
@@ -157,7 +162,7 @@ class RegisterPage extends Component {
             >
               Login
             </button>
-          </center>
+          </center> */}
         </div>
       </div>
     );
