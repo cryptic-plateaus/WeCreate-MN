@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import Header from "../../components/DecorativeHeaders/HeaderOne/HeaderOne";
+import Header from "../../components/DecorativeHeaders/HeaderOne/HeaderOne";
 import LoginButton from "../../components/AllButtons/LoginButton/LoginButton";
 
 class LoginPage extends Component {
@@ -39,7 +39,7 @@ class LoginPage extends Component {
   render() {
     return (
       <div>
-        {/* <Header /> */}
+        <Header />
         {this.props.errors.loginMessage && (
           <h2 className="alert" role="alert">
             {this.props.errors.loginMessage}
