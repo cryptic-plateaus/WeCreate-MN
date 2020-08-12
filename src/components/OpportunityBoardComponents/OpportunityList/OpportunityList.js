@@ -27,6 +27,7 @@ class OpportunityList extends Component {
                 experience={item.experience_level}
                 date={item.closing_date}
                 key={item.id}
+                id={item.id}
               />
             </div>
           );

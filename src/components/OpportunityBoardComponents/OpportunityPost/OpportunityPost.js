@@ -23,11 +23,17 @@ const cardStyle = {
 
 class OpportunityPost extends Component {
   state = {
+    id: this.props.id,
     title: this.props.title,
     type: this.props.type,
     experience: this.props.experience,
     date: this.props.date
   };
+
+  handleClick = (event) => {
+    this.props.history.push(`/details/${this.state.id}`);
+  };
+
   render() {
     const classes = this.props;
     return (
@@ -44,7 +50,15 @@ class OpportunityPost extends Component {
                   <Typography variant="subtitle1" color="textSecondary">
                 Closing Date: {this.state.date.split('T')[0]}
                   </Typography>
-                  <Button size="small" variant="contained" color="primary">
+              {/* -------> For testing:    
+              <Typography variant="subtitle1" color="textSecondary">
+                ID: {this.state.id}
+              </Typography> */}
+                  <Button 
+                    size="small" 
+                    variant="contained" 
+                    color="primary"
+                    onClick={this.handleClick}>
                     Learn More
                   </Button>
               </CardContent>
