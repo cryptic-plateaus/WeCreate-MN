@@ -48,51 +48,45 @@
 // export default withStyles(styles)(RecentUserOppCarousel);
 
 
-import React from 'react';
+import React, { Component } from 'react';
 import Carousel from 'react-material-ui-carousel';
 // import {Paper} from '@material-ui/core';
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 // import Button from "@material-ui/core/Button";
 import RecentUserOppPost from "../RecentUserOppPost/RecentUserOppPost";
+import { connect } from 'react-redux';
 
-// const styles = {
-//   root: {
-//     flexGrow: 1,
-//   },
-// };
 const styles = (theme) => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
   input: {
     display: "none",
   },
 });
 
-class RecentUserOppCarousel extends React.Component {
-  // state = {
-  //   items: [
-  //       {
-  //           name: "Random Name #1",
-  //           description: "Probably the most random thing you have ever seen!"
-  //       },
-  //       {
-  //           name: "Random Name #2",
-  //           description: "Hello World!"
-  //       }
-  //   ]
-  // };
+class RecentUserOppCarousel extends Component {
+  state = {
+    id: 9, //Needs to grab Employer ID based on logged-in user
+  }
 
-  // handleChange = (event, value) => {
-  //   this.setState({ value });
-  // };
+  componentDidMount = () => {
+    this.getOrganizationOpportunities();
+  };
+
+  getOrganizationOpportunities = () => {
+    this.props.dispatch({
+      type: "FETCH_ALL_USER_OPPORTUNITIES",
+      payload: this.state.id
+    });
+    // console.log('TESTING:', this.props.state.orgInfo);
+    console.log('TESTING STATE ID:', this.state.id);
+  };
+
 
   render() {
     return (
       <>
       <h3>
-              <i>Your current opportunities:</i>
+        <i>Your current opportunities:</i>
       </h3>
       <Carousel
         className="carousel"
@@ -126,8 +120,12 @@ class RecentUserOppCarousel extends React.Component {
   }
 }
 
-RecentUserOppCarousel.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+// RecentUserOppCarousel.propTypes = {
+//   // classes: PropTypes.object.isRequired,
+// };
 
-export default withStyles(styles)(RecentUserOppCarousel);
+const mapStateToProps = (reduxState) => ({
+  reduxState,
+});
+
+export default connect(mapStateToProps)(withStyles(styles)(RecentUserOppCarousel));

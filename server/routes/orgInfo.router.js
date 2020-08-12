@@ -3,8 +3,8 @@ const pool = require("../modules/pool");
 
 const router = express.Router();
 
-router.get("/:string", (req, res) => {
-  const id = req.params.string;
+router.get("/:id", (req, res) => {
+  const id = req.params.id;
   const queryText = `SELECT * FROM "organization_profile" WHERE "user_id" = ${id};`;
   pool
     .query(queryText)

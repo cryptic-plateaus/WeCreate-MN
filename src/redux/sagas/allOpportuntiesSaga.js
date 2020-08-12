@@ -12,9 +12,20 @@ function* getAllOpportuntiesSaga() {
   }
 }
 
+function* getAllUserOpportuntiesSaga(action) {
+  try {
+    const response = yield axios.get(`/api/opportunities/user_opps/${action.payload}`);
+    yield put({ type: "SET_ALL_USER_OPPORTUNITIES", payload: response });
+    // console.log('test console:',response.data);
+  } catch (error) {
+    console.log("Error with Get:", error);
+  }
+}
+
  //root Saga
 function* allOpportuntiesSaga() {
-    yield takeLatest("FETCH_ALL_OPPORTUNITIES", getAllOpportuntiesSaga);
+    yield takeLatest("FETCH_ALL_OPPORTUNITIES", getAllOpportuntiesSaga);//Gets all opps for job board
+  yield takeLatest("FETCH_ALL_USER_OPPORTUNITIES", getAllUserOpportuntiesSaga);//Gets all opps for Employer User
 }
 
 export default allOpportuntiesSaga;

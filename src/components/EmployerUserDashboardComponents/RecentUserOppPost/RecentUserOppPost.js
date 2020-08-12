@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 import { withRouter } from "react-router-dom";
 
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 // import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -61,9 +61,9 @@ class RecentUserOppPost extends Component {
   }
 }
 
-RecentUserOppPost.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+// RecentUserOppPost.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
 
 // const mapReduxStateToProps = (reduxState) => ({
 //   reduxState,

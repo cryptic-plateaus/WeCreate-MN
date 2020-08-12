@@ -3,6 +3,7 @@ const pool = require("../modules/pool");
 
 const router = express.Router();
 
+//Getting all opportunities in database for Job Board
 router.get("/", (req, res) => {
   const queryText = `SELECT * FROM opportunity_post ORDER BY id DESC`;
   pool
@@ -17,8 +18,27 @@ router.get("/", (req, res) => {
     });
 });
 
+//Getting specific user's opportunities they've already posted to system
+router.get("/user_opps/:id", (req, res) => {
+  const id = req.params.id //Employer ID
+  const queryText = `SELECT * FROM "opportunity_post" WHERE "org_id" = ${id};`;
+  pool
+    .query(queryText)
+    .then((result) => {
+      console.log("in /opportunities/user_opps/ GET");
+      console.log("id:", id);
+      console.log("results:", result.rows);
+      res.send(result.rows);
+    })
+    .catch((error) => {
+      console.log(`Error on query ${error}`);
+      res.sendStatus(500);
+    });
+});
+
+//Posting new opportunity from specific user
 router.post('/', (req, res, next) => { 
-  const orgID = 1; //NEEDS TO BE CHANGED
+  const orgID = 9; //NEEDS TO BE CHANGED
   const title =  req.body.oppTitle;
   const date =  req.body.closingDate;
   const type =  req.body.oppType;
