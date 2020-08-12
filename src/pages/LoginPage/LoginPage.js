@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from "../../components/DecorativeHeaders/HeaderOne/HeaderOne";
-import LoginButton from "../../components/AllButtons/LoginButton/LoginButton";
+// import LoginButton from "../../components/AllButtons/LoginButton/LoginButton";
 
 class LoginPage extends Component {
   state = {

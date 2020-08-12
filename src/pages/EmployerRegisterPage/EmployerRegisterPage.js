@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from "../../components/DecorativeHeaders/HeaderThree/HeaderThree";
-import RegisterButton from "../../components/AllButtons/RegisterButton/RegisterButton";
+// import RegisterButton from "../../components/AllButtons/RegisterButton/RegisterButton";
 
 class RegisterPage extends Component {
   state = {
@@ -71,7 +71,7 @@ class RegisterPage extends Component {
             <h1>Register As An Employer</h1>
             <div>
               <label htmlFor="organization-username">
-                Userame:
+                Username:
                 <input
                   type="text"
                   name="organization-username"

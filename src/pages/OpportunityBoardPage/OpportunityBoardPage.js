@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import SearchBar from "../../components/OpportunityBoardComponents/SearchBar/SearchBar";
+// import SearchBar from "../../components/OpportunityBoardComponents/SearchBar/SearchBar";
 import OpportunityList from "../../components/OpportunityBoardComponents/OpportunityList/OpportunityList";
 
 

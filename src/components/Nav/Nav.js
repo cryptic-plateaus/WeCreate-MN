@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -31,6 +31,12 @@ function Nav (props) {
                   className={classes.button}>
                   Dashboard
                 </Button>
+                <Button
+                  size="large"
+                  href="#info"
+                  className={classes.button}>
+                  User Info
+                </Button>
               </>
             )}
           </div>
@@ -54,7 +60,7 @@ function Nav (props) {
   );
 }
 
-Nav .propTypes = {
+Nav.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 

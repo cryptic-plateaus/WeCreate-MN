@@ -50,10 +50,10 @@
 
 import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import {Paper} from '@material-ui/core';
+// import {Paper} from '@material-ui/core';
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 import RecentUserOppPost from "../RecentUserOppPost/RecentUserOppPost";
 
 // const styles = {
