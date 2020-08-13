@@ -47,8 +47,8 @@ class RecentUserOppCarousel extends Component {
         }}
       >
         {/* ITEM IN CAROUSEL!!! */}
-          <h1>hey</h1>
-          {/* {this.props.employerUserOpps && this.props.employerUserOpps.map((item) => {
+          {/* <h1>hey</h1> */}
+          {this.props.employerUserOpps && this.props.employerUserOpps.map((item) => {
             return (
               <div>
                 <RecentUserOppPost 
@@ -60,7 +60,7 @@ class RecentUserOppCarousel extends Component {
                 id={item.id}/>
           </div>
             );
-          })} */}
+          })}
       </Carousel>
       </>
     );
