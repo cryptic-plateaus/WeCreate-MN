@@ -17,7 +17,7 @@ class OpportunityDetailsPage extends Component {
                         <h1>Opportunity Name</h1>
                         <h3 className="opp-close"><i>Closes On [DATE HERE]</i></h3>
                         <OppInfoCard/>
-                        <EmployerInfoCard/>
+                        {/* <EmployerInfoCard/> */}
                         <div className="opp-details-paragraph"><p>"Sed ut perspiciatis unde omnis iste natus error 
                             sit voluptatem accusantium doloremque laudantium, totam 
                             rem aperiam, eaque ipsa quae ab illo inventore veritatis 

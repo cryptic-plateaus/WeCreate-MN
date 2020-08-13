@@ -18,8 +18,8 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 import UserDashboardPage from '../../pages/UserDashboardPage/UserDashboardPage';
 import UserInfoPage from '../../pages/UserInfoPage/UserInfoPage';
-
 import SubmitNewOppPage from "../../pages/SubmitNewOppPage/SubmitNewOppPage";
+import UserOppDetailsPage from "../../pages/UserOppDetailsPage/UserOppDetailsPage";
 
 import './App.css';
 
@@ -58,6 +58,11 @@ class App extends Component {
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
             <ProtectedRoute exact path="/info" component={UserInfoPage} />
+            {/* If none of the other routes matched, we will show a 404. */}
+            {/* <Route render={() => <h1>404</h1>} /> */}
+            {/* This works the same as the other protected route, except that if the user is logged in,
+            they will see the info page instead. */}
+            <ProtectedRoute exact path="/user_opp" component={UserOppDetailsPage} />
             {/* If none of the other routes matched, we will show a 404. */}
             {/* <Route render={() => <h1>404</h1>} /> */}
             {/* This works the same as the other protected route, except that if the user is logged in,
