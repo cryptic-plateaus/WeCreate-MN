@@ -64,7 +64,6 @@ class EmployerUserInfo extends Component {
         return (
                 <div>
                     <h1>Edit Organization Profile</h1> 
-                    {JSON.stringify(this.state)}
                     <div className="form">
                         <form onSubmit={this.updateEmployerUser}>
                             <div>
