@@ -12,7 +12,7 @@ router.get("/:id", (req, res) => {
       console.log("in /orgInfo GET");
       console.log("id:", id);
       console.log("results:", result.rows);
-      res.send(result.rows);
+      res.send(result.rows[0]);
     })
     .catch((error) => {
       console.log(`Error on query ${error}`);

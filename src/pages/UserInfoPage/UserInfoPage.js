@@ -15,9 +15,7 @@ class UserInfoPage extends Component {
         <Header />
         <center>
           <div className="dashboard-content">
-            <h2 className="subtitle">Your Profile</h2>
-            <p>{this.props.user.id}</p> 
-            
+            <h1>Organization Profile</h1> 
             <EmployerUserInfo/>
             <UpdateProfileButton />
           </div>

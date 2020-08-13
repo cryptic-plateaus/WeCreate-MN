@@ -16,44 +16,23 @@ class SubmitNewOppPage extends Component {
     link: "",
   };
 
-  // submitOpportunity = (event) => {
-  //   event.preventDefault();
+  componentDidMount = () => {
+    this.getOrganizationDetails();
+  };
 
-  //   if (
-  //     this.state.oppTitle &&
-  //     this.state.closingDate &&
-  //     this.state.oppType &&
-  //     this.state.industry &&
-  //     this.state.expLevel &&
-  //     this.state.compensation &&
-  //     this.state.per &&
-  //     this.state.oppDetails &&
-  //     this.state.link
-  //   ) {
-  //     this.props.dispatch({
-  //       type: "SUBMIT_OPPORTUNITY", //WAS 'REGISTER'
-  //       payload: {
-  //         oppTitle: this.state.oppTitle,
-  //         closingDate: this.state.closingDate,
-  //         oppType: this.state.oppType,
-  //         industry: this.state.industry,
-  //         expLevel: this.state.expLevel,
-  //         compensation: this.state.compensation,
-  //         per: this.state.per,
-  //         oppDetails: this.state.oppDetails,
-  //         link: this.state.link,
-  //       },
-  //     });
-  //   } else {
-  //     this.props.dispatch({ type: "OPPORTUNITY_INPUT_ERROR" });
-  //   }
-  // }; // end submitOpportunity
+  getOrganizationDetails = () => {
+    this.props.dispatch({
+      type: "FETCH_ORGANIZATION_DETAILS",
+      payload: this.props.reduxState.user.id
+    });
+  };
 
   submitOpportunity = (event) => {
     event.preventDefault();
     this.props.dispatch({
           type: "SUBMIT_OPPORTUNITY", //WAS 'REGISTER'
           payload: {
+            orgID: this.props.reduxState.orgInfo.id,
             oppTitle: this.state.oppTitle,
             closingDate: this.state.closingDate,
             oppType: this.state.oppType,
@@ -81,7 +60,6 @@ class SubmitNewOppPage extends Component {
     return (
       <div>
         <Header />
-        {/* {JSON.stringify(this.state)} testing on-change */}
         {/* {this.props.errors.registrationMessage && (
           <h2 className="alert" role="alert">
             {this.props.errors.registrationMessage}

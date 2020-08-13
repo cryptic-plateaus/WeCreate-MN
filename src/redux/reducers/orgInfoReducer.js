@@ -7,7 +7,7 @@
 //     }
 // };
 
-const orgInfoReducer = (state = [], action) => {
+const orgInfoReducer = (state = {}, action) => {
   if (action.type === "SET_ORG_INFO") {
     console.log(action.payload);
     return action.payload; //<----- check

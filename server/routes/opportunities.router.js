@@ -38,7 +38,7 @@ router.get("/user_opps/:id", (req, res) => {
 
 //Posting new opportunity from specific user
 router.post('/', (req, res, next) => { 
-  const orgID = 9; //NEEDS TO BE CHANGED
+  const orgID = req.body.orgID;
   const title =  req.body.oppTitle;
   const date =  req.body.closingDate;
   const type =  req.body.oppType;

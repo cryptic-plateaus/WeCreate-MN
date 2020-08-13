@@ -25,7 +25,7 @@ function* getAllUserOpportuntiesSaga(action) {
  //root Saga
 function* allOpportuntiesSaga() {
     yield takeLatest("FETCH_ALL_OPPORTUNITIES", getAllOpportuntiesSaga);//Gets all opps for job board
-  yield takeLatest("FETCH_ALL_USER_OPPORTUNITIES", getAllUserOpportuntiesSaga);//Gets all opps for Employer User
-}
+    yield takeLatest("FETCH_ALL_USER_OPPORTUNITIES", getAllUserOpportuntiesSaga);//Gets all opps for Employer User
+  }
 
 export default allOpportuntiesSaga;

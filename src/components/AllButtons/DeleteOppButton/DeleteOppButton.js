@@ -12,24 +12,23 @@ const styles = (theme) => ({
   },
 });
 
-function Login(props) {
+function ApplyToOppButton(props) {
   const { classes } = props;
   return (
     <div>
-      <Button
-        variant="contained"
-        color="primary"
-        href="/"
-        className={classes.button}
-      >
-        Login
+      <Button 
+      variant="contained" 
+      color="primary" 
+      href="#opportunities"
+      className={classes.button}>
+        Delete Opportunity
       </Button>
     </div>
   );
 }
 
-Login.propTypes = {
+ApplyToOppButton.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Login);
+export default withStyles(styles)(ApplyToOppButton);
