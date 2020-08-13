@@ -14,10 +14,6 @@ class OpportunityList extends Component {
   render() {
     return (
       <div>
-        {/* {JSON.stringify(this.props.allOpportunities)} */}
-        {/* {this.props.allOpportunities.map((opportunity, index) => (
-          <p key={index}>{opportunity.opp_title}</p>
-        ))} */}
         {this.props.allOpportunities.map((item) => {
           return (
             <div>
@@ -27,8 +23,7 @@ class OpportunityList extends Component {
                 experience={item.experience_level}
                 date={item.closing_date}
                 key={item.id}
-                id={item.id}
-              />
+                id={item.id}/>
             </div>
           );
         })}

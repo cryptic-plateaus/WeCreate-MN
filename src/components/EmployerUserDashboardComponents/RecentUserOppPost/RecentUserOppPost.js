@@ -24,12 +24,13 @@ const cardStyle = {
 };
 
 class RecentUserOppPost extends Component {
-  // state = {
-  //   title: this.props.title,
-  //   type: this.props.type,
-  //   experience: this.props.experience,
-  //   date: this.props.date
-  // };
+  state = {
+    title: this.props.title,
+    type: this.props.type,
+    experience: this.props.experience,
+    date: this.props.date
+  };
+  
   render() {
     const classes = this.props;
     return (
@@ -38,16 +39,13 @@ class RecentUserOppPost extends Component {
           <div className={classes.details}>
               <CardContent className={classes.content}>
                   <Typography component="h5" variant="h5">
-                    {/* {this.state.title} */}
-                    Title
+                    {this.state.title}
                   </Typography>
                  <Typography variant="subtitle1" color="textSecondary">
-                    {/* Experience: {this.state.experience}, {this.state.type} */}
-                    Experience and Type
+                    {this.state.type}, {this.state.experience} Level
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                    Closing Date: 
-                {/* {this.state.date.split('T')[0]} */}
+                    Closing Date: {this.state.date.split('T')[0]}
                   </Typography>
                   <br/>
                   <Button size="small" variant="contained" color="primary">

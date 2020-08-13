@@ -18,7 +18,8 @@ class EmployerUserInfo extends Component {
     render() {
         return (
             <div>
-                    <div>               
+                    <div>
+                        <h1>Organization Profile</h1>                
                         <p>Organization Name: {this.props.reduxState.orgInfo 
                             && this.props.reduxState.orgInfo.org_name}</p>
                         <p>Website: {this.props.reduxState.orgInfo
@@ -29,7 +30,7 @@ class EmployerUserInfo extends Component {
                             && this.props.reduxState.orgInfo.org_contact_email}</p>
                         <p>Industry: {this.props.reduxState.orgInfo
                             && this.props.reduxState.orgInfo.industry}</p>
-                        <p>Organization Size: {this.props.reduxState.orgInfo
+                        <p>Company Size: {this.props.reduxState.orgInfo
                             && this.props.reduxState.orgInfo.org_size} Employees</p>
                     </div>
             </div>

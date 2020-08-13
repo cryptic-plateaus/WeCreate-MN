@@ -29,18 +29,6 @@ class UserDashboardPage extends Component {
               && this.props.reduxState.orgInfo.org_name}!</h2>
             <RecentUserOpps />
             <GoToSubmitOppButton />
-            {JSON.stringify(this.props.reduxState.employerUserOpps)}
-            {/* {this.state.employerUserOpps.map((item) => {
-              return (
-                <div>
-                  <p>{item.opp_title}</p>
-                  <p>{item.opp_type}</p>
-                  <p>{item.experience_level}</p>
-                  <p>{item.closing_date}</p>
-                  <p>id={item.id}</p>
-                </div>
-              );
-            })} */}
           </div>
         </center>
       </div>

@@ -48,7 +48,7 @@ class OpportunityPost extends Component {
                     {this.state.type}, {this.state.experience} Level
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
-                Closing Date: {this.state.date.split('T')[0]}
+                    Closing Date: {this.state.date.split('T')[0]}
                   </Typography>
               {/* -------> For testing:    
               <Typography variant="subtitle1" color="textSecondary">

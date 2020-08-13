@@ -27,10 +27,8 @@ class RecentUserOppCarousel extends Component {
       type: "FETCH_ALL_USER_OPPORTUNITIES",
       payload: this.state.id
     });
-    // console.log('TESTING:', this.props.state.orgInfo);
     console.log('TESTING STATE ID:', this.state.id);
   };
-
 
   render() {
     return (
@@ -49,21 +47,20 @@ class RecentUserOppCarousel extends Component {
         }}
       >
         {/* ITEM IN CAROUSEL!!! */}
-
-        {/* {this.state.items.map((item, i) => (
-          <Paper>
-            <h2>{item.name}</h2>
-            <p>{item.description}</p>
-
-            <Button className="CheckButton">Check it out!</Button>
-          </Paper>
-
-          // <Item key={i} item={this.state.items} />
-        ))} */}
-
-        <RecentUserOppPost />
-        <RecentUserOppPost />
-        <RecentUserOppPost />
+          <h1>hey</h1>
+          {/* {this.props.employerUserOpps && this.props.employerUserOpps.map((item) => {
+            return (
+              <div>
+                <RecentUserOppPost 
+                title={item.opp_title}
+                type={item.opp_type}
+                experience={item.experience_level}
+                date={item.closing_date}
+                key={item.id}
+                id={item.id}/>
+          </div>
+            );
+          })} */}
       </Carousel>
       </>
     );
@@ -75,7 +72,7 @@ class RecentUserOppCarousel extends Component {
 // };
 
 const mapStateToProps = (reduxState) => ({
-  reduxState,
+  employerUserOpps: reduxState.employerUserOpps,
 });
 
 export default connect(mapStateToProps)(withStyles(styles)(RecentUserOppCarousel));
