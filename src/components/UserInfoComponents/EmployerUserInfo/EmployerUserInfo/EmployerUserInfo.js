@@ -29,7 +29,7 @@ class EmployerUserInfo extends Component {
                         <p>Contact Email: {this.props.reduxState.orgInfo
                             && this.props.reduxState.orgInfo.org_contact_email}</p>
                         <p>Industry: {this.props.reduxState.orgInfo
-                            && this.props.reduxState.orgInfo.industry}</p>
+                            && this.props.reduxState.orgInfo.org_industry}</p>
                         <p>Company Size: {this.props.reduxState.orgInfo
                             && this.props.reduxState.orgInfo.org_size} Employees</p>
                     </div>

@@ -120,7 +120,7 @@ class EmployerUserInfo extends Component {
                                 Industry:
                                 <input 
                                     placeholder={this.props.reduxState.orgInfo
-                                    && this.props.reduxState.orgInfo.industry}
+                                    && this.props.reduxState.orgInfo.org_industry}
                                     type="text" name="organization-industry" 
                                     value={this.state.industry} 
                                     onChange={this.handleInputChangeFor("industry")} 
