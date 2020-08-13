@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from "../../components/DecorativeHeaders/HeaderThree/HeaderThree";
-import RegisterButton from "../../components/AllButtons/RegisterButton/RegisterButton";
+// import RegisterButton from "../../components/AllButtons/RegisterButton/RegisterButton";
 
 class RegisterPage extends Component {
   state = {
     username: "",
     password: "",
+    orgName: "",
     orgWebsite: "",
     nameOfContact: "",
     emailOfContact: "",
@@ -19,19 +20,20 @@ class RegisterPage extends Component {
 
     if (
       this.state.username &&
-      this.state.password 
-      // &&
-      // this.state.orgWebsite &&
-      // this.state.nameOfContact &&
-      // this.state.emailOfContact &&
-      // this.state.industry &&
-      // this.state.orgSize
+      this.state.password &&
+      this.state.orgName &&
+      this.state.orgWebsite &&
+      this.state.nameOfContact &&
+      this.state.emailOfContact &&
+      this.state.industry &&
+      this.state.orgSize
     ) {
       this.props.dispatch({
         type: "REGISTER_EMPLOYER", //WAS 'REGISTER'
         payload: {
           username: this.state.username,
           password: this.state.password,
+          orgName: this.state.orgName,
           orgWebsite: this.state.orgWebsite,
           nameOfContact: this.state.nameOfContact,
           emailOfContact: this.state.emailOfContact,
@@ -69,7 +71,7 @@ class RegisterPage extends Component {
             <h1>Register As An Employer</h1>
             <div>
               <label htmlFor="organization-username">
-                Organization Name:
+                Username:
                 <input
                   type="text"
                   name="organization-username"
@@ -86,6 +88,17 @@ class RegisterPage extends Component {
                   name="password"
                   value={this.state.password}
                   onChange={this.handleInputChangeFor("password")}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="organization-name">
+                Organization Name:
+                <input
+                  type="text"
+                  name="organization-name"
+                  value={this.state.orgName}
+                  onChange={this.handleInputChangeFor("orgName")}
                 />
               </label>
             </div>
@@ -133,9 +146,6 @@ class RegisterPage extends Component {
                 />
               </label>
             </div>
-            {/* 
-
-      companySize: '' */}
             <div>
               <label htmlFor="organization-size">
                 Company Size:
@@ -147,9 +157,17 @@ class RegisterPage extends Component {
                 />
               </label>
             </div>
-          <RegisterButton/>
+            {/* <RegisterButton/> */}
+            <div>
+              <input
+                className="register"
+                type="submit"
+                name="submit"
+                value="Register"
+              />
+            </div>
           </form>
-          <center>
+          {/* <center>
             <button
               type="button"
               onClick={this.handleClick}
@@ -157,7 +175,7 @@ class RegisterPage extends Component {
             >
               Login
             </button>
-          </center>
+          </center> */}
         </div>
       </div>
     );

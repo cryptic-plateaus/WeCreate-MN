@@ -5,14 +5,14 @@ import Button from "@material-ui/core/Button";
 
 const styles = (theme) => ({
   button: {
-    margin: theme.spacing.unit,
+    // margin: theme.spacing.unit,
   },
   input: {
     display: "none",
   },
 });
 
-function ApplyToOppButton(props) {
+function DeleteOppButton(props) {
   const { classes } = props;
   return (
     <div>
@@ -27,8 +27,8 @@ function ApplyToOppButton(props) {
   );
 }
 
-ApplyToOppButton.propTypes = {
+DeleteOppButton.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ApplyToOppButton);
+export default withStyles(styles)(DeleteOppButton);

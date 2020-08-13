@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 
 import ServicesInfoCarousel from "../../components/LandingPageComponents/ServicesInfoCarousel/ServicesInfoCarousel";
 import SeeOpportunitiesButton from "../../components/AllButtons/SeeOpportunitiesButton/SeeOpportunitiesButton";
@@ -22,7 +22,7 @@ function ContainedButtons(props) {
     <>
       <center>
         <div className="welcome">
-          <img className="image" src="images/6.png" />
+          <img className="image" src="images/6.png" alt="POC photographer"/>
           <div className="message">
             <h1 className="title">WeCreate MN</h1>
             <h3 className="subtitle">

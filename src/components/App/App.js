@@ -3,7 +3,7 @@ import {
   HashRouter as 
   Router,
   Route,
-  Redirect,
+  // Redirect,
   Switch,
 } from 'react-router-dom';
 
@@ -16,8 +16,8 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 
 // import AboutPage from '../AboutPage/AboutPage';
 
-import UserPage from '../../pages/UserPage/UserPage';
-import InfoPage from '../../pages/InfoPage/InfoPage';
+import UserDashboardPage from '../../pages/UserDashboardPage/UserDashboardPage';
+import UserInfoPage from '../../pages/UserInfoPage/UserInfoPage';
 
 import SubmitNewOppPage from "../../pages/SubmitNewOppPage/SubmitNewOppPage";
 
@@ -50,14 +50,14 @@ class App extends Component {
               component={AboutPage}
             /> */}
             {/* For protected routes, the view could show one of several things on the same route.
-            Visiting localhost:3000/home will show the UserPage if the user is logged in.
+            Visiting localhost:3000/home will show the UserDashboardPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
-            <ProtectedRoute exact path="/" component={UserPage} />
+            <ProtectedRoute exact path="/" component={UserDashboardPage} />
 
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
-            <ProtectedRoute exact path="/info" component={InfoPage} />
+            <ProtectedRoute exact path="/info" component={UserInfoPage} />
             {/* If none of the other routes matched, we will show a 404. */}
             {/* <Route render={() => <h1>404</h1>} /> */}
             {/* This works the same as the other protected route, except that if the user is logged in,
