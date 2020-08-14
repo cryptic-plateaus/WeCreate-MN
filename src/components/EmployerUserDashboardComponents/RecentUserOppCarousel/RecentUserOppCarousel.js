@@ -15,11 +15,14 @@ const styles = (theme) => ({
 
 class RecentUserOppCarousel extends Component {
   state = {
-    id: 9, //Needs to grab Employer ID based on logged-in user
+    id: 9 //Needs to grab Employer ID based on logged-in user
   }
 
   componentDidMount = () => {
     this.getOrganizationOpportunities();
+    this.setState({
+      id: this.props.id
+    })
   };
 
   getOrganizationOpportunities = () => {
@@ -39,15 +42,14 @@ class RecentUserOppCarousel extends Component {
       <Carousel
         className="carousel"
         navButtonsAlwaysVisible={true}
-        next={(next, active) => {
-          console.log(`we left ${active}, and are now at ${next}`);
-        }}
-        prev={(prev, active) => {
-          console.log(`we left ${active}, and are now at ${prev}`);
-        }}
+        // next={(next, active) => {
+        //   console.log(`we left ${active}, and are now at ${next}`);
+        // }}
+        // prev={(prev, active) => {
+        //   console.log(`we left ${active}, and are now at ${prev}`);
+        // }}
       >
         {/* ITEM IN CAROUSEL!!! */}
-          {/* <h1>hey</h1> */}
           {this.props.employerUserOpps && this.props.employerUserOpps.map((item) => {
             return (
               <div>
@@ -66,10 +68,6 @@ class RecentUserOppCarousel extends Component {
     );
   }
 }
-
-// RecentUserOppCarousel.propTypes = {
-//   // classes: PropTypes.object.isRequired,
-// };
 
 const mapStateToProps = (reduxState) => ({
   employerUserOpps: reduxState.employerUserOpps,

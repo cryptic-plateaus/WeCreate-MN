@@ -35,7 +35,7 @@ function* submitOpportunitySaga(action) {
 //worker Saga for user to remove (DELETE) an opportunity of theirs
 function* deleteUserOpportunityPost(action) {
   try {
-    yield axios.delete(`/api/opportunities/${action.payload}`);
+    yield axios.delete(`/api/opportunities/user_opps/${action.payload}`);
     yield put({ type: "FETCH_ALL_USER_OPPORTUNITIES" });
   } catch (error) {
     console.log(error);
@@ -47,7 +47,7 @@ function* opportuntiesSaga() {
     yield takeLatest("FETCH_ALL_OPPORTUNITIES", getAllOpportuntiesSaga);//Gets all opps for job board
     yield takeLatest("FETCH_ALL_USER_OPPORTUNITIES", getAllUserOpportuntiesSaga);//Gets all opps for Employer User
     yield takeLatest("SUBMIT_OPPORTUNITY", submitOpportunitySaga);
-  yield takeLatest('DELETE_USER_OPP_POST', deleteUserOpportunityPost);
+  yield takeLatest("DELETE_USER_OPP_POST", deleteUserOpportunityPost);
   }
 
 export default opportuntiesSaga;

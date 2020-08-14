@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 
 import { withRouter } from "react-router-dom";
 
@@ -24,13 +24,23 @@ const cardStyle = {
 };
 
 class RecentUserOppPost extends Component {
+
   state = {
+    id: this.props.id,
     title: this.props.title,
     type: this.props.type,
     experience: this.props.experience,
     date: this.props.date
   };
   
+  handleClick = (event) => {
+    // this.props.history.push(`/user_opp/${this.state.id}`);
+    this.props.dispatch({ 
+      type: "DELETE_USER_OPP_POST", 
+      payload: this.state.id
+    });
+  };
+
   render() {
     const classes = this.props;
     return (
@@ -48,9 +58,12 @@ class RecentUserOppPost extends Component {
                     Closing Date: {this.state.date.split('T')[0]}
                   </Typography>
                   <br/>
-                  <Button size="small" variant="contained" color="primary">
-                    See Post
-                  </Button>
+                <Button size="small"
+                  variant="contained"
+                  color="primary"
+                  onClick={this.handleClick}>
+                      Delete Posting
+                </Button>
               </CardContent>
           </div>
         </Card>
@@ -63,9 +76,9 @@ class RecentUserOppPost extends Component {
 //   classes: PropTypes.object.isRequired,
 // };
 
-// const mapReduxStateToProps = (reduxState) => ({
-//   reduxState,
-// });
+const mapReduxStateToProps = (reduxState) => ({
+  reduxState,
+});
 
-// export default withRouter(connect(mapReduxStateToProps)(RecentUserOppPost));
-export default withRouter(RecentUserOppPost);
+export default withRouter(connect(mapReduxStateToProps)(RecentUserOppPost));
+// export default withRouter(RecentUserOppPost);

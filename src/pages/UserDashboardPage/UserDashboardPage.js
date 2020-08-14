@@ -7,6 +7,7 @@ import RecentUserOpps from "../../components/EmployerUserDashboardComponents/Rec
 // import CardTemplate from "../../components/CardTemplate/CardTemplate";
 
 class UserDashboardPage extends Component {
+
   componentDidMount = () => {
     this.getOrganizationDetails();
   };
@@ -27,7 +28,7 @@ class UserDashboardPage extends Component {
           <div className="dashboard-content">
             <h2 className="subtitle">Welcome, {this.props.reduxState.orgInfo
               && this.props.reduxState.orgInfo.org_name}!</h2>
-            <RecentUserOpps />
+            <RecentUserOpps/>
             <GoToSubmitOppButton />
           </div>
         </center>

@@ -81,15 +81,14 @@ router.post("/", (req, res, next) => {
     });
 });
 
-// delete Nai's example
-router.delete("/delete/:id", (req, res) => {
-  let reqId = req.params.id;
-  console.log("Delete request for id", reqId);
-  let queryText = `DELETE FROM barrels WHERE id=$1`;
+router.delete("/user_opps/:id", (req, res) => {
+  let oppID = req.params.id;
+  console.log("Delete request for id", oppID);
+  let queryText = `DELETE FROM "opportunity_post" WHERE "id"= $1;`;
   pool
-    .query(queryText, [reqId])
+    .query(queryText, [oppID])
     .then((result) => {
-      console.log("Item deleted");
+      console.log("Opportunity deleted");
       res.sendStatus(200);
     })
     .catch((error) => {

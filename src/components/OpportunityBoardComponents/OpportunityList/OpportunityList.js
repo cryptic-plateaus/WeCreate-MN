@@ -33,7 +33,6 @@ class OpportunityList extends Component {
 }
 
 const mapReduxStateToProps = (state) => ({
-  //   reduxState,
   allOpportunities: state.allOpportunities,
 });
 

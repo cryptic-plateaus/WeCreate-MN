@@ -8,7 +8,13 @@ import DeleteOppButton from "../../components/AllButtons/DeleteOppButton/DeleteO
 class UserOppDetailsPage extends Component {
 
     // <ProtectedRoute exact path="/user_opp" component={UserOppDetailsPage} />
+    state = {
+        id: this.props.match.params.id
+    }
 
+    componentDidMount = ( ) => {
+        console.log("hey:",this.props.match.params.id);
+    }
 
     render() {
         return (
@@ -16,6 +22,7 @@ class UserOppDetailsPage extends Component {
                 <div className="dashboard-content">
                     <center>
                         <HeaderThree/>
+                        <h1>{this.state.id}</h1>
                         <h1>Opportunity Name</h1>
                         <h3 className="opp-close"><i>Closes On [DATE HERE]</i></h3>
                         <OppInfoCard/>

@@ -22,6 +22,7 @@ const cardStyle = {
 }
 
 class OpportunityPost extends Component {
+  
   state = {
     id: this.props.id,
     title: this.props.title,
