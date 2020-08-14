@@ -91,36 +91,52 @@ class SubmitNewOppPage extends Component {
               </label>
             </div>
             <div>
-              <label htmlFor="organization-website">
-                Organization Website:
-                <input
-                  type="text"
-                  name="organization-website"
-                  value={this.state.orgWebsite}
-                  onChange={this.handleInputChangeFor("orgWebsite")}
-                />
-              </label>
-            </div>
-            <div>
-              <label htmlFor="opportunity-type">
-                Opportunity Type:
-                <input
-                  type="text"
-                  name="opportunity-type"
-                  value={this.state.oppType}
-                  onChange={this.handleInputChangeFor("oppType")}
-                />
-              </label>
+              <label htmlFor="opportunity-type">Opportunity Type</label>
+              <select 
+                type="text"
+                name="opportunity-type"
+                value={this.state.oppType}
+                onChange={this.handleInputChangeFor("oppType")}>
+                  <option value="Full-Time">Full-Time</option>
+                  <option value="Part-Time">Part-Time</option>
+                  <option value="Gig">Gig</option>
+                  <option value="Temporary">Temporary</option>
+                  <option value="Contract">Contract</option>
+                  <option value="Paid Internship">Paid Internship</option>
+              </select>
             </div>
             <div>
               <label htmlFor="opportunity-industry">
                 Industry:
-                <input
+                 <select
                   type="text"
                   name="opportunity-industry"
                   value={this.state.industry}
-                  onChange={this.handleInputChangeFor("industry")}
-                />
+                  onChange={this.handleInputChangeFor("industry")}>
+                  <option value="Visual Arts">Visual Arts</option>
+                  <option value="Design">Design</option>
+                  <option value="Music">Music</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Dance">Dance</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <label htmlFor="experience-level">
+                Experience Level:
+                 <select
+                  type="text"
+                  name="experience-level"
+                  value={this.state.expLevel}
+                  onChange={this.handleInputChangeFor("expLevel")}>
+                  <option value="Intern">Intern</option>
+                  <option value="Entry-Level">Entry-Level</option>
+                  <option value="Associate">Associate</option>
+                  <option value="Mid-Level">Mid-Level</option>
+                  <option value="Senior Level">Senior Level</option>
+                  <option value="Director">Director</option>
+                  <option value="Executive">Executive</option>
+                </select>
               </label>
             </div>
             <div>
@@ -134,37 +150,47 @@ class SubmitNewOppPage extends Component {
                   onChange={this.handleInputChangeFor("compensation")}
                 />
               </label>
+              </div>
               <br />
+            <div>
               <label htmlFor="per">
                 Per:
-                <input
+                <select
                   type="text"
                   name="per"
                   value={this.state.per}
-                  onChange={this.handleInputChangeFor("per")}
-                />
-              </label>
-              <br />
+                  onChange={this.handleInputChangeFor("per")}>
+                    <option value="Hour">Hour</option>
+                    <option value="Project">Project</option>
+                    <option value="Year">Year</option>
+                    <option value="Stipend">Stipend</option>
+                </select>
+              </label>             
+            </div>
+            <div>
               <label htmlFor="opportunity-details">
                 Opportunity Details:
+                <br />
                 <textarea
                   name="opportunity-details"
                   value={this.state.oppDetails}
                   onChange={this.handleInputChangeFor("oppDetails")}
-                ></textarea>
+                  placeholder="Please provide details on the responsibilites of the job">                    
+                  </textarea>
               </label>
+            </div>
               <br />
-              <label htmlFor="experience-level">
+            <div>
+              <label htmlFor="link">
                 Application Link:
                 <input
                   type="text"
-                  name="experience-level"
-                  value={this.state.expLevel}
-                  onChange={this.handleInputChangeFor("expLevel")}
+                  name="link"
+                  value={this.state.link}
+                  onChange={this.handleInputChangeFor("link")}
                 />
               </label>
             </div>
-            {/* <SubmitOppButton  /> */}
             <button onClick={this.submitOpportunity}>Submit!</button>
           </form>
           <center>
