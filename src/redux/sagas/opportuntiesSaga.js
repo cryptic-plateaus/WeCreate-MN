@@ -14,8 +14,10 @@ function* getAllOpportuntiesSaga() {
 
 //worker Saga to retrieve (GET) ALL oportunities for USER
 function* getAllUserOpportuntiesSaga(action) {
+  console.log("action.payload:", action.payload);
   try {
     const response = yield axios.get(`/api/opportunities/user_opps/${action.payload}`);
+    
     yield put({ type: "SET_ALL_USER_OPPORTUNITIES", payload: response.data });
     // console.log('test console:',response.data);
   } catch (error) {

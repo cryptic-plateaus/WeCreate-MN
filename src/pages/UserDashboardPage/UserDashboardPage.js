@@ -8,7 +8,12 @@ import RecentUserOpps from "../../components/EmployerUserDashboardComponents/Rec
 
 class UserDashboardPage extends Component {
 
+  // state = {
+  //   orgId: null
+  // }
+
   componentDidMount = () => {
+    console.log("org id:", this.props.reduxState.orgInfo.id)
     this.getOrganizationDetails();
   };
 
@@ -17,6 +22,10 @@ class UserDashboardPage extends Component {
       type: "FETCH_ORGANIZATION_DETAILS",
       payload: this.props.reduxState.user.id
     });
+    // this.setState({
+    //   ...this.state,
+    //   orgId: this.props.reduxState.orgInfo.id
+    // })
     console.log('TESTING USER:', this.props.reduxState.user.id);
   };
   
@@ -24,11 +33,12 @@ class UserDashboardPage extends Component {
     return (
       <div>
         <Header />
+        {/* {JSON.stringify(this.state.orgId)} */}
         <center>
           <div className="dashboard-content">
             <h2 className="subtitle">Welcome, {this.props.reduxState.orgInfo
               && this.props.reduxState.orgInfo.org_name}!</h2>
-            <RecentUserOpps/>
+            <RecentUserOpps />
             <GoToSubmitOppButton />
           </div>
         </center>

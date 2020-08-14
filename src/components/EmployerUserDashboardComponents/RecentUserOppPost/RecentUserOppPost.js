@@ -52,7 +52,7 @@ class RecentUserOppPost extends Component {
                     {this.state.title}
                   </Typography>
                  <Typography variant="subtitle1" color="textSecondary">
-                    {this.state.type}, {this.state.experience} Level
+                    {this.state.type}, {this.state.experience}
                   </Typography>
                   <Typography variant="subtitle1" color="textSecondary">
                     Closing Date: {this.state.date.split('T')[0]}

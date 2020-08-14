@@ -1,5 +1,7 @@
 const express = require("express");
 const pool = require("../modules/pool");
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
+
 
 const router = express.Router();
 
@@ -19,8 +21,8 @@ router.get("/", (req, res) => {
 });
 
 //Getting specific user's opportunities they've already posted to system
-router.get("/user_opps/:id", (req, res) => {
-  const id = req.params.id; //Employer ID
+router.get("/user_opps/:id", rejectUnauthenticated, (req, res) => {
+  const id = req.params.id; //Organization ID
   const queryText = `SELECT * FROM "opportunity_post" WHERE "org_id" = ${id};`;
   pool
     .query(queryText)
@@ -37,7 +39,7 @@ router.get("/user_opps/:id", (req, res) => {
 });
 
 //Posting new opportunity from specific user
-router.post("/", (req, res, next) => {
+router.post("/", rejectUnauthenticated, (req, res, next) => {
   const orgID = req.body.orgID;
   const title = req.body.oppTitle;
   const date = req.body.closingDate;
@@ -81,7 +83,7 @@ router.post("/", (req, res, next) => {
     });
 });
 
-router.delete("/user_opps/:id", (req, res) => {
+router.delete("/user_opps/:id", rejectUnauthenticated, (req, res) => {
   let oppID = req.params.id;
   console.log("Delete request for id", oppID);
   let queryText = `DELETE FROM "opportunity_post" WHERE "id"= $1;`;

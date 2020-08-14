@@ -1,10 +1,11 @@
 const express = require("express");
 const pool = require("../modules/pool");
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 const router = express.Router();
 
-router.get("/:id", (req, res) => {
-  const id = req.params.id;
+router.get("/:id", rejectUnauthenticated, (req, res) => {
+  const id = req.user.id;
   const queryText = `SELECT * FROM "organization_profile" WHERE "user_id" = ${id};`;
   pool
     .query(queryText)
@@ -20,14 +21,14 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.put("/", (req, res) => {
+router.put("/", rejectUnauthenticated, (req, res) => {
   const orgName = req.body.orgName;
   const orgWebsite = req.body.orgWebsite;
   const nameOfContact = req.body.nameOfContact;
   const emailOfContact = req.body.emailOfContact;
   const industry = req.body.industry;
   const orgSize = req.body.orgSize;
-  const id = req.body.userID;
+  const id = req.user.id 
 
   console.log("req.body is", req.body);
   const queryText = `UPDATE "organization_profile" 
