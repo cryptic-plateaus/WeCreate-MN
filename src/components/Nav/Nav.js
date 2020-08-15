@@ -44,7 +44,9 @@ function Nav (props) {
             <Button
               size="large"
               href="#"
-              className={classes.button}>
+              className={classes.button}
+              className = {props.className}
+              onClick={() => props.dispatch({ type: 'LOGOUT' })}>
               Log Out
                 </Button> :
             <Button
@@ -69,3 +71,4 @@ const mapStateToProps = state => ({
 });
 
 export default withStyles(styles)(connect(mapStateToProps)(Nav));
+
