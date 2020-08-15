@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from "../../components/DecorativeHeaders/HeaderOne/HeaderOne";
-// import LoginButton from "../../components/AllButtons/LoginButton/LoginButton";
+import LoginButton from "../../components/AllButtons/LoginButton/LoginButton";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+
+
+
+
+const styles = (theme) => ({
+  button: {
+    // margin: theme.spacing.unit,
+  },
+  input: {
+    display: "none",
+  },
+});
 
 class LoginPage extends Component {
+
   state = {
     username: "",
     password: "",
@@ -37,6 +53,7 @@ class LoginPage extends Component {
 
 
   render() {
+    const { classes } = this.props;
     return (
       <div>
         <Header />
@@ -70,15 +87,18 @@ class LoginPage extends Component {
                 />
               </label>
             </div>
-            <div>
-              <input
-                className="log-in"
-                type="submit"
-                name="submit"
-                value="Log In"
-              />
-            </div>
-            {/* <LoginButton/> */}
+            <Button
+              variant="contained"
+              color="primary"
+              className="log-in"
+              type="submit"
+              name="submit"
+              value="Log In"
+              className={classes.button}
+            >
+              Login
+            </Button>
+
           </form>
         </div>
         <center>
@@ -95,6 +115,10 @@ class LoginPage extends Component {
   }
 }
 
+LoginPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
 // Instead of taking everything from state, we just want the error messages.
 // if you wanted you could write this code like this:
 // const mapStateToProps = ({errors}) => ({ errors });
@@ -102,4 +126,4 @@ const mapStateToProps = state => ({
   errors: state.errors,
 });
 
-export default connect(mapStateToProps)(LoginPage);
+export default withStyles(styles)(connect(mapStateToProps)(LoginPage));
