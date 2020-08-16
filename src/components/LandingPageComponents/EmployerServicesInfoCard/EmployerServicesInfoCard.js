@@ -54,10 +54,9 @@ function EmployerServicesInfoCard(props) {
             For Employers
           </Typography>
           <Typography component="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Our platform gives employers, who are interested in 
+            hiring candidates from diverse backgrounds and practices, 
+            the ability to post paid opportunities to the WeCreate MN community.
           </Typography>
         </CardContent>
       </CardActionArea>

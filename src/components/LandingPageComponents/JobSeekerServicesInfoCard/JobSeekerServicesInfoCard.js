@@ -54,10 +54,11 @@ function JobSeekerServicesInfoCard(props) {
             For Job Seekers
           </Typography>
           <Typography component="p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            WeCreate MN allows job seekers of color to 
+            find creative, paid opportunities from employers 
+            dedicated to hiring diverse candidates. Our job 
+            board holds up-to-date positions from a wide range 
+            of artistic industries.
           </Typography>
         </CardContent>
       </CardActionArea>
