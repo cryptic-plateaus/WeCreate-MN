@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+
+const styles = (theme) => ({
+    root: {
+        color: 'white',
+        fontWeight: 'bold',
+        margin: "10px",
+    },
+});
 
 class EmployerUserInfo extends Component {
     
@@ -11,18 +22,6 @@ class EmployerUserInfo extends Component {
         industry: "",
         orgSize: "",
     };
-
-    // componentDidMount = () => {
-    //     this.getOrganizationDetails();
-    // };
-
-    // getOrganizationDetails = () => {
-    //     this.props.dispatch({
-    //         type: "FETCH_ORGANIZATION_DETAILS",
-    //         payload: this.props.reduxState.user.id
-    //     });
-    //     console.log('TESTING USER ID:', this.props.reduxState.user.id);
-    // };
 
     updateEmployerUser = (event) => {
         event.preventDefault();
@@ -47,9 +46,6 @@ class EmployerUserInfo extends Component {
                 },
             });
         } 
-        // else {
-        //     this.props.dispatch({ type: "UPDATE_EMPLOYER_INPUT_ERROR" });
-        // }
         console.log("You clicked me!");
     };
 
@@ -61,6 +57,9 @@ class EmployerUserInfo extends Component {
     };
 
     render() {
+
+        const { classes } = this.props;
+
         return (
                 <div>
                     <h1>Edit Organization Profile</h1> 
@@ -138,9 +137,22 @@ class EmployerUserInfo extends Component {
                                 />
                                 </label>
                             </div>
-                            <div>
-                                <input className="save"type="submit"name="submit"value="Save"/>
-                            </div>
+                        <div>
+                            <center>
+                                <Button
+                                    variant="contained"
+                                    className="log-in"
+                                    type="submit"
+                                    name="submit"
+                                    value="Submit"
+                                    className={classes.button}
+                                    color="secondary"
+                                    classes={{ root: classes.root }}
+                                >
+                                    Save
+                                </Button>
+                            </center>
+                        </div>
                         </form>
                     </div>
             </div>
@@ -148,12 +160,14 @@ class EmployerUserInfo extends Component {
     }
 }
 
+EmployerUserInfo.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
 
 // Instead of taking everything from state, we just want the user info.
 const mapStateToProps = (reduxState) => ({
     reduxState,
 });
 
-
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(EmployerUserInfo);
+export default withStyles(styles)(connect(mapStateToProps)(EmployerUserInfo));
