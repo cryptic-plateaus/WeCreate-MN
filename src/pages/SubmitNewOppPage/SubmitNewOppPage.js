@@ -6,7 +6,6 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
-import Fade from "react-reveal/Fade";
 
 const styles = (theme) => ({
   root: {
@@ -188,7 +187,6 @@ class SubmitNewOppPage extends Component {
     return (
       <div>
         <Header />
-        <Fade bottom>
           <div className="form">
             <center>
               <form>
@@ -376,7 +374,6 @@ class SubmitNewOppPage extends Component {
               Go Back
             </button>
           </center>
-        </Fade>
       </div>
     );
   }

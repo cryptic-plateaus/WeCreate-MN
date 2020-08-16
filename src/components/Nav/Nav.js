@@ -14,7 +14,7 @@ const styles = {
     color: "white",
   },
   menuButton: {
-    marginLeft: "60%",
+    marginLeft: "57%",
   },
   font: {
     color: "white",
@@ -27,7 +27,7 @@ const styles = {
 
 function Nav (props) {
   const { classes } = props;
-  const MyLink = props => <RouterLink to="/" {...props} />
+  const home = props => <RouterLink to="/" {...props} />
 
   return (
     <div className={classes.root}>
@@ -38,8 +38,9 @@ function Nav (props) {
         }}
       >
         <Toolbar>
+          <img href="/" src="images/example_logo.png" alt="WeCreate Logo: Colorful Dots" width="5%"></img>
           <Link
-            component={MyLink}
+            component={home}
             underline="none"
             variant="h4"
             classes={{ root: classes.name }}

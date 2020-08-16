@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import GoToSubmitOppButton from "../../components/AllButtons/GoToSubmitOppButton/GoToSubmitOppButton";
 import Header from "../../components/DecorativeHeaders/HeaderTwo/HeaderTwo";
 import RecentUserOpps from "../../components/EmployerUserDashboardComponents/RecentUserOppCarousel/RecentUserOppCarousel";
-import Fade from "react-reveal/Fade";
 
 class UserDashboardPage extends Component {
 
@@ -29,14 +28,12 @@ class UserDashboardPage extends Component {
       <div>
         <Header />
         <center>
-          <Fade bottom>
           <div className="dashboard-content">
             <h2 className="subtitle">Welcome, {this.props.reduxState.orgInfo
               && this.props.reduxState.orgInfo.org_name}!</h2>
             <RecentUserOpps />
             <GoToSubmitOppButton />
           </div>
-          </Fade>
         </center>
       </div>
     );

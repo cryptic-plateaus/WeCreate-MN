@@ -6,7 +6,6 @@ import EditEmployerUserInfo from "../../components/UserInfoComponents/EditEmploy
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import Fade from "react-reveal/Fade";
 
 const styles = (theme) => ({
   root: {
@@ -43,7 +42,6 @@ class UserInfoPage extends Component {
         <Header />
         <center>
           <div className="dashboard-content">
-            <Fade bottom>
               <div>
                 {this.state.edit ? (
                   <div>
@@ -73,7 +71,6 @@ class UserInfoPage extends Component {
                   </div>
                 )}
               </div>
-            </Fade>
           </div>
         </center>
       </div>
