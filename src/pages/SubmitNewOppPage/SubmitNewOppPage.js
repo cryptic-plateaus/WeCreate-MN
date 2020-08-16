@@ -1,7 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Header from "../../components/DecorativeHeaders/HeaderOne/HeaderOne";
-// import SubmitOppButton from "../../components/AllButtons/SubmitOppButton/SubmitOppButton";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+
+const styles = (theme) => ({
+  root: {
+    background: 'linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    fontWeight: 'bold',
+    margin: "10px",
+    justify: 'center'
+  },
+});
 
 class SubmitNewOppPage extends Component {
   state = {
@@ -57,6 +73,7 @@ class SubmitNewOppPage extends Component {
   };
 
   render() {
+    const { classes } = this.props;
     return (
       <div>
         <Header />
@@ -191,26 +208,43 @@ class SubmitNewOppPage extends Component {
                 />
               </label>
             </div>
-            <button onClick={this.submitOpportunity}>Submit!</button>
+            <div>
+              <center>
+                <Button
+                  variant="contained"
+                  className="log-in"
+                  type="submit"
+                  name="submit"
+                  onClick={this.submitOpportunity}
+                  className={classes.button}
+                  classes={{ root: classes.root }}
+                >
+                  Submit
+                </Button>
+              </center>
+            </div>
           </form>
-          <center>
-            <button
-              type="button"
-              onClick={this.handleClick}
-              className="link-button"
-            >
-              Go Back
-            </button>
-          </center>
         </div>
+        <center>
+          <button
+            type="button"
+            onClick={this.handleClick}
+            className="link-button"
+          >
+            Go Back
+            </button>
+        </center>
       </div>
     );
   }
 }
 
+SubmitNewOppPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 const mapReduxStateToProps = (reduxState) => ({
   reduxState,
 });
 
-export default connect(mapReduxStateToProps)(SubmitNewOppPage);
+export default withStyles(styles)(connect(mapReduxStateToProps)(SubmitNewOppPage));

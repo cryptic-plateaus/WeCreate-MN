@@ -14,7 +14,6 @@ const styles = (theme) => ({
     color: 'white',
     height: 48,
     padding: '0 30px',
-    // boxShadow: '0 3px 5px 2px rgba(251, 158, 65, .3)',
     fontWeight: 'bold',
     margin: "10px",
     justify: 'center'
@@ -53,7 +52,6 @@ class LoginPage extends Component {
   handleClick = (event) => {
     this.props.history.push("/register");
   };
-
 
   render() {
     const { classes } = this.props;

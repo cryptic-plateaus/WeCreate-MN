@@ -1,17 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
 import { withRouter } from "react-router-dom";
-
-// import PropTypes from "prop-types";
-// import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-// import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
-const cardStyle = {
+const styles = {
   main: {
     display: "block",
     width: "250px",
@@ -21,6 +16,17 @@ const cardStyle = {
     justify: "center",
     paddingTop: "5%"
   },
+  root: {
+    background: 'linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    fontWeight: 'bold',
+    margin: "10px",
+    justify: 'center'
+  }
 };
 
 class RecentUserOppPost extends Component {
@@ -34,7 +40,6 @@ class RecentUserOppPost extends Component {
   };
   
   handleClick = (event) => {
-    // this.props.history.push(`/user_opp/${this.state.id}`);
     this.props.dispatch({ 
       type: "DELETE_USER_OPP_POST", 
       payload: this.state.id
@@ -45,7 +50,7 @@ class RecentUserOppPost extends Component {
     const classes = this.props;
     return (
       <center>
-        <Card style={cardStyle.main} className={classes.card} className="opportunity-post">
+        <Card style={styles.main} className={classes.card} className="opportunity-post">
           <div className={classes.details}>
               <CardContent className={classes.content}>
                   <Typography component="h5" variant="h5">
@@ -58,9 +63,12 @@ class RecentUserOppPost extends Component {
                     Closing Date: {this.state.date.split('T')[0]}
                   </Typography>
                   <br/>
-                <Button size="small"
-                  variant="contained"
-                  color="primary"
+                <Button
+                variant="contained"
+                color="secondary"
+                className={classes.button}
+                className="delete-button"
+                size="small"
                   onClick={this.handleClick}>
                       Delete Posting
                 </Button>
@@ -71,10 +79,6 @@ class RecentUserOppPost extends Component {
     );
   }
 }
-
-// RecentUserOppPost.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
 
 const mapReduxStateToProps = (reduxState) => ({
   reduxState,
