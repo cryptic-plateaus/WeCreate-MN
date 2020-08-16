@@ -12,13 +12,17 @@ const styles = {
   root: {
     background: "linear-gradient(45deg, #6633ff 30%, #6600cc 90%)",
     color: "white",
-    marginTop: "50px"
+    marginTop: "50px",
   },
   info: {
-    marginLeft: "57%"
+    marginLeft: "57%",
   },
   name: {
-    color: "white"
+    color: "white",
+  },
+  padding: {
+    paddingTop: "15px",
+    paddingBottom: "15px",
   }
 };
 
@@ -34,7 +38,11 @@ function Footer (props) {
           root: classes.root,
         }}
       >
-        <Toolbar>
+        <Toolbar
+          classes={{
+            root: classes.padding,
+          }}
+        >
           <div>
             <div id="logo-parts">
               <img

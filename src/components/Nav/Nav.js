@@ -23,6 +23,10 @@ const styles = {
   name: {
     color: "white",
   },
+  padding: {
+    paddingTop: "15px",
+    paddingBottom: "15px",
+  }
 };
 
 function Nav (props) {
@@ -37,8 +41,17 @@ function Nav (props) {
           root: classes.root,
         }}
       >
-        <Toolbar>
-          <img href="/" src="images/example_logo.png" alt="WeCreate Logo: Colorful Dots" width="5%"></img>
+        <Toolbar
+          classes={{
+            root: classes.padding,
+          }}
+        >
+          <img
+            href="/"
+            src="images/example_logo.png"
+            alt="WeCreate Logo: Colorful Dots"
+            width="5%"
+          ></img>
           <Link
             component={home}
             underline="none"
