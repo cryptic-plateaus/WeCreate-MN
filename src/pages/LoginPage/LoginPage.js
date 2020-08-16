@@ -3,20 +3,25 @@ import { connect } from 'react-redux';
 import Header from "../../components/DecorativeHeaders/HeaderOne/HeaderOne";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 
 const styles = (theme) => ({
   root: {
-    background: 'linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)',
+    background: "linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)",
     borderRadius: 3,
     border: 0,
-    color: 'white',
+    color: "white",
     height: 48,
-    padding: '0 30px',
-    fontWeight: 'bold',
+    padding: "0 30px",
+    fontWeight: "bold",
     margin: "10px",
-    justify: 'center'
+    justify: "center",
+  },
+  textField: {
+    width: 200,
+    margin: "10px",
   },
 });
 
@@ -69,26 +74,24 @@ class LoginPage extends Component {
           <form onSubmit={this.login}>
             <h1>Login</h1>
             <div>
-              <label htmlFor="username">
-                Username:
-                <input
-                  type="text"
-                  name="username"
-                  value={this.state.username}
-                  onChange={this.handleInputChangeFor("username")}
-                />
-              </label>
+              <TextField
+                required
+                label="Username"
+                className={classes.textField}
+                value={this.state.username}
+                onChange={this.handleInputChangeFor("username")}
+              />
             </div>
             <div>
-              <label htmlFor="password">
-                Password:
-                <input
-                  type="password"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.handleInputChangeFor("password")}
-                />
-              </label>
+              <TextField
+                required
+                label="Password"
+                className={classes.textField}
+                type="password"
+                value={this.state.password}
+                onChange={this.handleInputChangeFor("password")}
+                margin="normal"
+              />
             </div>
             <div>
               <center>
