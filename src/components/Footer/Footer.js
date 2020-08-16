@@ -8,7 +8,8 @@ const home = (props) => <RouterLink to="/" {...props} />;
 
 const Footer = (props) => (
   <div className="footer">
-    <Link to="/home">
+    <div className="footer-logos">    
+      <Link to="/home">
       <img
         className="footer-logo"
         width="40"
@@ -32,6 +33,7 @@ const Footer = (props) => (
       alt="Instagram logo"
       src="images/insta_logo.png"
     />
+    </div>
     <p className="footer-message">
       WeCreate MN is based in the Twin Cities, MN
     </p>

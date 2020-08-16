@@ -17,6 +17,7 @@ import OpportunityDetailsPage from "../../pages/OpportunityDetailsPage/Opportuni
 import UserDashboardPage from '../../pages/UserDashboardPage/UserDashboardPage';
 import ProfilePage from '../../pages/ProfilePage/ProfilePage';
 import SubmitNewOppPage from "../../pages/SubmitNewOppPage/SubmitNewOppPage";
+import FooterTwo from '../FooterTwo/FooterTwo';
 // import UserOppDetailsPage from "../../pages/UserOppDetailsPage/UserOppDetailsPage";
 
 class App extends Component {
@@ -65,7 +66,8 @@ class App extends Component {
           <Route path="/login" component={LoginPage} />
           <Route path="/opportunities" component={OpportunityBoardPage} />
           <Route path="/details" component={OpportunityDetailsPage} />
-          <Footer />
+          {/* <Footer /> */}
+          <FooterTwo />
         </div>
       </Router>
     );}
