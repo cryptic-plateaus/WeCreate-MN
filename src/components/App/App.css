@@ -101,7 +101,9 @@ padding-bottom: 20px;
 }
 
 /* JOB BOARD STYLING */
-
+.job-board-title{
+    margin-top: 50px;
+}
 .search-bar{
     margin-top: 30px;
     margin-bottom: 60px;
