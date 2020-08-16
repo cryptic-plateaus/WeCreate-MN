@@ -7,7 +7,7 @@ const router = express.Router();
 
 //Getting all opportunities in database for Job Board
 router.get("/", (req, res) => {
-  const queryText = `SELECT * FROM opportunity_post ORDER BY id DESC`;
+  const queryText = `SELECT * FROM opportunity_post ORDER BY closing_date ASC`;
   pool
     .query(queryText)
     .then((result) => {
