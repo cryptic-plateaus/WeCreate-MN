@@ -3,22 +3,50 @@ import { connect } from 'react-redux';
 import Header from "../../components/DecorativeHeaders/HeaderThree/HeaderThree";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 
 const styles = (theme) => ({
   root: {
-    background: 'linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)',
+    background: "linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)",
     borderRadius: 3,
     border: 0,
-    color: 'white',
+    color: "white",
     height: 48,
-    padding: '0 30px',
-    // boxShadow: '0 3px 5px 2px rgba(251, 158, 65, .3)',
-    fontWeight: 'bold',
+    padding: "0 30px",
+    fontWeight: "bold",
     margin: "10px",
-    justify: 'center'
+    justify: "center",
+  },
+  textField: {
+    width: 400,
+    margin: "10px",
   },
 });
+
+const industries = [
+  {
+    value: "Dance",
+    label: "Dance",
+  },
+  {
+    value: "Design",
+    label: "Design",
+  },
+  {
+    value: "Visual Arts",
+    label: "Visual Arts",
+  },
+  {
+    value: "Music",
+    label: "Music",
+  },
+  {
+    value: "Theatre",
+    label: "Theatre",
+  },
+];
 
 class RegisterPage extends Component {
   state = {
@@ -85,117 +113,130 @@ class RegisterPage extends Component {
           </h2>
         )}
         <div className="form">
-          <form onSubmit={this.registerUser}>
-            <h1>Register As An Employer</h1>
-            <div>
-              <label htmlFor="organization-username">
-                Username:
-                <input
-                  type="text"
+          <center>
+            <form onSubmit={this.registerUser}>
+              <h1>Register As An Employer</h1>
+              <div>
+                <TextField
+                  required
+                  label="Username"
+                  className={classes.textField}
                   name="organization-username"
                   value={this.state.username}
                   onChange={this.handleInputChangeFor("username")}
+                  margin="normal"
                 />
-              </label>
-            </div>
-            <div>
-              <label htmlFor="password">
-                Password:
-                <input
+              </div>
+              <div>
+                <TextField
+                  required
+                  label="Password"
+                  className={classes.textField}
                   type="password"
                   name="password"
                   value={this.state.password}
                   onChange={this.handleInputChangeFor("password")}
+                  margin="normal"
                 />
-              </label>
-            </div>
-            <div>
-              <label htmlFor="organization-name">
-                Organization Name:
-                <input
-                  type="text"
+              </div>
+              <div>
+                <TextField
+                  required
+                  label="Organization Name"
+                  className={classes.textField}
                   name="organization-name"
                   value={this.state.orgName}
                   onChange={this.handleInputChangeFor("orgName")}
+                  margin="normal"
                 />
-              </label>
-            </div>
-            <div>
-              <label htmlFor="organization-website">
-                Organization Website:
-                <input
-                  type="text"
+              </div>
+              <div>
+                <TextField
+                  required
+                  label="Organization Website"
+                  className={classes.textField}
                   name="organization-website"
                   value={this.state.orgWebsite}
                   onChange={this.handleInputChangeFor("orgWebsite")}
+                  margin="normal"
                 />
-              </label>
-            </div>
-            <div>
-              <label htmlFor="organization-contact-name">
-                Name of Organization Contact:
-                <input
-                  type="text"
+              </div>
+              <div>
+                <TextField
+                  required
+                  label="Name of Primary Contact"
+                  className={classes.textField}
                   name="organization-contact-name"
                   value={this.state.nameOfContact}
                   onChange={this.handleInputChangeFor("nameOfContact")}
+                  margin="normal"
                 />
-              </label>
-            </div>
-            <div>
-              <label htmlFor="organization-contact-email">
-                Email of Organization Contact:
-                <input
-                  type="text"
+              </div>
+              <div>
+                <TextField
+                  required
+                  label="Email of Primary Contact"
+                  className={classes.textField}
                   name="organization-contact-email"
                   value={this.state.emailOfContact}
                   onChange={this.handleInputChangeFor("emailOfContact")}
+                  margin="normal"
                 />
-              </label>
-            </div>
-            <div>
-              <label htmlFor="organization-industry">
-                Organization Industry:
-                <select
-                  type="text"
+              </div>
+              <div>
+                <TextField
+                  select
+                  label="Organization Industry"
+                  className={classes.textField}
                   name="organization-industry"
                   value={this.state.industry}
-                  onChange={this.handleInputChangeFor("industry")}>
-                  <option value="Visual Arts">Visual Arts</option>
-                  <option value="Design">Design</option>
-                  <option value="Music">Music</option>
-                  <option value="Theatre">Theatre</option>
-                  <option value="Dance">Dance</option>
-                </select>
-              </label>
-            </div>
-            <div>
-              <label htmlFor="organization-size">
-                Company Size:
-                <input
-                  type="number"
-                  name="organization-size"
+                  onChange={this.handleInputChangeFor("industry")}
+                  SelectProps={{
+                    MenuProps: {
+                      className: classes.menu,
+                    },
+                  }}
+                  margin="normal"
+                >
+                  {industries.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+              <div>
+                <TextField
+                  required
+                  label="Organization Size"
+                  name="Organization Size"
                   value={this.state.orgSize}
                   onChange={this.handleInputChangeFor("orgSize")}
+                  type="number"
+                  className={classes.textField}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  margin="normal"
                 />
-              </label>
-            </div>
-            <div>
-              <center>
-                <Button
-                  variant="contained"
-                  className="register"
-                  type="submit"
-                  name="submit"
-                  value="Register"
-                  className={classes.button}
-                  classes={{ root: classes.root }}
-                >
-                  Register
-                </Button>
-              </center>
-            </div>
-          </form>
+              </div>
+              <div>
+                <center>
+                  <Button
+                    variant="contained"
+                    className="register"
+                    type="submit"
+                    name="submit"
+                    value="Register"
+                    className={classes.button}
+                    classes={{ root: classes.root }}
+                  >
+                    Register
+                  </Button>
+                </center>
+              </div>
+            </form>
+          </center>
         </div>
         <center>
           <button
@@ -204,7 +245,7 @@ class RegisterPage extends Component {
             className="link-button"
           >
             Login
-            </button>
+          </button>
         </center>
       </div>
     );

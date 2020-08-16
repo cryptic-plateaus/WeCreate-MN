@@ -20,7 +20,7 @@ const styles = (theme) => ({
     justify: "center",
   },
   textField: {
-    width: 200,
+    width: 300,
     margin: "10px",
   },
 });
@@ -71,44 +71,46 @@ class LoginPage extends Component {
           </h2>
         )}
         <div className="form">
-          <form onSubmit={this.login}>
-            <h1>Login</h1>
-            <div>
-              <TextField
-                required
-                label="Username"
-                className={classes.textField}
-                value={this.state.username}
-                onChange={this.handleInputChangeFor("username")}
-              />
-            </div>
-            <div>
-              <TextField
-                required
-                label="Password"
-                className={classes.textField}
-                type="password"
-                value={this.state.password}
-                onChange={this.handleInputChangeFor("password")}
-                margin="normal"
-              />
-            </div>
-            <div>
-              <center>
-                <Button
-                  variant="contained"
-                  className="log-in"
-                  type="submit"
-                  name="submit"
-                  value="Log In"
-                  className={classes.button}
-                  classes={{ root: classes.root }}
-                >
-                  Login
-                </Button>
-              </center>
-            </div>
-          </form>
+          <center>
+            <form onSubmit={this.login}>
+              <h1>Login</h1>
+              <div>
+                <TextField
+                  required
+                  label="Username"
+                  className={classes.textField}
+                  value={this.state.username}
+                  onChange={this.handleInputChangeFor("username")}
+                />
+              </div>
+              <div>
+                <TextField
+                  required
+                  label="Password"
+                  className={classes.textField}
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleInputChangeFor("password")}
+                  margin="normal"
+                />
+              </div>
+              <div>
+                <center>
+                  <Button
+                    variant="contained"
+                    className="log-in"
+                    type="submit"
+                    name="submit"
+                    value="Log In"
+                    className={classes.button}
+                    classes={{ root: classes.root }}
+                  >
+                    Login
+                  </Button>
+                </center>
+              </div>
+            </form>
+          </center>
         </div>
         <center>
           <button
