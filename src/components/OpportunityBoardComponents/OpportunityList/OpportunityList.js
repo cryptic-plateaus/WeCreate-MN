@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import OpportunityPost from "../OpportunityPost/OpportunityPost";
+import Fade from "react-reveal/Fade";
 
 class OpportunityList extends Component {
   componentDidMount = () => {
@@ -17,13 +18,16 @@ class OpportunityList extends Component {
         {this.props.allOpportunities.map((item) => {
           return (
             <div>
-              <OpportunityPost
-                title={item.opp_title}
-                type={item.opp_type}
-                experience={item.experience_level}
-                date={item.closing_date}
-                key={item.id}
-                id={item.id}/>
+              <Fade bottom>
+                <OpportunityPost
+                  title={item.opp_title}
+                  type={item.opp_type}
+                  experience={item.experience_level}
+                  date={item.closing_date}
+                  key={item.id}
+                  id={item.id}
+                />
+              </Fade>
             </div>
           );
         })}

@@ -20,11 +20,12 @@ function SignUpButton(props) {
   const { classes } = props;
   return (
     <div>
-      <Button 
-      variant="contained" 
-      href="#register"
-      classes={{ root: classes.root }}
-      className={classes.button}>
+      <Button
+        variant="contained"
+        href="#register"
+        classes={{ root: classes.root }}
+        className={classes.button}
+      >
         Sign Up
       </Button>
     </div>

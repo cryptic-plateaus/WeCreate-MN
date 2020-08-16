@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-
+import Fade from "react-reveal/Fade";
 
 const styles = (theme) => ({
   root: {
@@ -70,57 +70,59 @@ class LoginPage extends Component {
             {this.props.errors.loginMessage}
           </h2>
         )}
-        <div className="form">
+        <Fade bottom>
+          <div className="form">
+            <center>
+              <form onSubmit={this.login}>
+                <h1>Login</h1>
+                <div>
+                  <TextField
+                    required
+                    label="Username"
+                    className={classes.textField}
+                    value={this.state.username}
+                    onChange={this.handleInputChangeFor("username")}
+                  />
+                </div>
+                <div>
+                  <TextField
+                    required
+                    label="Password"
+                    className={classes.textField}
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.handleInputChangeFor("password")}
+                    margin="normal"
+                  />
+                </div>
+                <div>
+                  <center>
+                    <Button
+                      variant="contained"
+                      className="log-in"
+                      type="submit"
+                      name="submit"
+                      value="Log In"
+                      className={classes.button}
+                      classes={{ root: classes.root }}
+                    >
+                      Login
+                    </Button>
+                  </center>
+                </div>
+              </form>
+            </center>
+          </div>
           <center>
-            <form onSubmit={this.login}>
-              <h1>Login</h1>
-              <div>
-                <TextField
-                  required
-                  label="Username"
-                  className={classes.textField}
-                  value={this.state.username}
-                  onChange={this.handleInputChangeFor("username")}
-                />
-              </div>
-              <div>
-                <TextField
-                  required
-                  label="Password"
-                  className={classes.textField}
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.handleInputChangeFor("password")}
-                  margin="normal"
-                />
-              </div>
-              <div>
-                <center>
-                  <Button
-                    variant="contained"
-                    className="log-in"
-                    type="submit"
-                    name="submit"
-                    value="Log In"
-                    className={classes.button}
-                    classes={{ root: classes.root }}
-                  >
-                    Login
-                  </Button>
-                </center>
-              </div>
-            </form>
+            <button
+              type="button"
+              onClick={this.handleClick}
+              className="link-button"
+            >
+              Register
+            </button>
           </center>
-        </div>
-        <center>
-          <button
-            type="button"
-            onClick={this.handleClick}
-            className="link-button"
-          >
-            Register
-          </button>
-        </center>
+        </Fade>
       </div>
     );
   }

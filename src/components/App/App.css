@@ -86,7 +86,7 @@ padding-bottom: 20px;
         right: 0;        
         text-align: center;
         top: 25%; /* Adjust this value to move the positioned div up and down */
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.4);
         border-radius: 20px;
         font-family: Arial,sans-serif;
         color: #fff;

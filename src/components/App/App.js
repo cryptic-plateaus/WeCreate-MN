@@ -1,25 +1,9 @@
 import React, {Component} from 'react';
-import {
-  HashRouter as 
-  Router,
-  Route,
-  // Redirect,
-  Switch,
-} from 'react-router-dom';
-
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import {connect} from 'react-redux';
-
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
-
-// import AboutPage from '../AboutPage/AboutPage';
-
-import UserDashboardPage from '../../pages/UserDashboardPage/UserDashboardPage';
-import ProfilePage from '../../pages/ProfilePage/ProfilePage';
-import SubmitNewOppPage from "../../pages/SubmitNewOppPage/SubmitNewOppPage";
-import UserOppDetailsPage from "../../pages/UserOppDetailsPage/UserOppDetailsPage";
 
 import './App.css';
 
@@ -28,6 +12,12 @@ import EmployerRegisterPage from "../../pages/EmployerRegisterPage/EmployerRegis
 import LoginPage from "../../pages/LoginPage/LoginPage";
 import OpportunityBoardPage from "../../pages/OpportunityBoardPage/OpportunityBoardPage"
 import OpportunityDetailsPage from "../../pages/OpportunityDetailsPage/OpportunityDetailsPage";
+
+//Private pages
+import UserDashboardPage from '../../pages/UserDashboardPage/UserDashboardPage';
+import ProfilePage from '../../pages/ProfilePage/ProfilePage';
+import SubmitNewOppPage from "../../pages/SubmitNewOppPage/SubmitNewOppPage";
+// import UserOppDetailsPage from "../../pages/UserOppDetailsPage/UserOppDetailsPage";
 
 class App extends Component {
   componentDidMount () {
@@ -62,7 +52,7 @@ class App extends Component {
             {/* <Route render={() => <h1>404</h1>} /> */}
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
-            <ProtectedRoute path="/user_opp" component={UserOppDetailsPage} />
+            {/* <ProtectedRoute path="/user_opp" component={UserOppDetailsPage} /> */}
             {/* If none of the other routes matched, we will show a 404. */}
             {/* <Route render={() => <h1>404</h1>} /> */}
             {/* This works the same as the other protected route, except that if the user is logged in,

@@ -6,6 +6,7 @@ import EditEmployerUserInfo from "../../components/UserInfoComponents/EditEmploy
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import Fade from "react-reveal/Fade";
 
 const styles = (theme) => ({
   root: {
@@ -42,33 +43,37 @@ class UserInfoPage extends Component {
         <Header />
         <center>
           <div className="dashboard-content">
-            <div >
-              {(this.state.edit ?
-                <div>
-                  <EmployerUserInfo /> 
-                  <Button
-                    variant="contained"
-                    className="edit-profile"
-                    className={classes.button}
-                    classes={{ root: classes.root }}
-                    onClick={this.toggleEdit}
-                  >
-                    Edit Profile
-                </Button>
-                </div> :
-                <div>
-                  <EditEmployerUserInfo />
-                  <Button
-                    variant="contained"
-                    className="back-to-profile"
-                    className={classes.button}
-                    classes={{ root: classes.root }}
-                    onClick={this.toggleEdit}
-                  >
-                    Back to Profile
-                </Button>
-                </div>)}
-            </div>
+            <Fade bottom>
+              <div>
+                {this.state.edit ? (
+                  <div>
+                    <EmployerUserInfo />
+                    <Button
+                      variant="contained"
+                      className="edit-profile"
+                      className={classes.button}
+                      classes={{ root: classes.root }}
+                      onClick={this.toggleEdit}
+                    >
+                      Edit Profile
+                    </Button>
+                  </div>
+                ) : (
+                  <div>
+                    <EditEmployerUserInfo />
+                    <Button
+                      variant="contained"
+                      className="back-to-profile"
+                      className={classes.button}
+                      classes={{ root: classes.root }}
+                      onClick={this.toggleEdit}
+                    >
+                      Back to Profile
+                    </Button>
+                  </div>
+                )}
+              </div>
+            </Fade>
           </div>
         </center>
       </div>

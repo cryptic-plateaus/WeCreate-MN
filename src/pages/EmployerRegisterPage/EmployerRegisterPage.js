@@ -6,6 +6,7 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
+import Fade from "react-reveal/Fade";
 
 const styles = (theme) => ({
   root: {
@@ -112,141 +113,143 @@ class RegisterPage extends Component {
             {this.props.errors.registrationMessage}
           </h2>
         )}
-        <div className="form">
-          <center>
-            <form onSubmit={this.registerUser}>
-              <h1>Register As An Employer</h1>
-              <div>
-                <TextField
-                  required
-                  label="Username"
-                  className={classes.textField}
-                  name="organization-username"
-                  value={this.state.username}
-                  onChange={this.handleInputChangeFor("username")}
-                  margin="normal"
-                />
-              </div>
-              <div>
-                <TextField
-                  required
-                  label="Password"
-                  className={classes.textField}
-                  type="password"
-                  name="password"
-                  value={this.state.password}
-                  onChange={this.handleInputChangeFor("password")}
-                  margin="normal"
-                />
-              </div>
-              <div>
-                <TextField
-                  required
-                  label="Organization Name"
-                  className={classes.textField}
-                  name="organization-name"
-                  value={this.state.orgName}
-                  onChange={this.handleInputChangeFor("orgName")}
-                  margin="normal"
-                />
-              </div>
-              <div>
-                <TextField
-                  required
-                  label="Organization Website"
-                  className={classes.textField}
-                  name="organization-website"
-                  value={this.state.orgWebsite}
-                  onChange={this.handleInputChangeFor("orgWebsite")}
-                  margin="normal"
-                />
-              </div>
-              <div>
-                <TextField
-                  required
-                  label="Name of Primary Contact"
-                  className={classes.textField}
-                  name="organization-contact-name"
-                  value={this.state.nameOfContact}
-                  onChange={this.handleInputChangeFor("nameOfContact")}
-                  margin="normal"
-                />
-              </div>
-              <div>
-                <TextField
-                  required
-                  label="Email of Primary Contact"
-                  className={classes.textField}
-                  name="organization-contact-email"
-                  value={this.state.emailOfContact}
-                  onChange={this.handleInputChangeFor("emailOfContact")}
-                  margin="normal"
-                />
-              </div>
-              <div>
-                <TextField
-                  select
-                  label="Organization Industry"
-                  className={classes.textField}
-                  name="organization-industry"
-                  value={this.state.industry}
-                  onChange={this.handleInputChangeFor("industry")}
-                  SelectProps={{
-                    MenuProps: {
-                      className: classes.menu,
-                    },
-                  }}
-                  margin="normal"
-                >
-                  {industries.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-              </div>
-              <div>
-                <TextField
-                  required
-                  label="Organization Size"
-                  name="Organization Size"
-                  value={this.state.orgSize}
-                  onChange={this.handleInputChangeFor("orgSize")}
-                  type="number"
-                  className={classes.textField}
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  margin="normal"
-                />
-              </div>
-              <div>
-                <center>
-                  <Button
-                    variant="contained"
-                    className="register"
-                    type="submit"
-                    name="submit"
-                    value="Register"
-                    className={classes.button}
-                    classes={{ root: classes.root }}
+        <Fade bottom>
+          <div className="form">
+            <center>
+              <form onSubmit={this.registerUser}>
+                <h1>Register As An Employer</h1>
+                <div>
+                  <TextField
+                    required
+                    label="Username"
+                    className={classes.textField}
+                    name="organization-username"
+                    value={this.state.username}
+                    onChange={this.handleInputChangeFor("username")}
+                    margin="normal"
+                  />
+                </div>
+                <div>
+                  <TextField
+                    required
+                    label="Password"
+                    className={classes.textField}
+                    type="password"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.handleInputChangeFor("password")}
+                    margin="normal"
+                  />
+                </div>
+                <div>
+                  <TextField
+                    required
+                    label="Organization Name"
+                    className={classes.textField}
+                    name="organization-name"
+                    value={this.state.orgName}
+                    onChange={this.handleInputChangeFor("orgName")}
+                    margin="normal"
+                  />
+                </div>
+                <div>
+                  <TextField
+                    required
+                    label="Organization Website"
+                    className={classes.textField}
+                    name="organization-website"
+                    value={this.state.orgWebsite}
+                    onChange={this.handleInputChangeFor("orgWebsite")}
+                    margin="normal"
+                  />
+                </div>
+                <div>
+                  <TextField
+                    required
+                    label="Name of Primary Contact"
+                    className={classes.textField}
+                    name="organization-contact-name"
+                    value={this.state.nameOfContact}
+                    onChange={this.handleInputChangeFor("nameOfContact")}
+                    margin="normal"
+                  />
+                </div>
+                <div>
+                  <TextField
+                    required
+                    label="Email of Primary Contact"
+                    className={classes.textField}
+                    name="organization-contact-email"
+                    value={this.state.emailOfContact}
+                    onChange={this.handleInputChangeFor("emailOfContact")}
+                    margin="normal"
+                  />
+                </div>
+                <div>
+                  <TextField
+                    select
+                    label="Organization Industry"
+                    className={classes.textField}
+                    name="organization-industry"
+                    value={this.state.industry}
+                    onChange={this.handleInputChangeFor("industry")}
+                    SelectProps={{
+                      MenuProps: {
+                        className: classes.menu,
+                      },
+                    }}
+                    margin="normal"
                   >
-                    Register
-                  </Button>
-                </center>
-              </div>
-            </form>
+                    {industries.map((option) => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                </div>
+                <div>
+                  <TextField
+                    required
+                    label="Organization Size"
+                    name="Organization Size"
+                    value={this.state.orgSize}
+                    onChange={this.handleInputChangeFor("orgSize")}
+                    type="number"
+                    className={classes.textField}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    margin="normal"
+                  />
+                </div>
+                <div>
+                  <center>
+                    <Button
+                      variant="contained"
+                      className="register"
+                      type="submit"
+                      name="submit"
+                      value="Register"
+                      className={classes.button}
+                      classes={{ root: classes.root }}
+                    >
+                      Register
+                    </Button>
+                  </center>
+                </div>
+              </form>
+            </center>
+          </div>
+          <center>
+            <button
+              type="button"
+              onClick={this.handleClick}
+              className="link-button"
+            >
+              Login
+            </button>
           </center>
-        </div>
-        <center>
-          <button
-            type="button"
-            onClick={this.handleClick}
-            className="link-button"
-          >
-            Login
-          </button>
-        </center>
+        </Fade>
       </div>
     );
   }
