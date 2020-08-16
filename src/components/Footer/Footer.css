@@ -12,7 +12,9 @@
 .footer {
   margin-top: 40px;
   overflow: hidden;
-  background-color: #5438d3;
+  background: rgb(102,51,255);
+  background: linear-gradient(45deg, rgba(102,51,255,1) 30%, rgba(102,0,204,1) 100%);
+  /* background-color: (45deg, #6633ff 30%, #6600cc 90%); */
   width: 100%;
   height: 10rem; 
   

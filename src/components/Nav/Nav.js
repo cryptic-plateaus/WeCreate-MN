@@ -10,14 +10,19 @@ import Button from '@material-ui/core/Button';
 // import Modal from "./Modal";
 
 const styles = {
-
+  root: {
+    background: 'linear-gradient(45deg, #6633ff 30%, #6600cc 90%)',
+    color: 'white',
+  },
 };
 
 function Nav (props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" classes={{
+        root: classes.root, // class name, e.g. `classes-nesting-root-x`
+      }}>
         <Toolbar>
           <Typography className={classes.title} variant="h5" color="inherit" noWrap>
               WeCreate MN
@@ -33,9 +38,9 @@ function Nav (props) {
                 </Button>
                 <Button
                   size="large"
-                  href="#info"
+                  href="#Profile"
                   className={classes.button}>
-                  User Info
+                  Profile
                 </Button>
               </>
             )}

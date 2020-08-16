@@ -1,7 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from "../../components/DecorativeHeaders/HeaderThree/HeaderThree";
-// import RegisterButton from "../../components/AllButtons/RegisterButton/RegisterButton";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+
+const styles = (theme) => ({
+  root: {
+    background: 'linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    // boxShadow: '0 3px 5px 2px rgba(251, 158, 65, .3)',
+    fontWeight: 'bold',
+    margin: "10px",
+    justify: 'center'
+  },
+});
 
 class RegisterPage extends Component {
   state = {
@@ -57,6 +74,7 @@ class RegisterPage extends Component {
   };
 
   render() {
+    const {classes} = this.props;
     return (
       <div>
         <Header />
@@ -138,12 +156,17 @@ class RegisterPage extends Component {
             <div>
               <label htmlFor="organization-industry">
                 Organization Industry:
-                <input
+                <select
                   type="text"
                   name="organization-industry"
                   value={this.state.industry}
-                  onChange={this.handleInputChangeFor("industry")}
-                />
+                  onChange={this.handleInputChangeFor("industry")}>
+                  <option value="Visual Arts">Visual Arts</option>
+                  <option value="Design">Design</option>
+                  <option value="Music">Music</option>
+                  <option value="Theatre">Theatre</option>
+                  <option value="Dance">Dance</option>
+                </select>
               </label>
             </div>
             <div>
@@ -157,30 +180,40 @@ class RegisterPage extends Component {
                 />
               </label>
             </div>
-            {/* <RegisterButton/> */}
             <div>
-              <input
-                className="register"
-                type="submit"
-                name="submit"
-                value="Register"
-              />
+              <center>
+                <Button
+                  variant="contained"
+                  className="register"
+                  type="submit"
+                  name="submit"
+                  value="Register"
+                  className={classes.button}
+                  classes={{ root: classes.root }}
+                >
+                  Register
+                </Button>
+              </center>
             </div>
           </form>
-          {/* <center>
-            <button
-              type="button"
-              onClick={this.handleClick}
-              className="link-button"
-            >
-              Login
-            </button>
-          </center> */}
         </div>
+        <center>
+          <button
+            type="button"
+            onClick={this.handleClick}
+            className="link-button"
+          >
+            Login
+            </button>
+        </center>
       </div>
     );
   }
 }
+
+RegisterPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 // Instead of taking everything from state, we just want the error messages.
 // if you wanted you could write this code like this:
@@ -189,7 +222,7 @@ const mapStateToProps = state => ({
   errors: state.errors,
 });
 
-export default connect(mapStateToProps)(RegisterPage);
+export default withStyles(styles)(connect(mapStateToProps)(RegisterPage));
 
 
 

@@ -17,15 +17,27 @@ const styles = {
     background: "#f9f9f9",
     textAlign: "left",
   },
+  root: {
+    background: 'linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    fontWeight: 'bold',
+    marginBottom: '20px',
+    marginLeft: "28%",
+    marginRight: "20%"
+  },
   media: {
     height: 340,
-  }
+  },
 };
 
 function EmployerServicesInfoCard(props) {
   const { classes } = props;
   return (
-    <Card className={classes.card} id="info-card">
+    <Card style={styles.card} id="info-card">
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -57,8 +69,9 @@ function EmployerServicesInfoCard(props) {
             className="for-employer-button"
             size="small"
             href="#register"
+            classes={{root:classes.root}}
           >
-            Create an Employer Account
+            Create Employer Account
           </Button>      
       </CardActions>
     </Card>

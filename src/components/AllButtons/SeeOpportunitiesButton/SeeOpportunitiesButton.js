@@ -4,11 +4,15 @@ import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
 const styles = (theme) => ({
-  button: {
-    // margin: theme.spacing.unit,
-  },
-  input: {
-    display: "none",
+  root: {
+    background: 'linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    fontWeight: 'bold',
+    margin: '10px'
   },
 });
 
@@ -20,6 +24,7 @@ function SeeOpportunitiesButton(props) {
       variant="contained" 
       color="primary" 
       href="#opportunities"
+      classes={{ root: classes.root, }}
       className={classes.button}>
         See All Opportunities
       </Button>

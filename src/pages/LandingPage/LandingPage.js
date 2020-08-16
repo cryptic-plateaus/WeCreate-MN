@@ -1,23 +1,9 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-import { withStyles } from '@material-ui/core/styles';
-// import Button from '@material-ui/core/Button';
-
 import ServicesInfoCarousel from "../../components/LandingPageComponents/ServicesInfoCarousel/ServicesInfoCarousel";
 import SeeOpportunitiesButton from "../../components/AllButtons/SeeOpportunitiesButton/SeeOpportunitiesButton";
-import SignUpButton from "../../components/AllButtons/GoToRegisterButton/GoToRegisterButton";
-
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  input: {
-    display: 'none',
-  },
-});
+import SignUpButton from "../../components/AllButtons/SignUpButton/SignUpButton";
 
 function ContainedButtons(props) {
-  // const { classes } = props;
   return (
     <>
       <center>
@@ -45,4 +31,4 @@ function ContainedButtons(props) {
   );
     }
   
-export default withStyles(styles)(ContainedButtons);
+export default ContainedButtons;

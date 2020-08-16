@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from "../../components/DecorativeHeaders/HeaderOne/HeaderOne";
-import LoginButton from "../../components/AllButtons/LoginButton/LoginButton";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
 
-
-
 const styles = (theme) => ({
-  button: {
-    // margin: theme.spacing.unit,
-  },
-  input: {
-    display: "none",
+  root: {
+    background: 'linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    // boxShadow: '0 3px 5px 2px rgba(251, 158, 65, .3)',
+    fontWeight: 'bold',
+    margin: "10px",
+    justify: 'center'
   },
 });
 
@@ -87,18 +90,21 @@ class LoginPage extends Component {
                 />
               </label>
             </div>
-            <Button
-              variant="contained"
-              color="primary"
-              className="log-in"
-              type="submit"
-              name="submit"
-              value="Log In"
-              className={classes.button}
-            >
-              Login
-            </Button>
-
+            <div>
+              <center>
+                <Button
+                  variant="contained"
+                  className="log-in"
+                  type="submit"
+                  name="submit"
+                  value="Log In"
+                  className={classes.button}
+                  classes={{ root: classes.root }}
+                >
+                  Login
+                </Button>
+              </center>
+            </div>
           </form>
         </div>
         <center>
