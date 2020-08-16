@@ -3,14 +3,43 @@ import { connect } from 'react-redux';
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const styles = (theme) => ({
-    root: {
-        color: 'white',
-        fontWeight: 'bold',
-        margin: "10px",
-    },
+  root: {
+    color: "white",
+    fontWeight: "bold",
+    margin: "10px",
+  },
+  textField: {
+    width: 400,
+    margin: "10px",
+  },
 });
+
+const industries = [
+  {
+    value: "Dance",
+    label: "Dance",
+  },
+  {
+    value: "Design",
+    label: "Design",
+  },
+  {
+    value: "Visual Arts",
+    label: "Visual Arts",
+  },
+  {
+    value: "Music",
+    label: "Music",
+  },
+  {
+    value: "Theatre",
+    label: "Theatre",
+  },
+];
 
 class EmployerUserInfo extends Component {
     
@@ -61,101 +90,137 @@ class EmployerUserInfo extends Component {
         const { classes } = this.props;
 
         return (
+          <div>
+            <div className="form">
+              <h1>Edit Organization Profile</h1>
+              <form onSubmit={this.updateEmployerUser}>
                 <div>
-                    <h1>Edit Organization Profile</h1> 
-                    <div className="form">
-                        <form onSubmit={this.updateEmployerUser}>
-                            <div>
-                                <label htmlFor="organization-name">
-                                Organization Name:
-                                    <input 
-                                        placeholder={this.props.reduxState.orgInfo
-                                        && this.props.reduxState.orgInfo.org_name} 
-                                        type="text" name="organization-name" 
-                                        value={this.state.orgName} 
-                                        onChange={this.handleInputChangeFor("orgName")}
-                                    />
-                                </label>
-                            </div>
-                            <div>
-                                <label htmlFor="organization-website">
-                                Website:
-                                    <input 
-                                        placeholder={this.props.reduxState.orgInfo
-                                        && this.props.reduxState.orgInfo.org_website}
-                                        type="text" name="organization-website" 
-                                        value={this.state.orgWebsite} 
-                                        onChange={this.handleInputChangeFor("orgWebsite")}
-                                    />
-                                </label>
-                            </div>
-                            <div>
-                                <label htmlFor="organization-contact-name">
-                                Primary Contact:
-                                <input 
-                                    placeholder={this.props.reduxState.orgInfo
-                                    && this.props.reduxState.orgInfo.org_contact_name}
-                                    type="text" name="organization-contact-name" 
-                                    value={this.state.nameOfContact} 
-                                    onChange={this.handleInputChangeFor("nameOfContact")}
-                                />
-                                </label>
-                            </div>
-                            <div>
-                                <label htmlFor="organization-contact-email">
-                                Contact Email:
-                                <input 
-                                    placeholder={this.props.reduxState.orgInfo
-                                    && this.props.reduxState.orgInfo.org_contact_email}
-                                    type="text" name="organization-contact-email" 
-                                    value={this.state.emailOfContact} 
-                                    onChange={this.handleInputChangeFor("emailOfContact")} 
-                                />
-                                </label>
-                            </div>
-                            <div>
-                                <label htmlFor="organization-industry">
-                                Industry:
-                                <input 
-                                    placeholder={this.props.reduxState.orgInfo
-                                    && this.props.reduxState.orgInfo.org_industry}
-                                    type="text" name="organization-industry" 
-                                    value={this.state.industry} 
-                                    onChange={this.handleInputChangeFor("industry")} 
-                                />
-                                </label>
-                            </div>
-                            <div>
-                                <label htmlFor="organization-size">
-                                Company Size:
-                                <input 
-                                    placeholder={this.props.reduxState.orgInfo
-                                    && this.props.reduxState.orgInfo.org_size}
-                                    type="number" name="organization-size" 
-                                    value={this.state.orgSize} 
-                                    onChange={this.handleInputChangeFor("orgSize")} 
-                                />
-                                </label>
-                            </div>
-                        <div>
-                            <center>
-                                <Button
-                                    variant="contained"
-                                    className="log-in"
-                                    type="submit"
-                                    name="submit"
-                                    value="Submit"
-                                    className={classes.button}
-                                    color="secondary"
-                                    classes={{ root: classes.root }}
-                                >
-                                    Save
-                                </Button>
-                            </center>
-                        </div>
-                        </form>
-                    </div>
+                  <TextField
+                    required
+                    // defaultValue={
+                    //   this.props.reduxState.orgInfo &&
+                    //   this.props.reduxState.orgInfo.org_name
+                    // }
+                    label="Organization Name"
+                    type="text"
+                    value={this.state.orgName}
+                    onChange={this.handleInputChangeFor("orgName")}
+                    className={classes.textField}
+                    // InputLabelProps={{
+                    //   shrink: true,
+                    // }}
+                  />
+                </div>
+                <div>
+                  <TextField
+                    required
+                    // defaultValue={
+                    //   this.props.reduxState.orgInfo &&
+                    //   this.props.reduxState.orgInfo.org_website
+                    // }
+                    label="Organization Website"
+                    type="text"
+                    name="organization-website"
+                    value={this.state.orgWebsite}
+                    onChange={this.handleInputChangeFor("orgWebsite")}
+                    className={classes.textField}
+                    // InputLabelProps={{
+                    //   shrink: true,
+                    // }}
+                  />
+                </div>
+                <div>
+                  <TextField
+                    required
+                    // defaultValue={
+                    //     this.props.reduxState.orgInfo &&
+                    //     this.props.reduxState.orgInfo.org_contact_name
+                    //   }
+                    label="Name of Primary Contact"
+                    type="text"
+                    name="organization-contact-name"
+                    value={this.state.nameOfContact}
+                    onChange={this.handleInputChangeFor("nameOfContact")}
+                    className={classes.textField}
+                    // InputLabelProps={{
+                    //   shrink: true,
+                    // }}
+                  />
+                </div>
+                <div>
+                  <TextField
+                    required
+                    // defaultValue={{
+                    //     this.props.reduxState.orgInfo &&
+                    //     this.props.reduxState.orgInfo.org_contact_email
+                    //   }
+                    label="Email of Primary Contact"
+                    type="text"
+                    name="organization-contact-email"
+                    value={this.state.emailOfContact}
+                    onChange={this.handleInputChangeFor("emailOfContact")}
+                    className={classes.textField}
+                    // InputLabelProps={{
+                    //   shrink: true,
+                    // }}
+                  />
+                </div>
+                <div>
+                  <TextField
+                    select
+                    label="Organization Industry"
+                    className={classes.textField}
+                    name="organization-industry"
+                    value={this.state.industry}
+                    onChange={this.handleInputChangeFor("industry")}
+                    SelectProps={{
+                      MenuProps: {
+                        className: classes.menu,
+                      },
+                    }}
+                    margin="normal"
+                  >
+                    {industries.map((option) => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                </div>
+                <div>
+                  <TextField
+                    required
+                    label="Organization Size"
+                    name="Organization Size"
+                    value={this.state.orgSize}
+                    onChange={this.handleInputChangeFor("orgSize")}
+                    type="number"
+                    className={classes.textField}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    margin="normal"
+                  />
+                </div>
+                <div>
+                  <center>
+                    <Button
+                      variant="contained"
+                      className="log-in"
+                      type="submit"
+                      name="submit"
+                      value="Submit"
+                      className={classes.button}
+                      color="secondary"
+                      classes={{ root: classes.root }}
+                    >
+                      Save
+                    </Button>
+                  </center>
+                </div>
+              </form>
             </div>
+          </div>
         );
     }
 }

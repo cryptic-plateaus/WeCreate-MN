@@ -188,180 +188,182 @@ class SubmitNewOppPage extends Component {
       <div>
         <Header />
         <div className="form">
-          <form>
-            <h2>Submit An Opportunity</h2>
-            <div>
-              <TextField
-                required
-                label="Opportunity Title"
-                type="text"
-                name="opportunity-title"
-                value={this.state.oppTitle}
-                onChange={this.handleInputChangeFor("oppTitle")}
-                className={classes.textField}
-                margin="normal"
-              />
-            </div>
-            <div>
-              <TextField
-                required
-                label="Closing Date"
-                type="date"
-                name="closing-date"
-                value={this.state.closingDate}
-                onChange={this.handleInputChangeFor("closingDate")}
-                className={classes.textField}
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-              />
-            </div>
-            <div>
-              <TextField
-                select
-                label="Opportunity Type"
-                className={classes.textField}
-                name="opportunity-type"
-                value={this.state.oppType}
-                onChange={this.handleInputChangeFor("oppType")}
-                SelectProps={{
-                  MenuProps: {
-                    className: classes.menu,
-                  },
-                }}
-                margin="normal"
-              >
-                {oppType.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </div>
-            <div>
-              <TextField
-                select
-                label="Industry"
-                className={classes.textField}
-                name="organization-industry"
-                value={this.state.industry}
-                onChange={this.handleInputChangeFor("industry")}
-                SelectProps={{
-                  MenuProps: {
-                    className: classes.menu,
-                  },
-                }}
-                margin="normal"
-              >
-                {industries.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </div>
-            <div>
-              <TextField
-                select
-                label="Experience Level"
-                className={classes.textField}
-                type="text"
-                name="experience-level"
-                value={this.state.expLevel}
-                onChange={this.handleInputChangeFor("expLevel")}
-                SelectProps={{
-                  MenuProps: {
-                    className: classes.menu,
-                  },
-                }}
-                margin="normal"
-              >
-                {experienceLevels.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </div>
-            <div>
-              <TextField
-                required
-                label="Compensation"
-                type="number"
-                name="Compensation"
-                value={this.state.compensation}
-                onChange={this.handleInputChangeFor("compensation")}
-                className={classes.textField}
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                margin="normal"
-              />
-            </div>
-            <div>
-              <TextField
-                select
-                label="Per"
-                className={classes.textField}
-                name="per"
-                value={this.state.per}
-                onChange={this.handleInputChangeFor("per")}
-                SelectProps={{
-                  MenuProps: {
-                    className: classes.menu,
-                  },
-                }}
-                margin="normal"
-              >
-                {compPer.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </div>
-            <div>
-              <TextField
-                label="Opportunity Details:"
-                // defaultValue="Hello World"
-                multiline
-                rows="5"
-                name="opportunity-details"
-                value={this.state.oppDetails}
-                onChange={this.handleInputChangeFor("oppDetails")}
-                placeholder="Please provide details on the responsibilites of the job"
-                className={classes.textField}
-                margin="normal"
-              />
-            </div>
-            <div>
-              <TextField
-                required
-                label="Application Link"
-                name="link"
-                value={this.state.link}
-                onChange={this.handleInputChangeFor("link")}
-                className={classes.textField}
-                margin="normal"
-              />
-            </div>
-            <div>
-              <center>
-                <Button
-                  variant="contained"
-                  className="log-in"
-                  type="submit"
-                  name="submit"
-                  onClick={this.submitOpportunity}
-                  className={classes.button}
-                  classes={{ root: classes.root }}
+          <center>
+            <form>
+              <h1>Submit A New Opportunity</h1>
+              <div>
+                <TextField
+                  required
+                  label="Opportunity Title"
+                  type="text"
+                  name="opportunity-title"
+                  value={this.state.oppTitle}
+                  onChange={this.handleInputChangeFor("oppTitle")}
+                  className={classes.textField}
+                  margin="normal"
+                />
+              </div>
+              <div>
+                <TextField
+                  required
+                  label="Closing Date"
+                  type="date"
+                  name="closing-date"
+                  value={this.state.closingDate}
+                  onChange={this.handleInputChangeFor("closingDate")}
+                  className={classes.textField}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  margin="normal"
+                />
+              </div>
+              <div>
+                <TextField
+                  select
+                  label="Opportunity Type"
+                  className={classes.textField}
+                  name="opportunity-type"
+                  value={this.state.oppType}
+                  onChange={this.handleInputChangeFor("oppType")}
+                  SelectProps={{
+                    MenuProps: {
+                      className: classes.menu,
+                    },
+                  }}
+                  margin="normal"
                 >
-                  Submit
-                </Button>
-              </center>
-            </div>
-          </form>
+                  {oppType.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+              <div>
+                <TextField
+                  select
+                  label="Industry"
+                  className={classes.textField}
+                  name="organization-industry"
+                  value={this.state.industry}
+                  onChange={this.handleInputChangeFor("industry")}
+                  SelectProps={{
+                    MenuProps: {
+                      className: classes.menu,
+                    },
+                  }}
+                  margin="normal"
+                >
+                  {industries.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+              <div>
+                <TextField
+                  select
+                  label="Experience Level"
+                  className={classes.textField}
+                  type="text"
+                  name="experience-level"
+                  value={this.state.expLevel}
+                  onChange={this.handleInputChangeFor("expLevel")}
+                  SelectProps={{
+                    MenuProps: {
+                      className: classes.menu,
+                    },
+                  }}
+                  margin="normal"
+                >
+                  {experienceLevels.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+              <div>
+                <TextField
+                  required
+                  label="Compensation"
+                  type="number"
+                  name="Compensation"
+                  value={this.state.compensation}
+                  onChange={this.handleInputChangeFor("compensation")}
+                  className={classes.textField}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  margin="normal"
+                />
+              </div>
+              <div>
+                <TextField
+                  select
+                  label="Per"
+                  className={classes.textField}
+                  name="per"
+                  value={this.state.per}
+                  onChange={this.handleInputChangeFor("per")}
+                  SelectProps={{
+                    MenuProps: {
+                      className: classes.menu,
+                    },
+                  }}
+                  margin="normal"
+                >
+                  {compPer.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+              <div>
+                <TextField
+                  label="Opportunity Details:"
+                  // defaultValue="Hello World"
+                  multiline
+                  rows="5"
+                  name="opportunity-details"
+                  value={this.state.oppDetails}
+                  onChange={this.handleInputChangeFor("oppDetails")}
+                  placeholder="Please provide details on the responsibilites of the job"
+                  className={classes.textField}
+                  margin="normal"
+                />
+              </div>
+              <div>
+                <TextField
+                  required
+                  label="Application Link"
+                  name="link"
+                  value={this.state.link}
+                  onChange={this.handleInputChangeFor("link")}
+                  className={classes.textField}
+                  margin="normal"
+                />
+              </div>
+              <div>
+                <center>
+                  <Button
+                    variant="contained"
+                    className="log-in"
+                    type="submit"
+                    name="submit"
+                    onClick={this.submitOpportunity}
+                    className={classes.button}
+                    classes={{ root: classes.root }}
+                  >
+                    Submit
+                  </Button>
+                </center>
+              </div>
+            </form>
+          </center>
         </div>
         <center>
           <button
