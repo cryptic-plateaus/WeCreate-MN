@@ -17,23 +17,23 @@ class EmployerUserInfo extends Component {
 
     render() {
         return (
-            <div>
-                    <div>
-                        <h1>Organization Profile</h1>                
-                        <p>Organization Name: {this.props.reduxState.orgInfo 
-                            && this.props.reduxState.orgInfo.org_name}</p>
-                        <p>Website: {this.props.reduxState.orgInfo
-                            && this.props.reduxState.orgInfo.org_website}</p>
-                        <p>Primary Contact: {this.props.reduxState.orgInfo
-                            && this.props.reduxState.orgInfo.org_contact_name}</p>
-                        <p>Contact Email: {this.props.reduxState.orgInfo
-                            && this.props.reduxState.orgInfo.org_contact_email}</p>
-                        <p>Industry: {this.props.reduxState.orgInfo
-                            && this.props.reduxState.orgInfo.org_industry}</p>
-                        <p>Company Size: {this.props.reduxState.orgInfo
-                            && this.props.reduxState.orgInfo.org_size} Employees</p>
+                <div className="org-profile">
+                    <h1>Organization Profile</h1>                
+                    <div className="org-profile-text">
+                        <p><b>Organization Name:</b> {this.props.reduxState.orgInfo 
+                                    && this.props.reduxState.orgInfo.org_name}</p>
+                        <p><b>Website:</b> {this.props.reduxState.orgInfo
+                                    && this.props.reduxState.orgInfo.org_website}</p>
+                        <p><b>Primary Contact:</b> {this.props.reduxState.orgInfo
+                                    && this.props.reduxState.orgInfo.org_contact_name}</p>
+                        <p><b>Contact Email:</b> {this.props.reduxState.orgInfo
+                                    && this.props.reduxState.orgInfo.org_contact_email}</p>
+                        <p><b>Industry:</b> {this.props.reduxState.orgInfo
+                                    && this.props.reduxState.orgInfo.org_industry}</p>
+                        <p><b>Company Size:</b> {this.props.reduxState.orgInfo
+                                    && this.props.reduxState.orgInfo.org_size} Employee(s)</p>
                     </div>
-            </div>
+                </div>
         );
     }
 }
