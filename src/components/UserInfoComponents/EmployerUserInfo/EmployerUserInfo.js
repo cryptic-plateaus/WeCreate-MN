@@ -30,7 +30,7 @@ class EmployerUserInfo extends Component {
                                     && this.props.reduxState.orgInfo.org_contact_email}</p>
                         <p><b>Industry:</b> {this.props.reduxState.orgInfo
                                     && this.props.reduxState.orgInfo.org_industry}</p>
-                        <p><b>Company Size:</b> {this.props.reduxState.orgInfo
+                        <p><b>Organization Size:</b> {this.props.reduxState.orgInfo
                                     && this.props.reduxState.orgInfo.org_size} Employee(s)</p>
                     </div>
                 </div>

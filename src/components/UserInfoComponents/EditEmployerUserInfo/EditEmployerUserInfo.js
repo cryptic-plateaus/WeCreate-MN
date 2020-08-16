@@ -44,12 +44,24 @@ const industries = [
 class EmployerUserInfo extends Component {
     
     state = {
-        orgName: "",
-        orgWebsite: "",
-        nameOfContact: "",
-        emailOfContact: "",
-        industry: "",
-        orgSize: "",
+      orgName: 
+        this.props.reduxState.orgInfo
+        && this.props.reduxState.orgInfo.org_name,      
+      orgWebsite:
+        this.props.reduxState.orgInfo
+        && this.props.reduxState.orgInfo.org_website,
+      nameOfContact: 
+        this.props.reduxState.orgInfo
+        && this.props.reduxState.orgInfo.org_contact_name,
+      emailOfContact: 
+        this.props.reduxState.orgInfo
+        && this.props.reduxState.orgInfo.org_contact_email,
+      industry: 
+        this.props.reduxState.orgInfo
+        && this.props.reduxState.orgInfo.org_industry,
+      orgSize: 
+        this.props.reduxState.orgInfo
+        && this.props.reduxState.orgInfo.org_size
     };
 
     updateEmployerUser = (event) => {
