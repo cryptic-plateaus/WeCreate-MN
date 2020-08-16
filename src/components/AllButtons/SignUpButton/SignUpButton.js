@@ -22,9 +22,8 @@ function SignUpButton(props) {
     <div>
       <Button 
       variant="contained" 
-      color="primary" 
       href="#register"
-      classes={{ root: classes.root, }}
+      classes={{ root: classes.root }}
       className={classes.button}>
         Sign Up
       </Button>
