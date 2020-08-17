@@ -14,7 +14,7 @@ const styles = {
     color: "white",
   },
   menuButton: {
-    marginLeft: "57%",
+    marginLeft: "59%",
   },
   font: {
     color: "white",
@@ -48,18 +48,10 @@ function Nav (props) {
         >
           <img
             href="/"
-            src="images/example_logo.png"
+            src="images/WeCreateMN_logo.png"
             alt="WeCreate Logo: Colorful Dots"
-            width="5%"
+            width="20%"
           ></img>
-          <Link
-            component={home}
-            underline="none"
-            variant="h4"
-            classes={{ root: classes.name }}
-          >
-            WeCreate MN
-          </Link>
           <div style={{ flex: 1 }}>
             {props.user.id && (
               <div className={classes.menuButton}>

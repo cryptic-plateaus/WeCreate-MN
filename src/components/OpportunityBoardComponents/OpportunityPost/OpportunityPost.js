@@ -43,7 +43,8 @@ class OpportunityPost extends Component {
   };
 
   handleClick = (event) => {
-    this.props.history.push(`/details/${this.state.id}`);
+    // this.props.history.push(`/details/${this.state.id}`);
+    console.log("Clicked Learn More");
   };
 
   render() {

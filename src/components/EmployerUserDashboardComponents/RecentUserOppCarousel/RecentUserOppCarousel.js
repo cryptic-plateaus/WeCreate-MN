@@ -33,9 +33,6 @@ class RecentUserOppCarousel extends Component {
   render() {
     return (
       <>
-        <h3>
-          <i>Your current opportunities:</i>
-        </h3>
         <Carousel
           className="carousel"
           navButtonsAlwaysVisible={true}

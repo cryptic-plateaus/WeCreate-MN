@@ -29,6 +29,7 @@ function* getAllUserOpportuntiesSaga(action) {
 function* submitOpportunitySaga(action) {
   try {
     yield axios.post("/api/opportunities/", action.payload);
+    yield put({ type: 'FETCH_ALL_USER_OPPORTUNITIES', payload: action.payload.orgID });
   } catch (error) {
     console.log("Error with Post:", error);
   }
@@ -37,8 +38,8 @@ function* submitOpportunitySaga(action) {
 //worker Saga for user to remove (DELETE) an opportunity of theirs
 function* deleteUserOpportunityPost(action) {
   try {
-    yield axios.delete(`/api/opportunities/user_opps/${action.payload}`);
-    yield put({ type: "FETCH_ALL_USER_OPPORTUNITIES" });
+    yield axios.delete(`/api/opportunities/user_opps/${action.payload.opp_id}`);
+    yield put({ type: 'FETCH_ALL_USER_OPPORTUNITIES', payload: action.payload.org_id });
   } catch (error) {
     console.log(error);
   }

@@ -9,8 +9,8 @@ import Button from "@material-ui/core/Button";
 const styles = {
   main: {
     display: "block",
-    width: "250px",
-    height: "200px",
+    width: "300px",
+    height: "230px",
     color: "black",
     background: "#f9f9f9",
     justify: "center",
@@ -40,9 +40,9 @@ class RecentUserOppPost extends Component {
   };
   
   handleClick = (event) => {
-    this.props.dispatch({ 
-      type: "DELETE_USER_OPP_POST", 
-      payload: this.state.id
+    this.props.dispatch({
+      type: "DELETE_USER_OPP_POST",
+      payload: { opp_id: this.state.id, org_id: this.props.reduxState.orgInfo.id }
     });
   };
 

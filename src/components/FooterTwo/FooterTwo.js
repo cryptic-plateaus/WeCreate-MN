@@ -21,9 +21,9 @@ const styles = {
     color: "white",
   },
   padding: {
-    paddingTop: "15px",
-    paddingBottom: "15px",
-  }
+    paddingTop: "30px",
+    paddingBottom: "30px",
+  },
 };
 
 function Footer (props) {
@@ -43,50 +43,38 @@ function Footer (props) {
             root: classes.padding,
           }}
         >
-          <div>
-            <div id="logo-parts">
-              <img
-                href="/"
-                src="images/example_logo.png"
-                alt="WeCreate Logo: Colorful Dots"
-                width="3%"
-              ></img>
-              <Link
-                component={home}
-                underline="none"
-                variant="h5"
-                classes={{ root: classes.name }}
-              >
-                WeCreate MN
-              </Link>
-            </div>
+          <center>
             <div>
-              <img
-                className="social-icon"
-                width="25"
-                alt="Instagram Logo"
-                src="images/insta_logo.png"
-              />
-              <img
-                className="social-icon"
-                width="25"
-                alt="Twitter Logoo"
-                src="images/twitter-logo.png"
-              />
-              <img
-                className="social-icon"
-                width="25"
-                alt="Facebook Logo"
-                src="images/facebook-logo.png"
-              />
+              <div id="logo-parts">
+                <img
+                  href="/"
+                  src="images/WeCreateMN_logo.png"
+                  alt="WeCreate Logo: Colorful Dots"
+                  width="13%"
+                ></img>
+              </div>
+              <div>
+                <img
+                  className="social-icon"
+                  width="25"
+                  alt="Instagram Logo"
+                  src="images/insta_logo.png"
+                />
+                <img
+                  className="social-icon"
+                  width="25"
+                  alt="Twitter Logoo"
+                  src="images/twitter-logo.png"
+                />
+                <img
+                  className="social-icon"
+                  width="25"
+                  alt="Facebook Logo"
+                  src="images/facebook-logo.png"
+                />
+              </div>
             </div>
-          </div>
-          <div className="footer-styling">
-            <p className="footer-message">
-              WeCreate MN is based in the Twin Cities, MN
-            </p>
-            <p className="footer-copyright">&copy; WeCreate MN</p>
-          </div>
+          </center>
         </Toolbar>
       </AppBar>
     </div>

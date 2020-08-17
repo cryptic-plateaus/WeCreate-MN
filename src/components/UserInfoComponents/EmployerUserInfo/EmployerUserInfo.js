@@ -17,23 +17,49 @@ class EmployerUserInfo extends Component {
 
     render() {
         return (
-                <div className="org-profile">
-                    <h1>Organization Profile</h1>                
-                    <div className="org-profile-text">
-                        <p><b>Organization Name:</b> {this.props.reduxState.orgInfo 
-                                    && this.props.reduxState.orgInfo.org_name}</p>
-                        <p><b>Website:</b> {this.props.reduxState.orgInfo
-                                    && this.props.reduxState.orgInfo.org_website}</p>
-                        <p><b>Primary Contact:</b> {this.props.reduxState.orgInfo
-                                    && this.props.reduxState.orgInfo.org_contact_name}</p>
-                        <p><b>Contact Email:</b> {this.props.reduxState.orgInfo
-                                    && this.props.reduxState.orgInfo.org_contact_email}</p>
-                        <p><b>Industry:</b> {this.props.reduxState.orgInfo
-                                    && this.props.reduxState.orgInfo.org_industry}</p>
-                        <p><b>Organization Size:</b> {this.props.reduxState.orgInfo
-                                    && this.props.reduxState.orgInfo.org_size} Employee(s)</p>
-                    </div>
-                </div>
+          <div className="org-profile">
+            <br/>
+            <img
+              href="/"
+              src="images/colorful_dots.png"
+              alt="WeCreate Logo: Colorful Dots"
+              width="30%"
+            ></img>
+            <h1>Organization Profile</h1>
+            <div className="org-profile-text">
+              <p>
+                <b>Organization Name:</b>{" "}
+                {this.props.reduxState.orgInfo &&
+                  this.props.reduxState.orgInfo.org_name}
+              </p>
+              <p>
+                <b>Website:</b>{" "}
+                {this.props.reduxState.orgInfo &&
+                  this.props.reduxState.orgInfo.org_website}
+              </p>
+              <p>
+                <b>Primary Contact:</b>{" "}
+                {this.props.reduxState.orgInfo &&
+                  this.props.reduxState.orgInfo.org_contact_name}
+              </p>
+              <p>
+                <b>Contact Email:</b>{" "}
+                {this.props.reduxState.orgInfo &&
+                  this.props.reduxState.orgInfo.org_contact_email}
+              </p>
+              <p>
+                <b>Industry:</b>{" "}
+                {this.props.reduxState.orgInfo &&
+                  this.props.reduxState.orgInfo.org_industry}
+              </p>
+              <p>
+                <b>Organization Size:</b>{" "}
+                {this.props.reduxState.orgInfo &&
+                  this.props.reduxState.orgInfo.org_size}{" "}
+                Employee(s)
+              </p>
+            </div>
+          </div>
         );
     }
 }

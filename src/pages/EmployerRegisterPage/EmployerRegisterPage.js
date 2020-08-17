@@ -103,7 +103,7 @@ class RegisterPage extends Component {
   };
 
   render() {
-    const {classes} = this.props;
+    const { classes } = this.props;
     return (
       <div>
         <Header />
@@ -188,6 +188,7 @@ class RegisterPage extends Component {
                 <div>
                   <TextField
                     select
+                    required
                     label="Organization Industry"
                     className={classes.textField}
                     name="organization-industry"
