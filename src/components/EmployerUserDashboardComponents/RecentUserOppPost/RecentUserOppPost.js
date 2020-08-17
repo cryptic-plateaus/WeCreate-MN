@@ -40,9 +40,9 @@ class RecentUserOppPost extends Component {
   };
   
   handleClick = (event) => {
-    this.props.dispatch({ 
-      type: "DELETE_USER_OPP_POST", 
-      payload: this.state.id
+    this.props.dispatch({
+      type: "DELETE_USER_OPP_POST",
+      payload: { opp_id: this.state.id, org_id: this.props.reduxState.orgInfo.id }
     });
   };
 
