@@ -29,6 +29,7 @@ function* getAllUserOpportuntiesSaga(action) {
 function* submitOpportunitySaga(action) {
   try {
     yield axios.post("/api/opportunities/", action.payload);
+    yield put({ type: 'FETCH_ALL_USER_OPPORTUNITIES', payload: action.payload.orgID });
   } catch (error) {
     console.log("Error with Post:", error);
   }

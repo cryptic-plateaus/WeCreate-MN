@@ -1,10 +1,11 @@
 import { takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
-// worker Saga for user to submit (POST) new opportunity
+// worker Saga for USER to submit (POST) new opportunity
 function* submitOpportunitySaga(action) {
   try {
     yield axios.post("/api/opportunities/", action.payload);
+    yield put({ type: 'FETCH_ALL_USER_OPPORTUNITIES', payload: action.payload.orgID });
   } catch (error) {
     console.log("Error with Post:", error);
   }
