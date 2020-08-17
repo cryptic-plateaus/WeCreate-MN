@@ -188,6 +188,7 @@ class RegisterPage extends Component {
                 <div>
                   <TextField
                     select
+                    required
                     label="Organization Industry"
                     className={classes.textField}
                     name="organization-industry"
