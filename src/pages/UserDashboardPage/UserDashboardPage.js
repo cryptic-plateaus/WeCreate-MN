@@ -45,14 +45,14 @@ class UserDashboardPage extends Component {
         <Header />
         <center>
           <div className="dashboard-content">
-            <h2 className="subtitle">
-              Welcome,{" "}
-              {this.props.reduxState.orgInfo &&
-                this.props.reduxState.orgInfo.org_name}
-              !
-            </h2>
             {this.props.reduxState.employerUserOpps.length > 0 ? (
               <>
+                <h2 className="subtitle">
+                  Welcome,{" "}
+                  {this.props.reduxState.orgInfo &&
+                    this.props.reduxState.orgInfo.org_name}
+                  !
+                </h2>
                 <h3>
                   <i>Your current opportunities:</i>
                 </h3>
@@ -60,17 +60,24 @@ class UserDashboardPage extends Component {
               </>
             ) : (
               <>
-              <img
-                href="/"
-                src="images/colorful_dots.png"
-                alt="WeCreate Logo: Colorful Dots"
-                width="10%"
-              ></img>
-              <h3>
+              <br/>
+                <img
+                  href="/"
+                  src="images/colorful_dots.png"
+                  alt="WeCreate Logo: Colorful Dots"
+                  width="10%"
+                ></img>
+                <h2 className="subtitle">
+                  Welcome,{" "}
+                  {this.props.reduxState.orgInfo &&
+                    this.props.reduxState.orgInfo.org_name}
+                  !
+                </h2>
+                <p>
                   You do not have any current opportunities
                   <br />
                   Submit a new opportunity to get started.
-              </h3>
+                </p>
               </>
             )}
             <GoToSubmitOppButton />
