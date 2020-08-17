@@ -149,37 +149,54 @@ class SubmitNewOppPage extends Component {
   getOrganizationDetails = () => {
     this.props.dispatch({
       type: "FETCH_ORGANIZATION_DETAILS",
-      payload: this.props.reduxState.user.id
+      payload: this.props.reduxState.user.id,
     });
   };
 
   submitOpportunity = (event) => {
     event.preventDefault();
     this.props.dispatch({
-          type: "SUBMIT_OPPORTUNITY",
-          payload: {
-            orgID: this.props.reduxState.orgInfo.id,
-            oppTitle: this.state.oppTitle,
-            closingDate: this.state.closingDate,
-            oppType: this.state.oppType,
-            industry: this.state.industry,
-            expLevel: this.state.expLevel,
-            compensation: this.state.compensation,
-            per: this.state.per,
-            oppDetails: this.state.oppDetails,
-            link: this.state.link,
-          },
-        });
+      type: "SUBMIT_OPPORTUNITY",
+      payload: {
+        orgID: this.props.reduxState.orgInfo.id,
+        oppTitle: this.state.oppTitle,
+        closingDate: this.state.closingDate,
+        oppType: this.state.oppType,
+        industry: this.state.industry,
+        expLevel: this.state.expLevel,
+        compensation: this.state.compensation,
+        per: this.state.per,
+        oppDetails: this.state.oppDetails,
+        link: this.state.link,
+      },
+    });
   }; // end submitOpportunity
 
   handleInputChangeFor = (propertyName) => (event) => {
     this.setState({
       [propertyName]: event.target.value,
     });
+    console.log(this.state.closingDate);
   };
 
   handleClick = (event) => {
     this.props.history.push("/");
+  };
+
+  //For presenting only - can be removed later
+  populateInputs = () => {
+    this.setState({
+      oppTitle: "Photographer",
+      closingDate: "2020-08-30",
+      oppType: "Part-Time",
+      industry: "Visual Arts",
+      expLevel: "Not Applicable",
+      compensation: "25",
+      per: "Hour",
+      oppDetails:
+        "Looking for someone to take photos for our next project. Contract position running until March 2021. Need someone with a good eye and an interest in zoology.",
+      link: "digitalexperiences.com/jobs/photographer",
+    });
   };
 
   render() {
@@ -190,7 +207,7 @@ class SubmitNewOppPage extends Component {
         <div className="form">
           <center>
             <form>
-              <h1>Submit A New Opportunity</h1>
+              <h1 onClick={this.populateInputs} >Submit A New Opportunity</h1>
               <div>
                 <TextField
                   required
@@ -221,6 +238,7 @@ class SubmitNewOppPage extends Component {
               <div>
                 <TextField
                   select
+                  required
                   label="Opportunity Type"
                   className={classes.textField}
                   name="opportunity-type"
@@ -243,6 +261,7 @@ class SubmitNewOppPage extends Component {
               <div>
                 <TextField
                   select
+                  required
                   label="Industry"
                   className={classes.textField}
                   name="organization-industry"
@@ -266,6 +285,7 @@ class SubmitNewOppPage extends Component {
                 <TextField
                   select
                   label="Experience Level"
+                  required
                   className={classes.textField}
                   type="text"
                   name="experience-level"
@@ -304,6 +324,7 @@ class SubmitNewOppPage extends Component {
                 <TextField
                   select
                   label="Per"
+                  required
                   className={classes.textField}
                   name="per"
                   value={this.state.per}
@@ -326,6 +347,7 @@ class SubmitNewOppPage extends Component {
                 <TextField
                   label="Opportunity Details:"
                   // defaultValue="Hello World"
+                  required
                   multiline
                   rows="5"
                   name="opportunity-details"
