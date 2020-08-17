@@ -9,8 +9,8 @@ import Button from "@material-ui/core/Button";
 const styles = {
   main: {
     display: "block",
-    width: "250px",
-    height: "200px",
+    width: "300px",
+    height: "230px",
     color: "black",
     background: "#f9f9f9",
     justify: "center",
