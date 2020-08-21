@@ -2,18 +2,35 @@
 
 ### Built By:
 Mase Santos
+>Duration: Two Week Sprint, Solo Project
+
+<img src="images/Landing_Page_View_WeCreate_MN-01.png" alt="WeCreate MN Landing Page View" width="50%" />
+
+## What is WeCreate MN?
+WeCreate MN is a web-based application that serves as a job board and candidate database for prospective creatives of color in Minnesota. In the Midwest as a whole, the creative industry has a low hiring and retention rate for People of Color. WeCreate MN serves to showcase job opportunities by organizations interested in accessing a more-inclusive applicant pool, while also highlighting creatives of color in various practices. Individuals seeking opportunities will be able to create their own profile through a “Personal” portal, including links to outside portfolios. Organizations will be able to submit job opportunities via an “Employer” portal, and then have their jobs posted to a searchable online database.
 
 ## Application Overview
 
-<img src="images/Landing_Page_View.gif" alt="WeCreate MN Landing Page View" width="50%" />
+This application was created over the duration of two weeks, with the purpose of utilizing ***JavaScript, React, Redux, Sagas, and User Authentication*** in order to solidify knowledge with each of these technologies, and is a ***CRUD application*** to provide the most use to the user. The primary task of this project included providing the user with the option to view public job opportunities, create a private account to post new opportunities as an employer, delete old oppprtunities as needed, and update their employer profile. 
 
-WeCreate MN is a web-based application that serves as a job board and candidate database for prospective creatives of color in Minnesota. In the Midwest as a whole, the creative industry has a low hiring and retention rate for people of color. WeCreate MN serves to showcase job opportunities by organizations interested in accessing a more-inclusive applicant pool, while also highlighting creatives of color in various practices. Individuals seeking opportunities will be able to create their own profile through a “Personal” portal, including links to outside portfolios. Organizations will be able to submit job opportunities via an “Employer” portal, and then have their jobs posted to a searchable online database.
-
->Duration: Two Week Sprint, Solo Project
+The next phase of this project will include enhancing the employer user experience by adding the option to upload a logo, to create a job seeker database employers can search, and to focus in on the accessibility of the site to make sure ***all*** can use it.
 
 ## Scope and Wireframe
 
 The scope of this project and wireframes can be accessed [here](https://docs.google.com/document/u/1/d/e/2PACX-1vR0iafFcsc668VuVEz3PXhJhQS-_b8LumMSDESe3XMtGeDtyoudlNWe7PGCXrVBrEdRyG9wuNT0u2lU/pub)
+
+## Installation
+
+1. Set-up 'wecreate_mn' DB using the provided SQL file
+2. npm intall  
+3. npm run server, npm run client
+
+## Usage
+
+1. Create an employer user account via the "Sign Up" button in the landing page
+2. Log in and explore posting a new opportunity
+3. Delete old opportunities as needed
+4. Update your user profile via the "Profile" section found at the top
 
 ## Technologies Used
 

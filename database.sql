@@ -1,3 +1,4 @@
+-- DATABASE NAME: wecreate_mn
 
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
