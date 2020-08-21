@@ -2,19 +2,17 @@
 
 ### Built By:
 Mase Santos
-
-## Description 
-
 >Duration: Two Week Sprint, Solo Project
 
+## Application Overview
 
+<img src="images/Landing_Page_View.gif" alt="WeCreate MN Landing Page View" width="50%" />
 
-## Demo
+WeCreate MN is a web-based application that serves as a job board and candidate database for prospective creatives of color in Minnesota. In the Midwest as a whole, the creative industry has a low hiring and retention rate for people of color. WeCreate MN serves to showcase job opportunities by organizations interested in accessing a more-inclusive applicant pool, while also highlighting creatives of color in various practices. Individuals seeking opportunities will be able to create their own profile through a “Personal” portal, including links to outside portfolios. Organizations will be able to submit job opportunities via an “Employer” portal, and then have their jobs posted to a searchable online database.
 
+## Scope and Wireframe
 
-## Installation 
-
-## Usage 
+The scope of this project and wireframes can be accessed [here](https://docs.google.com/document/u/1/d/e/2PACX-1vR0iafFcsc668VuVEz3PXhJhQS-_b8LumMSDESe3XMtGeDtyoudlNWe7PGCXrVBrEdRyG9wuNT0u2lU/pub)
 
 ## Technologies Used
 
