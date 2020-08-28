@@ -7,7 +7,7 @@ Mase Santos
 ![WeCreate Landing Page View](./Landing_Page_View_WeCreate_MN-01.png)
 
 ### Video Link to Demo:
- [Complete Application Demo](https://vimeo.com/user122213197/review/452713571/3be1cef0db)
+ [Complete Application Demo](https://vimeo.com/452713571)
 
 ## What is WeCreate MN?
 WeCreate MN is a web-based application that serves as a job board and candidate database for prospective creatives of color in Minnesota. In the Midwest as a whole, the creative industry has a low hiring and retention rate for People of Color. WeCreate MN serves to showcase job opportunities by organizations interested in accessing a more-inclusive applicant pool, while also highlighting creatives of color in various practices. Individuals seeking opportunities will be able to create their own profile through a “Personal” portal, including links to outside portfolios. Organizations will be able to submit job opportunities via an “Employer” portal, and then have their jobs posted to a searchable online database.
