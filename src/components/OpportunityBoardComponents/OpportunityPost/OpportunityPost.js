@@ -67,14 +67,15 @@ class OpportunityPost extends Component {
               <Typography variant="subtitle1" color="textSecondary">
                 ID: {this.state.id}
               </Typography> */}
-                  <Button 
+                {/* Button disabled for beta version of project */}
+                  {/* <Button 
                     size="small" 
                     variant="contained" 
                 className={classes.button}
                   classes={{ root: classes.root }}
                     onClick={this.handleClick}>
                     Learn More
-                  </Button>
+                  </Button> */}
               </CardContent>
           </div>
         </Card>
