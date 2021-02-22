@@ -12,7 +12,7 @@ import orgInfoSaga from './orgInfoSaga';
 
 // some sagas trigger other sagas, as an example
 // the registration triggers a login
-// and login triggers setting 
+// and login triggers setting the user
 export default function* rootSaga() {
   yield all([
     loginSaga(),
