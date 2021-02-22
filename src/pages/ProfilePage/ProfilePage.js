@@ -9,10 +9,10 @@ import Button from "@material-ui/core/Button";
 
 const styles = (theme) => ({
   root: {
-    background: 'linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)',
+    background: 'linear-gradient(45deg, #ff4081 60%, #f50057 90%)',
     borderRadius: 3,
     border: 0,
-    color: 'white',
+    color: 'black',
     height: 48,
     padding: '0 30px',
     fontWeight: 'bold',
