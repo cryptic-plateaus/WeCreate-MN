@@ -18,7 +18,7 @@ const styles = {
     textAlign: "left",
   },
   root: {
-    background: 'linear-gradient(45deg, #fbbd41 60%, #fb9e41 90%)',
+    background: 'linear-gradient(45deg, #d500f9 60%, #9e00c5 90%)',
     borderRadius: 3,
     border: 0,
     color: 'white',

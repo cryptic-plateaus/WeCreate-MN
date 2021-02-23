@@ -9,10 +9,10 @@ import Fade from "react-reveal/Fade";
 
 const styles = (theme) => ({
   root: {
-    background: 'linear-gradient(45deg, #ff4081 60%, #f50057 90%)',
+      background: 'linear-gradient(45deg, #d500f9 60%, #9e00c5 90%)',
     borderRadius: 3,
     border: 0,
-    color: 'black',
+    color: 'white',
     height: 48,
     padding: "0 30px",
     fontWeight: "bold",
